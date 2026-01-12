@@ -36,6 +36,15 @@ print(f"Ubuntu Version: {ubuntu_version}")
 print(f"Codename: {ubuntu_codename.title()}")
 
 print('--------------------------------------------------')
+# Get the current Date and Time
+import datetime
+
+now = datetime.datetime.now()
+
+print("The Current Date and Time is...")
+print(now.strftime("%B %A %m/%d/%y %I:%M%p")) # Outputs as January Monday 01/12/26 03:55PM
+
+print('--------------------------------------------------')
 
 print("The list of all Variables is...")
 for key, value in os.environ.items():
