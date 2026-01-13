@@ -16,15 +16,24 @@ print("Hand written exponent:", area)
 print("Math function exponent:", area_2)
 
 print('--------------------------------------------------')
+# Find the Volume of a Spere, V = 4/3 π r³
 
 print("Find volume of a sphere.")
-# V = 4/3 π r³
+
 volume = (4/3) * math.pi * radius**3
 
 print("The volume equals ", volume)
 
 print('--------------------------------------------------')
+# Find if a number is Even or Odd (radius input)
+print('Determine if the Radius input is an Even or Odd number.')
 
+if radius % 2 == 0:
+    print("The Radius is an Even Number")
+else:
+    print("The Radius is an Odd Number")
+
+print('--------------------------------------------------')
 # Find the sum of the positive integers of a number that is entered. E.g. 5 = (1 + 2 + 3 + 4 + 5)
 # Uses a basic math formula and not an iterative loop
 
@@ -36,8 +45,8 @@ sum = (number * (number + 1)) / 2
 print("Your sum equals ", sum)
 
 print('--------------------------------------------------')
-
 # Find the Average of X-amount of Numbers being input via the command line.
+
 print("Find the Average of X-amount of Numbers being entered.")
 
 total_numbers = int(input("How many numbers will there be? "))
@@ -54,6 +63,7 @@ average = total_sum / total_numbers
 print(f"Your average of all the numbers inputted is... {total_sum} / {total_numbers} =", average)
 
 print('--------------------------------------------------')
+# Find if all or some of three input numbers are equal
 
 print("If Three Numbers all Equal")
 
@@ -70,6 +80,21 @@ elif num_1 == num_3 and num_1 != num_2:
 elif num_2 == num_3 and num_2 != num_1:
     print('Only The Second and Third Numbers Match')
 elif num_1 != num_2 and num_1 != num_3:
+    # Find the biggest and smallest of the three numbers entered
     print("None of the numbers match")
+
+    nums = []
+
+    nums.append(num_1)
+    nums.append(num_2)
+    nums.append(num_3)
+
+    print(nums)
+
+    print("The Largest Number Is:", max(nums))
+    print("The Smallest Number Is:", min(nums))
 else:
+    # Should never hit
     print("Uncaught Exception")
+
+print('--------------------------------------------------')

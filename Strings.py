@@ -19,6 +19,17 @@ for char in entered_string:
 print(f"The reverse of {entered_string} is... {reversed_3}")
 
 print('--------------------------------------------------')
+# Reverse a Number
+print("Reverse a Number")
+
+number = int(input("Enter your positive number:"))
+
+reversed = int(str(number)[::-1])
+
+print("The reversed number is:", reversed)
+print(type(reversed))
+
+print('--------------------------------------------------')
 
 print("Multi-Line String 1")
 
