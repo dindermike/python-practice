@@ -34,6 +34,21 @@ else:
     print("The Radius is an Odd Number")
 
 print('--------------------------------------------------')
+# Find the Area of a Triangle, A = 1/2 × b × h or get semi-perimeter and then area. This uses the latter, the semi-perimeter, given 3 side lengths as inputs.
+
+print("The Area of a Triange.")
+
+num_1 = int(input("Enter the First Number: "))
+num_2 = int(input("Enter the Second Number: "))
+num_3 = int(input("Enter the Third Number: "))
+
+semi = (num_1 + num_2 + num_3) / 2
+semi_positive = abs(semi * (semi - num_1) * (semi - num_2) * (semi - num_3))
+area_triangle = math.sqrt(semi_positive)
+
+print("The Area of this Triangle =", area_triangle)
+
+print('--------------------------------------------------')
 # Find the sum of the positive integers of a number that is entered. E.g. 5 = (1 + 2 + 3 + 4 + 5)
 # Uses a basic math formula and not an iterative loop
 
@@ -66,10 +81,6 @@ print('--------------------------------------------------')
 # Find if all or some of three input numbers are equal
 
 print("If Three Numbers all Equal")
-
-num_1 = int(input("Enter the First Number: "))
-num_2 = int(input("Enter the Second Number: "))
-num_3 = int(input("Enter the Third Number: "))
 
 if num_1 == num_2 == num_3:
     print('Dinder Magic - All Numbers Are Equal to Each Other')

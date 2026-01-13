@@ -14,4 +14,8 @@ print("Docstring of reversed() ...")
 print(reversed.__class__)
 print(reversed.__doc__)
 
+print("Docstring of abs() ...")
+print(abs.__class__)
+print(abs.__doc__)
+
 print('--------------------------------------------------')
