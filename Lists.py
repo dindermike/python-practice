@@ -27,3 +27,19 @@ print("The First Name/Element is...", names[0])
 print("The Last Name/Element is...", names[-1])
 
 print('--------------------------------------------------')
+# Number of items in a list
+
+print("The number of items in a list.")
+
+print("The Length of the names you entered is =", len(names))
+
+find_name = input("Enter the name you wish to find: ")
+count = 0
+
+for name in names:
+    if name == find_name:
+        count += 1
+
+print(f"The name {find_name} was found {count} times.")
+
+print('--------------------------------------------------')
