@@ -19,3 +19,13 @@ for char in entered_string:
 print(f"The reverse of {entered_string} is... {reversed_3}")
 
 print('--------------------------------------------------')
+
+print("Multi-Line String 1")
+
+print("""
+      This is a Mult-Line String in a Print Statement.
+      This is how you can write without having to do special stuff to a string.
+      This is the third line of the statement.
+""")
+
+print('--------------------------------------------------')
