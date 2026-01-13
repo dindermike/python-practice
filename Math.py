@@ -40,9 +40,9 @@ print('--------------------------------------------------')
 print('Find the sum of all positive numbers of the number you enter.')
 number = int(input("Enter your number: "))
 
-sum = (number * (number + 1)) / 2
+sum_total = (number * (number + 1)) / 2
 
-print("Your sum equals ", sum)
+print("Your sum equals ", sum_total)
 
 print('--------------------------------------------------')
 # Find the Average of X-amount of Numbers being input via the command line.
@@ -93,6 +93,8 @@ elif num_1 != num_2 and num_1 != num_3:
 
     print("The Largest Number Is:", max(nums))
     print("The Smallest Number Is:", min(nums))
+
+    print("The sum of all numbers in the list is =", sum(nums))
 else:
     # Should never hit
     print("Uncaught Exception")
