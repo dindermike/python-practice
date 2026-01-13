@@ -29,3 +29,11 @@ print("""
 """)
 
 print('--------------------------------------------------')
+
+print('Replace characters in a string.')
+
+var = "This,is,my,string."
+print("Original String =", var)
+
+modified_var = var.replace(',', ' ')
+print('Repaced all "," with a " " =', modified_var)
