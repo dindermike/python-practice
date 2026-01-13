@@ -1,6 +1,9 @@
 # Access and get system variables, including the current username of the user logged into the operating system (Ubuntu etc...) (two different ways to get username)
 import getpass
 import os
+import platform
+import pprint
+import sys
 
 print("The current Username is... ", getpass.getuser())
 
@@ -14,15 +17,13 @@ print(os.environ['SHELL'])
 
 print('--------------------------------------------------')
 # Get the current version of Python
-import sys
+
 print("Current Version of Python is...")
 print(sys.version)
 print(sys.version_info)
 
 print('--------------------------------------------------')
 # Get the current version of Ubuntu
-import platform
-import pprint
 
 # Get all the OS release data
 os_release_info = platform.freedesktop_os_release()

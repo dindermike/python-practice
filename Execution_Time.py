@@ -1,4 +1,5 @@
 # Find the duration of a function from start to finish.
+import cProfile
 import time
 from decimal import Decimal, ROUND_HALF_UP
 
@@ -55,7 +56,5 @@ Will output something that looks like this...
         2    0.000    0.000    0.000    0.000 {built-in method time.time}
         1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
 """
-import cProfile
-
 print('Profile the Function "loop_nums()"...')
 cProfile.run(f'loop_nums({user_input})')
