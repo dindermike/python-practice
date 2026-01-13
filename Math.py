@@ -12,8 +12,8 @@ area = math.pi * radius**2
 area_2 = math.pi * math.pow(radius, 2)
 
 print(f"The Area of a circle with a radius of {radius} equals...")
-print("Hand written exponent:", area)
-print("Math function exponent:", area_2)
+print("Hand written exponent:", round(area, 2))
+print("Math function exponent:", round(area_2, 2))
 
 print('--------------------------------------------------')
 # Find the Volume of a Spere, V = 4/3 π r³
@@ -34,7 +34,7 @@ else:
     print("The Radius is an Odd Number")
 
 print('--------------------------------------------------')
-# Find the Area of a Triangle, A = 1/2 × b × h or get semi-perimeter and then area. This uses the latter, the semi-perimeter, given 3 side lengths as inputs.
+# Find the Area of a Triangle, A = 1/2 × b × h or get semi-perimeter and then area. The former, uses two inputs base and height. The latter, the semi-perimeter, uses 3 side lengths as inputs.
 
 print("The Area of a Triange.")
 
@@ -42,11 +42,14 @@ num_1 = int(input("Enter the First Number: "))
 num_2 = int(input("Enter the Second Number: "))
 num_3 = int(input("Enter the Third Number: "))
 
+area_triangle_1 = (num_1 * num_2) / 2
+
 semi = (num_1 + num_2 + num_3) / 2
 semi_positive = abs(semi * (semi - num_1) * (semi - num_2) * (semi - num_3))
-area_triangle = math.sqrt(semi_positive)
+area_triangle_2 = math.sqrt(semi_positive)
 
-print("The Area of this Triangle =", area_triangle)
+print("The Area of the Triangle, given base and height =", round(area_triangle_1, 2))
+print("The Area of the Triangle, given 3 sides =", round(area_triangle_2, 2))
 
 print('--------------------------------------------------')
 # Find the sum of the positive integers of a number that is entered. E.g. 5 = (1 + 2 + 3 + 4 + 5)
