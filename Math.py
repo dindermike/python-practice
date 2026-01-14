@@ -1,6 +1,21 @@
 # Various Math Functions
 import math
 
+print('--------------------------------------------------')
+# Find the Greatest Common Factor 
+"""
+The Greatest Common Divisor (GCD), also known as the Highest Common Factor (HCF) or Greatest Common Factor (GCF), is the largest positive integer that divides two or more given integers without leaving a remainder. It's found by identifying common factors or using methods like prime factorization or Euclid's Algorithm, and is useful for simplifying fractions or dividing items into equal groups
+"""
+gcf_1 = math.gcd(24, 54)
+
+print(f"A) The GCF of 24 and 54 is: {gcf_1}")
+
+gcf_list = [12, 18, 24, 48, 54]
+gcf_2 = math.gcd(*gcf_list)
+gcf_nums = ', '.join(str(i) for i in gcf_list)
+print(f"B) The GCF of {gcf_nums} is: {gcf_2}")
+
+print('--------------------------------------------------')
 # Area of a Circle
 print("Find the Area of a Circle.")
 radius = float(input("Enter the Radius of the Circle: "))
@@ -110,7 +125,7 @@ elif num_1 != num_2 and num_1 != num_3:
 
     print("The sum of all numbers in the list is =", sum(nums))
 else:
-    # Should never hit
+    # Should Never Hit
     print("Uncaught Exception")
 
 print('--------------------------------------------------')

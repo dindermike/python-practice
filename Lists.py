@@ -17,6 +17,39 @@ for x in tupled:
     print(type(x))
 
 print('--------------------------------------------------')
+# Create a Histogram using the list of numbers above.
+print("Show a Histogram of the List of Numbers you Entered.")
+
+def histogram(list_of_numbers):
+    """
+    Histogram: a chart that visually displays the distribution of continuous numerical data, grouping it into "bins" or ranges, with the height of each bar showing the frequency (how many data points) within that range. This function will represent this in text format using asterisks "*", where each line is each element in the list.
+    
+    :param list_of_numbers: List of Numbers Entered Via Input
+    """
+    for interval in list_of_numbers:
+        output = ''
+
+        while (interval > 0):
+            output += '*'
+            interval -= 1
+
+        print(output)
+
+histogram(numbers)
+
+print('--------------------------------------------------')
+# Find all the Even Numbers found in the list. By Value and not by index.
+print("Show Even numbers by value of the list of numbers.")
+
+for x in numbers:
+    if x > 100:
+        print("XXX - This Number Exceeds This Threshold! - XXX")
+    elif x % 2 == 0:
+        print("    (" + str(x) + ")")
+    else:
+        print("X")
+
+print('--------------------------------------------------')
 
 # Show the First and Last elements of a list of names
 print("Show the first and last names of a list of names.")
@@ -28,27 +61,66 @@ print("The First Name/Element is...", names[0])
 print("The Last Name/Element is...", names[-1])
 
 print('--------------------------------------------------')
-# Number of items in a list
+# List to String
+print("List to String.")
 
+stringed_list_1 = ' '.join(names)
+stringed_list_2 = ', '.join(names)
+stringed_list_3 = ' - '.join(names)
+stringed_list_4 = ' : '.join(names)
+
+print("Example 1:", stringed_list_1)
+print("Example 2:", stringed_list_2)
+print("Example 3:", stringed_list_3)
+print("Example 4:", stringed_list_4)
+
+print('--------------------------------------------------')
+# Number of items in a list, how many times does this name appear in the list?
 print("The number of items in a list.")
 
 print("The Length of the names you entered is =", len(names))
 
 find_name = input("Enter the name you wish to find: ")
 count = 0
+found = False
 
+this_count = names.count(find_name)
+print(f"A) The name {find_name} was found {this_count} times.")
+
+# Via For Loop: Slower Memory Performacne
 for name in names:
     if name == find_name:
         count += 1
 
-print(f"The name {find_name} was found {count} times.")
+print(f"B) The name {find_name} was found {count} times.")
+
+print('--------------------------------------------------')
+# Alternative, check if element is in the list
+print("Check if the Name you Entered is in the List")
+
+if find_name in names:
+    print(f'A) The Name "{find_name}" is in the list of names you created.')
+else:
+    print(f'A) The Name "{find_name}" is NOT in the list of names you created.')
+
+# Via a For Loop: Slower Memory Performance
+for name in names:
+    if name == find_name:
+        found = True
+
+if found:
+    print(f'B) The Name "{find_name}" is in the list of names you created.')
+else:
+   print(f'B) The Name "{find_name}" is NOT in the list of names you created.')
 
 print('--------------------------------------------------')
 # Find all Even and Odd indexes of a list
 print("Find Even and Odd Indexes and Reverse the List.")
 
 numbered_list = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+comparing_list = [3, 9, 12, 15, 20, 25, 33, 56, 99, 100]
 
+# Copying for Independent Operations Further Down in this File
 numbered_list_1 = copy.copy(numbered_list)
 numbered_list_2 = copy.copy(numbered_list)
 numbered_list_3 = copy.copy(numbered_list)
@@ -58,9 +130,15 @@ even_indexes = numbered_list[::2]
 odd_indexes = numbered_list[1::2]
 
 print("Your Standard List Is:", numbered_list)
+print("Your Comparable List Is:", comparing_list)
 print("Your Even Indexes Are:", even_indexes)
 print("Your Odd Indexes Are:", odd_indexes)
 print("Your Reversed List Is:", numbered_list[::-1])
+
+set_list_1 = set(numbered_list)
+set_list_2 = set(comparing_list)
+print("A) The Difference in the Two Lists is:", set_list_1.difference(set_list_2))
+print("B) The Difference in the Two Lists is:", set_list_2.difference(set_list_1))
 
 print('--------------------------------------------------')
 # Using a Slice Object
