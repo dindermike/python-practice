@@ -1,8 +1,10 @@
 # Access and get system variables, including the current username of the user logged into the operating system (Ubuntu etc...) (two different ways to get username)
 import getpass
+import multiprocessing
 import os
 import platform
 import pprint
+import site
 import sys
 
 print("The current Username is... ", getpass.getuser())
@@ -18,7 +20,7 @@ print(os.environ['NAME'])
 print(os.environ['SHELL'])
 
 print('--------------------------------------------------')
-# Get the current version of Python
+# Get the current version of Python and OS information
 print("Current Version of Python and OS Info is...")
 
 print(sys.version)
@@ -26,6 +28,10 @@ print(sys.version_info)
 print(os.name)
 print(platform.system())
 print(platform.release())
+print(site.getsitepackages())
+print(site.getusersitepackages())
+
+print("Number of CPU's Is:", multiprocessing.cpu_count())
 
 print('--------------------------------------------------')
 # Get the current version of Ubuntu

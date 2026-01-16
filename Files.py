@@ -2,6 +2,13 @@
 from os import listdir, path
 from os.path import isfile, join
 
+print('--------------------------------------------------')
+# Check if a File Exists
+print("Show Current Filename and Path of Script that is running.")
+
+print("Current Filename and Path:", path.realpath(__file__))
+
+print('--------------------------------------------------')
 # Check if a File Exists
 print("Does File Exist?")
 

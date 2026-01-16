@@ -3,6 +3,8 @@ import copy
 import math
 import struct
 
+from subprocess import call
+
 print("Print Doc String of Built-in Function...")
 print("Docstring of math.pi() ...")
 print(math.pi.__class__)
@@ -63,3 +65,15 @@ elif struct.calcsize("P") * 8 == 32:
     print("You Are Using: 32-bit Python")
 else:
     print("Your Python is of Unknown Architecture")
+
+print('--------------------------------------------------')
+# Execute an External Python Command
+print("Execute an External Python Command")
+
+call(['dir'])
+call(['ls', '-li'])
+
+print('\n\n\n----- Now Executing Variables.py Script -----\n\n\n')
+call(['python3', 'Variables.py'])
+
+print('--------------------------------------------------')
