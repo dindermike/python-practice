@@ -4,8 +4,9 @@ import math
 print('--------------------------------------------------')
 # Find the Greatest Common Factor 
 """
-The Greatest Common Divisor (GCD), also known as the Highest Common Factor (HCF) or Greatest Common Factor (GCF), is the largest positive integer that divides two or more given integers without leaving a remainder. It's found by identifying common factors or using methods like prime factorization or Euclid's Algorithm, and is useful for simplifying fractions or dividing items into equal groups
+The Greatest Common Denominator (GCD), also known as the Highest Common Factor (HCF) or Greatest Common Factor (GCF), is the largest positive integer that divides two or more given integers without leaving a remainder. It's found by identifying common factors or using methods like prime factorization or Euclid's Algorithm, and is useful for simplifying fractions or dividing items into equal groups.
 """
+print("Greated Common Denominator")
 gcf_1 = math.gcd(24, 54)
 
 print(f"A) The GCF of 24 and 54 is: {gcf_1}")
@@ -14,6 +15,34 @@ gcf_list = [12, 18, 24, 48, 54]
 gcf_2 = math.gcd(*gcf_list)
 gcf_nums = ', '.join(str(i) for i in gcf_list)
 print(f"B) The GCF of {gcf_nums} is: {gcf_2}")
+
+print('--------------------------------------------------')
+# Find the Least Common Denominator 
+"""
+The Least Common Denominator (LCD) is the smallest positive number that all denominators in a set of fractions can divide into evenly; it's essential for adding, subtracting, or comparing fractions by converting them to equivalent forms with the same base, found by identifying the Least Common Multiple (LCM) of the denominators, often using prime factorization or listing multiples.
+"""
+print("Least Common Multiple")
+lcm_1 = math.lcm(24, 54)
+
+print(f"A) The LCM of 24 and 54 is: {lcm_1}")
+
+lcm_list = [12, 18, 24, 48, 54]
+lcm_2 = math.lcm(*lcm_list)
+lcm_nums = ', '.join(str(i) for i in lcm_list)
+print(f"B) The LCM of {lcm_nums} is: {lcm_2}")
+
+print('--------------------------------------------------')
+# Find the Distance Between Two Points
+"""
+To calculate the distance between two points in Python, you can use the built-in math module or the numpy library. The Euclidean distance formula is based on the Pythagorean theorem: d = sqrt((x2 - x1)^2 + (y2 - y1)^2).
+"""
+print("Distance Between Two Points")
+point_1 = [int(num) for num in input("Enter the First Point X, Y with a comma and a space separating them: ").split(', ')]
+point_2 = [int(num) for num in input("Enter the Second Point X, Y with a comma and a space separating them: ").split(', ')]
+
+distance = math.sqrt((point_2[0] - point_1[0])**2 + (point_2[1] - point_1[1])**2)
+
+print(f"The Distance Between Point 1 - {str(point_1)} and Point 2 - {str(point_2)} is:", distance)
 
 print('--------------------------------------------------')
 # Area of a Circle

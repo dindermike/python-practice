@@ -8,6 +8,8 @@ import sys
 print("The current Username is... ", getpass.getuser())
 
 print('--------------------------------------------------')
+# Get Environment Variables
+print("Various Local Environment Variables...")
 
 print(os.environ['HOME'])
 print(os.environ['USER'])
@@ -17,13 +19,17 @@ print(os.environ['SHELL'])
 
 print('--------------------------------------------------')
 # Get the current version of Python
+print("Current Version of Python and OS Info is...")
 
-print("Current Version of Python is...")
 print(sys.version)
 print(sys.version_info)
+print(os.name)
+print(platform.system())
+print(platform.release())
 
 print('--------------------------------------------------')
 # Get the current version of Ubuntu
+print("Ubuntu Information...")
 
 # Get all the OS release data
 os_release_info = platform.freedesktop_os_release()

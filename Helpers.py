@@ -1,6 +1,7 @@
 # Various Helper Functions
 import copy
 import math
+import struct
 
 print("Print Doc String of Built-in Function...")
 print("Docstring of math.pi() ...")
@@ -50,3 +51,15 @@ print(list.pop.__class__)
 print(list.pop.__doc__)
 
 print('--------------------------------------------------')
+# Is Python Version 32bit or 64bit?
+"""
+The struct.calcsize("P") function returns the size of a C pointer in bytes, which is 4 on a 32-bit system and 8 on a 64-bit system. Multiplying by 8 converts this to bits where 32 = 32-bit and 64 = 64-bit
+"""
+print("Is Python Version 32-bit or 64-bit Architecture?")
+
+if struct.calcsize("P") * 8 == 64:
+    print("You Are Using: 64-bit Python")
+elif struct.calcsize("P") * 8 == 32:
+    print("You Are Using: 32-bit Python")
+else:
+    print("Your Python is of Unknown Architecture")
