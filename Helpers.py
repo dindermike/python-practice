@@ -82,7 +82,7 @@ sys.stderr.write("ERROR A: Another way to write to stderr.\n")
 sys.stderr.flush()
 
 # Write to Log File
-sys.stderr = open("log.txt", "a", buffering=1)
+sys.stderr = open("standard_error_log.txt", "a", buffering=1)
 print("ERROR B: Something went wrong.", file=sys.stderr)
 sys.stderr.write("ERROR B: Another way to write to stderr.\n")
 sys.stderr.flush()
