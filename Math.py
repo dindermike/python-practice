@@ -171,3 +171,22 @@ else:
     print("Uncaught Exception")
 
 print('--------------------------------------------------')
+# Calculate Body Mass Ratio.
+"""
+BMI = Weight(Kg) / Height(Meters)²
+or
+BMI = (Weight(Lbs) / Height(Inches)²) * 703
+     Where 703 is the conversion factor.
+
+Below 18.5: Underweight
+18.5 - 24.9: Healthy Weight
+25.0 - 29.9: Overweight
+30.0 or above: Obesity
+"""
+print("Calculate Body Mass Index")
+
+weight = float(input("Enter Your Weight in Pounds (E.g. 105.4):"))
+height = float(input("Enter Your Height in Inches (E.g. 68.5):"))
+bmi = (weight / height**2) * 703
+
+print(f"Your BMI for a Height of {height} Inches and Weight of {weight} Lbs is:", bmi)
