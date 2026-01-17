@@ -34,7 +34,8 @@ print(f"B) The LCM of {lcm_nums} is: {lcm_2}")
 print('--------------------------------------------------')
 # Find the Distance Between Two Points
 """
-To calculate the distance between two points in Python, you can use the built-in math module or the numpy library. The Euclidean distance formula is based on the Pythagorean theorem: d = sqrt((x2 - x1)^2 + (y2 - y1)^2).
+To calculate the distance between two points in Python, you can use the built-in math module or the numpy library. The Euclidean Distance Formula is based on the Pythagorean Theorem:
+d = sqrt((x2 - x1)² + (y2 - y1)²).
 """
 print("Distance Between Two Points")
 point_1 = [int(num) for num in input("Enter the First Point X, Y with a comma and a space separating them: ").split(', ')]
@@ -62,7 +63,7 @@ print("Math function exponent:", round(area_2, 2))
 print('--------------------------------------------------')
 # Find the Volume of a Spere, V = 4/3 π r³
 
-print("Find volume of a sphere.")
+print(f"Find volume of a sphere using Radius = {radius}.")
 
 volume = (4/3) * math.pi * radius**3
 
@@ -70,7 +71,7 @@ print("The volume equals ", volume)
 
 print('--------------------------------------------------')
 # Find if a number is Even or Odd (radius input)
-print('Determine if the Radius input is an Even or Odd number.')
+print(f'Determine if the Radius "{radius}" is an Even or Odd number.')
 
 if radius % 2 == 0:
     print("The Radius is an Even Number")
@@ -82,9 +83,9 @@ print('--------------------------------------------------')
 
 print("The Area of a Triange.")
 
-num_1 = int(input("Enter the First Number: "))
-num_2 = int(input("Enter the Second Number: "))
-num_3 = int(input("Enter the Third Number: "))
+num_1 = int(input("Enter the First Length: "))
+num_2 = int(input("Enter the Second Length: "))
+num_3 = int(input("Enter the Third Length: "))
 
 area_triangle_1 = (num_1 * num_2) / 2
 
@@ -94,6 +95,18 @@ area_triangle_2 = math.sqrt(semi_positive)
 
 print("The Area of the Triangle, given base and height =", round(area_triangle_1, 2))
 print("The Area of the Triangle, given 3 sides =", round(area_triangle_2, 2))
+
+print('--------------------------------------------------')
+# Find the Hypotenuse of a Triangle using Pythagorean Theorem a²+b²=c²
+print("Hypotenuse of a Triangle")
+
+sides = [int(num) for num in input("Please enter Side A and Side B of your Trianlge separated by a space:").split()]
+
+hypotenuse_1 = math.hypot(sides[0], sides[1])
+hypotenuse_2 = math.sqrt(sides[0]**2 + sides[1]**2)
+
+print("The Math Library Hypotenuse Is:", hypotenuse_1)
+print("The Manually Calculated Hypotenuse Is:", hypotenuse_2)
 
 print('--------------------------------------------------')
 # Find the sum of the positive integers of a number that is entered. E.g. 5 = (1 + 2 + 3 + 4 + 5)
@@ -127,7 +140,7 @@ print(f"Your average of all the numbers inputted is... {total_sum} / {total_numb
 print('--------------------------------------------------')
 # Find if all or some of three input numbers are equal
 
-print("If Three Numbers all Equal")
+print(f"If Three Numbers all Equal [{num_1}, {num_2}, {num_3}]")
 
 if num_1 == num_2 == num_3:
     print('Dinder Magic - All Numbers Are Equal to Each Other')

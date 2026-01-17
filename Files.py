@@ -1,15 +1,23 @@
-# Various File Operations
-from os import listdir, path
+# Various File Operations           
+"""
+pystatx - Requires "python3 -m pip install pystatx" and/or activating Virtual Environment First.
+Command: source practice_env/bin/activate
+"""
+import statx
+import time
+
+from datetime import datetime
+from os import listdir, path, stat
 from os.path import isfile, join
 
 print('--------------------------------------------------')
-# Check if a File Exists
+# Show Current Filename
 print("Show Current Filename and Path of Script that is running.")
 
 print("Current Filename and Path:", path.realpath(__file__))
 
 print('--------------------------------------------------')
-# Check if a File Exists
+# Check if a File Exists, E.g. Math.py (Files in Current Directory)
 print("Does File Exist?")
 
 check_file = input("Enter the Filename: ")
@@ -24,10 +32,18 @@ directory = input("Please enter the directory you would like to list: ")
 files_list = [f for f in listdir(directory) if isfile(join(directory, f))]
 
 for file in files_list:
-    print("Filename =", file)
+    print('***********************************************')
+    print("Filename:", file)
 
     file_extension = file.split('.')
+    stx = statx.statx(file).btime
+    dt_object = datetime.fromtimestamp(stx)
+    formatted_date = dt_object.strftime("%a %b %d %H:%M:%S %Y")
 
-    print('File Extension = ".' + file_extension[-1] + '"')
+    print('File Extension: ".' + file_extension[-1] + '"')
+    print('File Last Accessed Time:', time.ctime(path.getatime(file)))
+    print(f"File Created Time: {formatted_date}")
+    print('File Changed Time:', time.ctime(path.getctime(file)))
+    print('File Last Modified Time:', time.ctime(path.getmtime(file)))
 
 print('--------------------------------------------------')

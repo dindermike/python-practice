@@ -118,7 +118,6 @@ print('--------------------------------------------------')
 print("Find Even and Odd Indexes and Reverse the List.")
 
 numbered_list = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-comparing_list = [3, 9, 12, 15, 20, 25, 33, 56, 99, 100]
 
 # Copying for Independent Operations Further Down in this File
 numbered_list_1 = copy.copy(numbered_list)
@@ -130,15 +129,9 @@ even_indexes = numbered_list[::2]
 odd_indexes = numbered_list[1::2]
 
 print("Your Standard List Is:", numbered_list)
-print("Your Comparable List Is:", comparing_list)
 print("Your Even Indexes Are:", even_indexes)
 print("Your Odd Indexes Are:", odd_indexes)
 print("Your Reversed List Is:", numbered_list[::-1])
-
-set_list_1 = set(numbered_list)
-set_list_2 = set(comparing_list)
-print("A) The Difference in the Two Lists is:", set_list_1.difference(set_list_2))
-print("B) The Difference in the Two Lists is:", set_list_2.difference(set_list_1))
 
 print('--------------------------------------------------')
 # Using a Slice Object
