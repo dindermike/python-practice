@@ -5,6 +5,7 @@ import os
 import platform
 import pprint
 import site
+import socket
 import sys
 
 print("The current Username is... ", getpass.getuser())
@@ -47,6 +48,22 @@ pretty_name = os_release_info.get("PRETTY_NAME")
 print(f"Pretty Name: {pretty_name}")
 print(f"Ubuntu Version: {ubuntu_version}")
 print(f"Codename: {ubuntu_codename.title()}")
+
+print('--------------------------------------------------')
+# Get the current Hostname of your system (A.k.a. The Computer Name)
+# mikedinder.com = 15.197.225.128
+print("System Hostname...")
+
+ip_address = '15.197.225.128'
+host_name = socket.gethostname()
+host_by_name = socket.gethostbyname(host_name)
+host_by_addr = socket.gethostbyaddr(ip_address)
+addr_info = socket.getaddrinfo(ip_address, 80)
+
+print('Host Name:', host_name)
+print('Host By Name:', host_by_name)
+print('Host By Address:', host_by_addr)
+print('Address Info:', addr_info)
 
 print('--------------------------------------------------')
 

@@ -6,7 +6,7 @@ print('--------------------------------------------------')
 """
 The Greatest Common Denominator (GCD), also known as the Highest Common Factor (HCF) or Greatest Common Factor (GCF), is the largest positive integer that divides two or more given integers without leaving a remainder. It's found by identifying common factors or using methods like prime factorization or Euclid's Algorithm, and is useful for simplifying fractions or dividing items into equal groups.
 """
-print("Greated Common Denominator")
+print("Greatest Common Denominator")
 gcf_1 = math.gcd(24, 54)
 
 print(f"A) The GCF of 24 and 54 is: {gcf_1}")

@@ -3,6 +3,7 @@ import copy
 import math
 import struct
 import sys
+import textwrap
 
 from subprocess import call
 
@@ -86,6 +87,30 @@ sys.stderr = open("standard_error_log.txt", "a", buffering=1)
 print("ERROR B: Something went wrong.", file=sys.stderr)
 sys.stderr.write("ERROR B: Another way to write to stderr.\n")
 sys.stderr.flush()
+
+print('--------------------------------------------------')
+# Get ASCII Character Codes
+print("Get ASCII Character Codes")
+
+print(ord("D"))
+print(ord("I"))
+print(ord("N"))
+print(ord("D"))
+print(ord("E"))
+print(ord("R"))
+print(ord("!"))
+print(ord("@"))
+print(ord("#"))
+print(ord("$"))
+print(ord("%"))
+print(ord("€"))
+
+print('--------------------------------------------------')
+# List of Built-In Modules
+print("Built-In Modules")
+
+modules = ', '.join(sorted(sys.builtin_module_names))
+print(textwrap.fill(modules, width=100))
 
 print('--------------------------------------------------')
 # Execute an External Python Command
