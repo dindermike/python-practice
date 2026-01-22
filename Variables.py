@@ -1,12 +1,13 @@
-# Access and get system variables, including the current username of the user logged into the operating system (Ubuntu etc...) (two different ways to get username)
+# Access and get system variables, including the current username of the user logged into the operating system (Ubuntu
+# etc...) (two different ways to get username)
 import getpass
 import multiprocessing
 import os
 import platform
-import pprint
 import site
 import socket
 import sys
+
 
 print("The current Username is... ", getpass.getuser())
 

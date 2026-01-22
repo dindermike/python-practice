@@ -3,13 +3,12 @@ import psycopg2
 
 from Connect import connect
 from psycopg2 import sql
-from psycopg2.extensions import AsIs
 
 
 def insert_user(conn, table_name, columns, user_info):
     """
     Insert a new User into the User table and return the User ID.
-    
+
     :param conn: Database Connection
     :param table_name: Database Table Name
     :param columns: List of Column Names

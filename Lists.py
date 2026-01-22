@@ -1,6 +1,7 @@
 # List and Tuple operations
 import copy
 
+
 # Enter numbers and split into a list and a tuple.
 print("Enter a series of numbers. Your output will be a list and a separate tuple of numbers.")
 numbers = [int(num) for num in input("Enter numbers separated by spaces: ").split()]
@@ -20,10 +21,13 @@ print('--------------------------------------------------')
 # Create a Histogram using the list of numbers above.
 print("Show a Histogram of the List of Numbers you Entered.")
 
+
 def histogram(list_of_numbers):
     """
-    Histogram: a chart that visually displays the distribution of continuous numerical data, grouping it into "bins" or ranges, with the height of each bar showing the frequency (how many data points) within that range. This function will represent this in text format using asterisks "*", where each line is each element in the list.
-    
+    Histogram: a chart that visually displays the distribution of continuous numerical data, grouping it into "bins" or
+    ranges, with the height of each bar showing the frequency (how many data points) within that range. This function
+    will represent this in text format using asterisks "*", where each line is each element in the list.
+
     :param list_of_numbers: List of Numbers Entered Via Input
     """
     for interval in list_of_numbers:
@@ -34,6 +38,7 @@ def histogram(list_of_numbers):
             interval -= 1
 
         print(output)
+
 
 histogram(numbers)
 
@@ -111,7 +116,7 @@ for name in names:
 if found:
     print(f'B) The Name "{find_name}" is in the list of names you created.')
 else:
-   print(f'B) The Name "{find_name}" is NOT in the list of names you created.')
+    print(f'B) The Name "{find_name}" is NOT in the list of names you created.')
 
 print('--------------------------------------------------')
 # Find all Even and Odd indexes of a list

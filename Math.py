@@ -2,9 +2,12 @@
 import math
 
 print('--------------------------------------------------')
-# Find the Greatest Common Factor 
+# Find the Greatest Common Factor
 """
-The Greatest Common Denominator (GCD), also known as the Highest Common Factor (HCF) or Greatest Common Factor (GCF), is the largest positive integer that divides two or more given integers without leaving a remainder. It's found by identifying common factors or using methods like prime factorization or Euclid's Algorithm, and is useful for simplifying fractions or dividing items into equal groups.
+The Greatest Common Denominator (GCD), also known as the Highest Common Factor (HCF) or Greatest Common Factor (GCF), is
+the largest positive integer that divides two or more given integers without leaving a remainder. It's found by
+identifying common factors or using methods like prime factorization or Euclid's Algorithm, and is useful for
+simplifying fractions or dividing items into equal groups.
 """
 print("Greatest Common Denominator")
 gcf_1 = math.gcd(24, 54)
@@ -17,9 +20,12 @@ gcf_nums = ', '.join(str(i) for i in gcf_list)
 print(f"B) The GCF of {gcf_nums} is: {gcf_2}")
 
 print('--------------------------------------------------')
-# Find the Least Common Denominator 
+# Find the Least Common Denominator
 """
-The Least Common Denominator (LCD) is the smallest positive number that all denominators in a set of fractions can divide into evenly; it's essential for adding, subtracting, or comparing fractions by converting them to equivalent forms with the same base, found by identifying the Least Common Multiple (LCM) of the denominators, often using prime factorization or listing multiples.
+The Least Common Denominator (LCD) is the smallest positive number that all denominators in a set of fractions can
+divide into evenly; it's essential for adding, subtracting, or comparing fractions by converting them to equivalent
+forms with the same base, found by identifying the Least Common Multiple (LCM) of the denominators, often using prime
+factorization or listing multiples.
 """
 print("Least Common Multiple")
 lcm_1 = math.lcm(24, 54)
@@ -34,12 +40,17 @@ print(f"B) The LCM of {lcm_nums} is: {lcm_2}")
 print('--------------------------------------------------')
 # Find the Distance Between Two Points
 """
-To calculate the distance between two points in Python, you can use the built-in math module or the numpy library. The Euclidean Distance Formula is based on the Pythagorean Theorem:
+To calculate the distance between two points in Python, you can use the built-in math module or the numpy library. The
+Euclidean Distance Formula is based on the Pythagorean Theorem:
 d = sqrt((x2 - x1)² + (y2 - y1)²).
 """
 print("Distance Between Two Points")
-point_1 = [int(num) for num in input("Enter the First Point X, Y with a comma and a space separating them: ").split(', ')]
-point_2 = [int(num) for num in input("Enter the Second Point X, Y with a comma and a space separating them: ").split(', ')]
+point_1 = [
+    int(num) for num in input("Enter the First Point X, Y with a comma and a space separating them: ").split(', ')
+]
+point_2 = [
+    int(num) for num in input("Enter the Second Point X, Y with a comma and a space separating them: ").split(', ')
+]
 
 distance = math.sqrt((point_2[0] - point_1[0])**2 + (point_2[1] - point_1[1])**2)
 
@@ -79,7 +90,8 @@ else:
     print("The Radius is an Odd Number")
 
 print('--------------------------------------------------')
-# Find the Area of a Triangle, A = 1/2 × b × h or get semi-perimeter and then area. The former, uses two inputs base and height. The latter, the semi-perimeter, uses 3 side lengths as inputs.
+# Find the Area of a Triangle, A = 1/2 × b × h or get semi-perimeter and then area. The former, uses two inputs base and
+# height. The latter, the semi-perimeter, uses 3 side lengths as inputs.
 
 print("The Area of a Triange.")
 

@@ -1,4 +1,4 @@
-# Various File Operations           
+# Various File Operations
 """
 pystatx - Requires "python3 -m pip install pystatx" and/or activating Virtual Environment First.
 Command: source practice_env/bin/activate
@@ -7,7 +7,7 @@ import statx
 import time
 
 from datetime import datetime
-from os import listdir, path, stat
+from os import listdir, path
 from os.path import isfile, join
 
 print('--------------------------------------------------')
@@ -25,7 +25,8 @@ check_file = input("Enter the Filename: ")
 print(f"Does The File {check_file} Exist:", path.isfile(check_file))
 
 print('--------------------------------------------------')
-# List all files found in a directory, with their file extensions on a separate line. E.g. Directory = /home/mike/Python_Practice
+# List all files found in a directory, with their file extensions on a separate line.
+# E.g.Directory = /home/mike Python_Practice
 print("List all Files in a Directory.")
 directory = input("Please enter the directory you would like to list: ")
 

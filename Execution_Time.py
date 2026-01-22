@@ -3,10 +3,12 @@ import cProfile
 import time
 from decimal import Decimal, ROUND_HALF_UP
 
+
 def loop_nums(num_range=5):
     """
-    Docstring for loop_nums. Loops through numbers from 1 to the end number passed in as a parameter. Adds the sum of all numbers in the loop.
-    
+    Docstring for loop_nums. Loops through numbers from 1 to the end number passed in as a parameter. Adds the sum of
+    all numbers in the loop.
+
     :param num_range: End range of the loop, must be a positive integer
     :returns: Sum of all numbers in the loop.
     :rtype: int
@@ -24,6 +26,7 @@ def loop_nums(num_range=5):
     return sum, str(((end_time - start_time) * 1000) * 1000)
     # Result would otherwise be 0.0000057220458984375 etc...
     # Result now becomes 5.7220458984375 (milliseconds)
+
 
 user_input = int(input('Enter the number to loop and count: '))
 

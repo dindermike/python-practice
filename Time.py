@@ -8,7 +8,7 @@ now = datetime.datetime.now()
 now_2 = time.ctime()
 
 print("The Current Date and Time is...")
-print(now.strftime("%B %A %m/%d/%y %I:%M%p")) # Outputs as January Monday 01/12/26 03:55PM
+print(now.strftime("%B %A %m/%d/%y %I:%M%p"))  # Outputs as January Monday 01/12/26 03:55PM
 print(now_2)
 
 print('--------------------------------------------------')
