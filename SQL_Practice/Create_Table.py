@@ -27,15 +27,15 @@ def create_table(conn, table_name='', columns=None):
             columns
         )
     except (Exception, psycopg2.DatabaseError) as e:
-        print(f"Error Creating Table: {e}")
+        print(f'Error Creating Table: {e}')
         conn.rollback()
     else:
         conn.commit()
         executed_query_bytes = cursor.query
         executed_query_str = executed_query_bytes.decode('utf-8')
 
-        print(f"Executed Query: {executed_query_str}")
-        print("Table Created Successfully.")
+        print(f'Executed Query: {executed_query_str}')
+        print('Table Created Successfully.')
     finally:
         # Close the Cursor and Connection
         if cursor:
@@ -53,5 +53,6 @@ if __name__ == '__main__':
             AsIs('id SERIAL PRIMARY KEY'),
             AsIs('first_name VARCHAR(100)'),
             AsIs('last_name VARCHAR(100)'),
-            AsIs('email VARCHAR(200)')
+            AsIs('email VARCHAR(200)'),
+            AsIs('UNIQUE(email)')
         ])
