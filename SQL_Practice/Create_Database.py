@@ -23,19 +23,19 @@ cursor = None
 try:
     # Connect to the default 'postgres' database
     conn = psycopg2.connect(dbname="postgres", **CONN_PARAMS)
-    
+
     # Set the connection to autocommit mode
     conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
-    
+
     # Create a cursor object
     cursor = conn.cursor()
-    
+
     # Use the psycopg2.sql module to safely format the query
     # This helps prevent SQL injection
     create_db_query = sql.SQL("CREATE DATABASE {}").format(
         sql.Identifier(DB_NAME_TO_CREATE)
     )
-    
+
     # Execute the query to create the new database
     cursor.execute(create_db_query)
     print(f"Database '{DB_NAME_TO_CREATE}' created successfully!")
@@ -48,7 +48,7 @@ except psycopg2.Error as e:
         print(f'The Database "{DB_NAME_TO_CREATE}" Already Exists! No Database Created...')
 
 finally:
-    # Close the cursor and connection
+    # Close the Cursor and Connection
     if cursor:
         cursor.close()
 

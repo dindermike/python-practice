@@ -5,8 +5,10 @@ import psycopg2
 from dotenv import load_dotenv
 from psycopg2 import OperationalError
 
+
 # Load Environment Variables
 load_dotenv()
+
 
 def connect():
     """ Connect to the PostgreSQL database server """
@@ -24,6 +26,7 @@ def connect():
     except OperationalError as e:
         print(f"Error Connecting to the Database: {e}")
         return None
+
 
 if __name__ == '__main__':
     print("Practice Connecting...")

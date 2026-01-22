@@ -1,26 +1,57 @@
 # Create a Database Table
+import psycopg2
+
 from Connect import connect
+from psycopg2 import sql
+from psycopg2.extensions import AsIs
 
 
-def create_table(conn, table_name, columns):
+def create_table(conn, table_name='', columns=None):
+    """
+    Insert a new User into the User table and return the User ID.
+
+    :param conn: Database Connection
+    :param table_name: Database Table Name
+    :param columns: List, Specifies the columns to write
+    :returns: Nothing - Prints Status as Prompt Dialogue
+    """
     cursor = conn.cursor()
-    columns_sql = ", ".join(columns)
-    query = f'CREATE TABLE IF NOT EXISTS "{table_name}" ({columns_sql});'
+    columns_sql = ', '.join(['%s'] * len(columns))
+    query = f'CREATE TABLE IF NOT EXISTS {{}} ({columns_sql});'
 
-    cursor.execute(query)
+    try:
+        cursor.execute(
+            sql.SQL(query).format(
+                sql.Identifier(table_name)
+            ),
+            columns
+        )
+    except (Exception, psycopg2.DatabaseError) as e:
+        print(f"Error Creating Table: {e}")
+        conn.rollback()
+    else:
+        conn.commit()
+        executed_query_bytes = cursor.query
+        executed_query_str = executed_query_bytes.decode('utf-8')
 
-    conn.commit()
+        print(f"Executed Query: {executed_query_str}")
+        print("Table Created Successfully.")
+    finally:
+        # Close the Cursor and Connection
+        if cursor:
+            cursor.close()
 
-    print("Table Created Successfully.")
+        if conn:
+            conn.close()
 
-    cursor.close()
 
 if __name__ == '__main__':
     conn = connect()
-    
+
     if conn:
         create_table(conn, 'user', [
-            'id SERIAL PRIMARY KEY',
-            'name VARCHAR(100)',
-            'email VARCHAR(100)'
+            AsIs('id SERIAL PRIMARY KEY'),
+            AsIs('first_name VARCHAR(100)'),
+            AsIs('last_name VARCHAR(100)'),
+            AsIs('email VARCHAR(200)')
         ])
