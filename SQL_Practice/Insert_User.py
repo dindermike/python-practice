@@ -111,11 +111,13 @@ if __name__ == '__main__':
             [
                 ('Mike', 'Dinder', 'mike@mikedinder.com'),
                 ('Robb', 'Dinder', 'robb@mikedinder.com'),
-                # ('Mike', 'Dinder', 'mike1@mikedinder.com'),
-                # ('Robb', 'Dinder', 'robb1@mikedinder.com'),
-                # ('Mike', 'Dinder', 'mike2@mikedinder.com'),
-                # ('Robb', 'Dinder', 'robb2@mikedinder.com'),
-                # ('Mike', 'Dinder', 'mike3@mikedinder.com'),
-                # ('Robb', 'Dinder', 'robb3@mikedinder.com'),
+                # ('Roger', 'ROlast', 'roger@mikedinder.com'),
+                # ('Chris', 'CHlast', 'chris@mikedinder.com'),
+                # ('Sean', 'SElast', 'sean@mikedinder.com'),
+                # ('Catherine', 'CAlast', 'catherine@mikedinder.com'),
+                # ('Liz', 'Llast', 'liz@mikedinder.com'),
+                # ('Ruby', 'RUlast', 'ruby@mikedinder.com'),
+                # ('Rachel', 'RAlast', 'rachel@mikedinder.com'),
+                # ('Vienna', 'Vlast', 'vienna@mikedinder.com'),
             ]
         )
