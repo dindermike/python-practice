@@ -41,8 +41,8 @@ def create_table(conn, table_name='', columns=None):
         if cursor:
             cursor.close()
 
-        if conn:
-            conn.close()
+        # if conn:
+        #     conn.close()
 
 
 if __name__ == '__main__':
@@ -56,3 +56,5 @@ if __name__ == '__main__':
             AsIs('email VARCHAR(200)'),
             AsIs('UNIQUE(email)')
         ])
+
+        conn.close()
