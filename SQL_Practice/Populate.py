@@ -1,5 +1,7 @@
 # Populate database using existing functions to create other tables/records that are not associated with those specific
 # practice files.
+import datetime
+
 from Connect import connect
 from Create_Table import create_table
 from Insert_Rows import insert_rows
@@ -90,15 +92,17 @@ if __name__ == '__main__':
         ])
 
         # Insert Rows
-        # insert_rows(
-        #     conn, 'users', [
-        #         'first_name',
-        #         'last_name',
-        #         'email'
-        #     ],
-        #     [
-        #         ('Mike', 'Dinder', 'mike@mikedinder.com'),
-        #     ]
-        # )
+        insert_rows(
+            conn, 'authors', [
+                'author_id',
+                'first_name',
+                'last_name',
+                'biography',
+                'birth_date'
+            ],
+            [
+                ('10000', 'Mike', 'Dinder', 'Information Technology Author of a Django Book', datetime.date(1985, 12, 15)),
+            ]
+        )
 
         conn.close()

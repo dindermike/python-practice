@@ -23,7 +23,11 @@ def insert_rows(conn=None, table_name='', columns=[], row_info=()):
     col_identifiers = [sql.Identifier(name) for name in columns]
     cols = sql.SQL(', ').join(col_identifiers)
 
-    if table_name == 'users':
+    if table_name == 'authors':
+        returning_identifiers = [
+            sql.Identifier('author_id')
+        ]
+    elif table_name == 'users':
         returning_identifiers = [
             sql.Identifier('id'),
             sql.Identifier(columns[0]),
