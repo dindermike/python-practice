@@ -49,7 +49,7 @@ if __name__ == '__main__':
     conn = connect()
 
     if conn:
-        create_table(conn, 'user', [
+        create_table(conn, 'users', [
             AsIs('id SERIAL PRIMARY KEY'),
             AsIs('first_name VARCHAR(100)'),
             AsIs('last_name VARCHAR(100)'),
