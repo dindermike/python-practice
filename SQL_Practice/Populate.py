@@ -91,7 +91,7 @@ if __name__ == '__main__':
             AsIs('subtotal DECIMAL(10, 2) NOT NULL')
         ])
 
-        # Insert Rows
+        # Insert Author Rows
         insert_rows(
             conn, 'authors', [
                 'author_id',
@@ -108,6 +108,29 @@ if __name__ == '__main__':
                 ('10004', 'Rachel', 'RALast', 'Specializes in spy tactics, specifically how to transition from job to job and make people believe you are an expert in that field, even when you are not.', datetime.date(2001, 7, 12)),
                 ('10005', 'Ruby', 'RULast', 'Specializes in adaptability through difficult situations.', datetime.date(2000, 2, 14)),
                 ('10006', 'Liz', 'LILast', 'Publishes stories of how to become a pilot as well as specializes in how to be sassy to people who need it.', datetime.date(2005, 6, 25)),
+            ]
+        )
+
+        # Insert Publisher Rows
+        insert_rows(
+            conn, 'publishers', [
+                'publisher_id',
+                'name',
+                'address',
+                'city',
+                'state',
+                'zip_code',
+                'phone',
+                'email',
+            ],
+            [
+                ('20000', 'Dinder Publishing', '1234 Fake St.', 'Phoenix', 'AZ', '85022', '6235529371', 'mike@mikedinder.com'),
+                ('20001', 'Robb Publishing', '2345 Bake St.', 'Phoenix', 'AZ', '85032', '5555529371', 'robb@mikedinder.com'),
+                ('20002', 'Roger Publishing', '3456 Flake St.', 'Phoenix', 'AZ', '85257', '5551239371', 'roger@mikedinder.com'),
+                ('20003', 'Rachel Publishing', '4567 Blake St.', 'Phoenix', 'AZ', '85021', '5554569371', 'rachel@mikedinder.com'),
+                ('20004', 'Liz Publishing', '5678 Rake St.', 'Phoenix', 'AZ', '85050', '5559849371', 'liz@mikedinder.com'),
+                ('20005', 'Ruby Publishing', '6789 Make St.', 'Phoenix', 'AZ', '85012', '5555529456', 'ruby@mikedinder.com'),
+                ('20006', 'Vienna Publishing', '7890 Wake St.', 'Phoenix', 'AZ', '85008', '5555529841', 'vienna@mikedinder.com'),
             ]
         )
 

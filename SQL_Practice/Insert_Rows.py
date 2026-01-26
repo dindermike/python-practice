@@ -27,6 +27,10 @@ def insert_rows(conn=None, table_name='', columns=[], row_info=()):
         returning_identifiers = [
             sql.Identifier('author_id')
         ]
+    elif table_name == 'publishers':
+        returning_identifiers = [
+            sql.Identifier('publisher_id')
+        ]
     elif table_name == 'users':
         returning_identifiers = [
             sql.Identifier('id'),
@@ -40,7 +44,7 @@ def insert_rows(conn=None, table_name='', columns=[], row_info=()):
 
     returning = sql.SQL(', ').join(returning_identifiers)
 
-    # The SQL statement uses %s as a placeholder for the User fields to prevent SQL injection
+    # The SQL statement uses %s as a placeholder for the Table fields to prevent SQL injection
     # query = """
     #     INSERT INTO {} ({}, {}, {})
     #     VALUES (%s, %s, %s)
@@ -101,7 +105,7 @@ def insert_rows(conn=None, table_name='', columns=[], row_info=()):
                 row
             )
         except (Exception, psycopg2.DatabaseError, psycopg2.IntegrityError) as e:
-            print(f'Error Inserting User Record: {e}')
+            print(f'Error Inserting Table Record: {e}')
             conn.rollback()
             failed_inserts += 1
         else:
@@ -121,7 +125,7 @@ def insert_rows(conn=None, table_name='', columns=[], row_info=()):
 
     print(f'{successful_inserts} Records Inserted Successfully.')
     print(f'{failed_inserts} Records Failed to Insert')
-    print('List of User ID\'s:', table_ids)
+    print('List of Table ID\'s:', table_ids)
 
     if table_name == 'users':
         print('List of User Names:', user_names)
@@ -130,8 +134,8 @@ def insert_rows(conn=None, table_name='', columns=[], row_info=()):
     if cursor:
         cursor.close()
 
-    if conn:
-        conn.close()
+    # if conn:
+    #     conn.close()
 
     return table_ids, user_names
 
@@ -160,3 +164,5 @@ if __name__ == '__main__':
                 ('Vienna', 'Vlast', 'vienna@mikedinder.com'),
             ]
         )
+
+        conn.close()
