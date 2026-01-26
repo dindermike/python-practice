@@ -102,6 +102,12 @@ if __name__ == '__main__':
             ],
             [
                 ('10000', 'Mike', 'Dinder', 'Information Technology Author of a Django Book', datetime.date(1985, 12, 15)),
+                ('10001', 'Michael', 'Binder', 'Writer of fiction books, mostly Sci-fi and Fantasy', datetime.date(1987, 9, 13)),
+                ('10002', 'Robb', 'Dinder', 'Writer of awesome baking books', datetime.date(1989, 4, 20)),
+                ('10003', 'Roger', 'ROLast', 'Master debator of anything that is considered a "hot topic"', datetime.date(1999, 4, 19)),
+                ('10004', 'Rachel', 'RALast', 'Specializes in spy tactics, specifically how to transition from job to job and make people believe you are an expert in that field, even when you are not.', datetime.date(2001, 7, 12)),
+                ('10005', 'Ruby', 'RULast', 'Specializes in adaptability through difficult situations.', datetime.date(2000, 2, 14)),
+                ('10006', 'Liz', 'LILast', 'Publishes stories of how to become a pilot as well as specializes in how to be sassy to people who need it.', datetime.date(2005, 6, 25)),
             ]
         )
 
