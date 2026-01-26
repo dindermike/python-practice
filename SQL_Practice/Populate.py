@@ -4,6 +4,7 @@ import datetime
 
 from Connect import connect
 from Create_Table import create_table
+from decimal import Decimal
 from Insert_Rows import insert_rows
 from psycopg2.extensions import AsIs
 
@@ -39,13 +40,14 @@ if __name__ == '__main__':
         create_table(conn, 'books', [
             AsIs('book_id SERIAL PRIMARY KEY'),
             AsIs('title VARCHAR(300) NOT NULL'),
-            AsIs('isbn VARCHAR(13) UNIQUE NOT NULL'),
+            AsIs('isbn VARCHAR(14) UNIQUE NOT NULL'),
             AsIs('publisher_id INTEGER REFERENCES publishers(publisher_id)'),
             AsIs('publication_date DATE'),
             AsIs('price DECIMAL(10, 2) NOT NULL'),
             AsIs('stock_quantity INTEGER DEFAULT 0'),
             AsIs('description TEXT'),
             AsIs('genre VARCHAR(50)'),
+            AsIs('website VARCHAR(300)'),
             AsIs('created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP')
         ])
 
@@ -101,14 +103,16 @@ if __name__ == '__main__':
                 'birth_date'
             ],
             [
-                ('10000', 'Mike', 'Dinder', 'Information Technology Author of a Django Book', datetime.date(1985, 12, 15)),
-                ('10001', 'Michael', 'Binder', 'Writer of fiction books, mostly Sci-fi and Fantasy', datetime.date(1987, 9, 13)),
-                ('10002', 'Robb', 'Dinder', 'Writer of awesome baking books', datetime.date(1989, 4, 20)),
-                ('10003', 'Roger', 'ROLast', 'Master debator of anything that is considered a "hot topic"', datetime.date(1999, 4, 19)),
-                ('10004', 'Rachel', 'RALast', 'Specializes in spy tactics, specifically how to transition from job to job and make people believe you are an expert in that field, even when you are not.', datetime.date(2001, 7, 12)),
-                ('10005', 'Ruby', 'RULast', 'Specializes in adaptability through difficult situations.', datetime.date(2000, 2, 14)),
-                ('10006', 'Liz', 'LILast', 'Publishes stories of how to become a pilot as well as specializes in how to be sassy to people who need it.', datetime.date(2005, 6, 25)),
-            ]
+                (10000, 'Mike', 'Dinder', 'Information Technology Author of a Django Book', datetime.date(1985, 12, 15)),
+                (10001, 'Michael', 'Binder', 'Writer of fiction books, mostly Sci-fi and Fantasy', datetime.date(1987, 9, 13)),
+                (10002, 'Robb', 'Dinder', 'Writer of awesome baking books', datetime.date(1989, 4, 20)),
+                (10003, 'Roger', 'ROLast', 'Master debater of anything that is considered a "hot topic"', datetime.date(1999, 4, 19)),
+                (10004, 'Rachel', 'RALast', 'Specializes in spy tactics, specifically how to transition from job to job and make people believe you are an expert in that field, even when you are not.', datetime.date(2001, 7, 12)),
+                (10005, 'Ruby', 'RULast', 'Specializes in adaptability through difficult situations.', datetime.date(2000, 2, 14)),
+                (10006, 'Liz', 'LILast', 'Publishes stories of how to become a pilot as well as specializes in how to be sassy to people who need it.', datetime.date(2005, 6, 25)),
+                (10007, 'Vienna', 'VILast', 'Publishes stories of luxury cars', datetime.date(2003, 7, 18)),
+            ],
+            'author_id'
         )
 
         # Insert Publisher Rows
@@ -124,13 +128,59 @@ if __name__ == '__main__':
                 'email',
             ],
             [
-                ('20000', 'Dinder Publishing', '1234 Fake St.', 'Phoenix', 'AZ', '85022', '6235529371', 'mike@mikedinder.com'),
-                ('20001', 'Robb Publishing', '2345 Bake St.', 'Phoenix', 'AZ', '85032', '5555529371', 'robb@mikedinder.com'),
-                ('20002', 'Roger Publishing', '3456 Flake St.', 'Phoenix', 'AZ', '85257', '5551239371', 'roger@mikedinder.com'),
-                ('20003', 'Rachel Publishing', '4567 Blake St.', 'Phoenix', 'AZ', '85021', '5554569371', 'rachel@mikedinder.com'),
-                ('20004', 'Liz Publishing', '5678 Rake St.', 'Phoenix', 'AZ', '85050', '5559849371', 'liz@mikedinder.com'),
-                ('20005', 'Ruby Publishing', '6789 Make St.', 'Phoenix', 'AZ', '85012', '5555529456', 'ruby@mikedinder.com'),
-                ('20006', 'Vienna Publishing', '7890 Wake St.', 'Phoenix', 'AZ', '85008', '5555529841', 'vienna@mikedinder.com'),
+                (20000, 'Dinder Publishing', '1234 Fake St.', 'Phoenix', 'AZ', '85022', '6235529371', 'mike@mikedinder.com'),
+                (20001, 'Robb Publishing', '2345 Bake St.', 'Phoenix', 'AZ', '85032', '5555529371', 'robb@mikedinder.com'),
+                (20002, 'Roger Publishing', '3456 Flake St.', 'Phoenix', 'AZ', '85257', '5551239371', 'roger@mikedinder.com'),
+                (20003, 'Rachel Publishing', '4567 Blake St.', 'Phoenix', 'AZ', '85021', '5554569371', 'rachel@mikedinder.com'),
+                (20004, 'Liz Publishing', '5678 Rake St.', 'Phoenix', 'AZ', '85050', '5559849371', 'liz@mikedinder.com'),
+                (20005, 'Ruby Publishing', '6789 Make St.', 'Phoenix', 'AZ', '85012', '5555529456', 'ruby@mikedinder.com'),
+                (20006, 'Vienna Publishing', '7890 Wake St.', 'Phoenix', 'AZ', '85008', '5555529841', 'vienna@mikedinder.com'),
+            ],
+            'publisher_id'
+        )
+
+        # Insert Book Rows
+        insert_rows(
+            conn, 'books', [
+                'book_id',
+                'title',
+                'isbn',
+                'publisher_id',
+                'publication_date',
+                'price',
+                'stock_quantity',
+                'description',
+                'genre',
+                'website'
+            ],
+            [
+                (100, 'Becoming an Enterprise Django Developer', '978-1801073639', 20000, datetime.date(2022, 6, 27), Decimal('44.95'), 765, 'Discover best practices, tooling, and solutions for writing and organizing Django applications in production', 'Programming', 'https://www.amazon.com/Becoming-Enterprise-Django-Developer-applications/dp/1801073635'),
+                (101, 'King Arthur Baking Company\'s Big Book of Bread', '978-1668009741', 20001, datetime.date(2024, 10, 22), Decimal('29.87'), 25, 'Master the art of bread baking with 125+ bread recipes for every baker\'s journey.', 'Cooking', 'https://shop.kingarthurbaking.com/items/king-arthur-baking-companys-big-book-of-bread'),
+                (102, 'Win Every Argument', '978-1250853479', 20002, datetime.date(2023, 2, 28), Decimal('17.65'), 1029, 'The Art of Debating, Persuading, and Public Speaking', 'Communications', 'https://www.amazon.com/Win-Every-Argument-Debating-Persuading/dp/1250853478'),
+                (103, 'Shadow Cell', '978-0316572149', 20003, datetime.date(2025, 9, 9), Decimal('15.99'), 45, 'An Insider Account of America\'s New Spy War', 'Intelligence & Espionage', 'https://www.amazon.com/Red-Cell-Inside-Account-Americas-ebook/dp/B0CK8C5XD7'),
+                (104, 'Becoming an Enterprise Django Developer 2', '999-9801073639', 20000, datetime.date(2026, 12, 15), Decimal('44.95'), 125, 'The 2nd Edition of his best book that dives even deeper into Production related Django projects', 'Programming', 'https://www.amazon.com/Becoming-Enterprise-Django-Developer-applications-2/dp/1801073420'),
+                (105, 'Becoming A Pilot', '979-8372222861', 20004, datetime.date(2023, 1, 12), Decimal('19.99'), 420, 'What Every New Pilot Needs To Know To Save Time And Money In Flight School', 'Commercial', 'https://www.amazon.com/Becoming-Pilot-Every-Flight-School/dp/B0BS8NPF6D'),
+                (106, 'Superadaptability', '978-3111575124', 20005, datetime.date(2025, 11, 17), Decimal('16.79'), 744, 'How to Transcend in an Age of Overwhelm', 'Decision-Making & Problem Solving', 'https://www.amazon.com/SuperAdaptability-How-Thrive-Age-Uncertainty/dp/3111575128'),
+                (107, '2025\'s Automotive Elite', '978-1923361928', 20006, datetime.date(2024, 10, 22), Decimal('34.99'), 856, 'Supercars and Luxury Icons', 'Pictorial', 'https://www.amazon.com/2025s-Automotive-Elite-Supercars-Luxury/dp/1923361929'),
+            ],
+            'book_id'
+        )
+
+        # Insert Book Authors Rows
+        insert_rows(
+            conn, 'book_authors', [
+                'book_id',
+                'author_id'
+            ],
+            [
+                (100, 10000),
+                (101, 10002),
+                (102, 10003),
+                (103, 10004),
+                (104, 10000),
+                (105, 10006),
+                (106, 10005),
+                (107, 10007),
             ]
         )
 

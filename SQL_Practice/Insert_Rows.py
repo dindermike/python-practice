@@ -5,17 +5,18 @@ from Connect import connect
 from psycopg2 import sql
 
 
-def insert_rows(conn=None, table_name='', columns=[], row_info=()):
+def insert_rows(conn=None, table_name='', columns=[], row_info=(), return_identifier='id'):
     """
     Insert a new User into the User table and return the User ID.
 
-    :param conn: Database Connection
-    :param table_name: Database Table Name
+    :param conn: Object, Database Connection
+    :param table_name: String, Database Table Name
     :param columns: List of Column Names
     :param row_info: List of Row Info (Each as Tuples) to Insert, Each Column Value
+    :param return_identifier: String, primary key identifier to return
     :returns table_ids: List of ID's of new User Records.
-    :rtype: list of int
-    :returns user_names: List of User Names ("{{first_name}} {{last_name}}") Value if users table, else []
+    :rtype: list of int or other return_identifier
+    :returns returns_list: List of Return Items E.g. ("{{first_name}} {{last_name}}") Value if users table, else []
     :rtype: list of str
     """
     cursor = conn.cursor()
@@ -23,23 +24,20 @@ def insert_rows(conn=None, table_name='', columns=[], row_info=()):
     col_identifiers = [sql.Identifier(name) for name in columns]
     cols = sql.SQL(', ').join(col_identifiers)
 
-    if table_name == 'authors':
+    if table_name == 'book_authors':
         returning_identifiers = [
-            sql.Identifier('author_id')
-        ]
-    elif table_name == 'publishers':
-        returning_identifiers = [
-            sql.Identifier('publisher_id')
+            sql.Identifier(columns[0]),
+            sql.Identifier(columns[1])
         ]
     elif table_name == 'users':
         returning_identifiers = [
-            sql.Identifier('id'),
+            sql.Identifier(return_identifier),
             sql.Identifier(columns[0]),
             sql.Identifier(columns[1])
         ]
     else:
         returning_identifiers = [
-            sql.Identifier('id')
+            sql.Identifier(return_identifier)
         ]
 
     returning = sql.SQL(', ').join(returning_identifiers)
@@ -56,7 +54,7 @@ def insert_rows(conn=None, table_name='', columns=[], row_info=()):
         RETURNING {{}};
     """
     table_ids = []
-    user_names = []
+    returns_list = []
     successful_inserts = 0
     failed_inserts = 0
 
@@ -105,7 +103,7 @@ def insert_rows(conn=None, table_name='', columns=[], row_info=()):
                 row
             )
         except (Exception, psycopg2.DatabaseError, psycopg2.IntegrityError) as e:
-            print(f'Error Inserting Table Record: {e}')
+            print(f'Error Inserting {table_name} Table Record: {e}')
             conn.rollback()
             failed_inserts += 1
         else:
@@ -120,15 +118,19 @@ def insert_rows(conn=None, table_name='', columns=[], row_info=()):
 
             table_ids.append(result[0])
 
-            if table_name == 'users':
-                user_names.append(result[1] + ' ' + result[2])
+            if table_name == 'book_authors':
+                returns_list.append(str(result[0]) + '-' + str(result[1]))
+            elif table_name == 'users':
+                returns_list.append(result[1] + ' ' + result[2])
 
     print(f'{successful_inserts} Records Inserted Successfully.')
     print(f'{failed_inserts} Records Failed to Insert')
-    print('List of Table ID\'s:', table_ids)
+    print(f'List of "{table_name}" Table ID\'s:', table_ids)
 
-    if table_name == 'users':
-        print('List of User Names:', user_names)
+    if table_name == 'book_authors':
+        print('List of Book/Author ID\'s:', returns_list)
+    elif table_name == 'users':
+        print('List of User Names:', returns_list)
 
     # Close the Cursor and Connection
     if cursor:
@@ -137,7 +139,7 @@ def insert_rows(conn=None, table_name='', columns=[], row_info=()):
     # if conn:
     #     conn.close()
 
-    return table_ids, user_names
+    return table_ids, returns_list
 
 
 if __name__ == '__main__':
