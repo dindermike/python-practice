@@ -184,4 +184,21 @@ if __name__ == '__main__':
             ]
         )
 
+        # Insert Customer Rows
+        insert_rows(
+            conn, 'customers', [
+                'first_name',
+                'last_name',
+                'email',
+                'phone',
+                'address',
+                'city',
+                'state',
+                'zip_code'
+            ],
+            [
+                ('Customer1_First', 'Customer1_Last', 'customer1@mikedinder.com', '5551234567', '456 W. Fake Ave.', 'Scottsdale', 'AZ', '85257'),
+            ],
+            'customer_id'
+        )
         conn.close()
