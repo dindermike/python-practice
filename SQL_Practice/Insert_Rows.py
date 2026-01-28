@@ -132,6 +132,8 @@ def insert_rows(conn=None, table_name='', columns=[], row_info=(), return_identi
     elif table_name == 'users':
         print('List of User Names:', returns_list)
 
+    print('--------------------------------------------------')
+
     # Close the Cursor and Connection
     if cursor:
         cursor.close()
