@@ -266,6 +266,7 @@ if __name__ == '__main__':
         # Insert Customer Rows
         insert_rows(
             conn, 'customers', [
+                'customer_id',
                 'first_name',
                 'last_name',
                 'email',
@@ -277,30 +278,82 @@ if __name__ == '__main__':
             ],
             [
                 (
-                    'Customer1_First', 'Customer1_Last', 'customer1@mikedinder.com', '5551234567', '456 W. Fake Ave.',
-                    'Scottsdale', 'AZ', '85257'
+                    4000, 'Customer1_First', 'Customer1_Last', 'customer1@mikedinder.com', '5551234567',
+                    '456 W. Fake Ave.', 'Scottsdale', 'AZ', '85257'
                 ),
                 (
-                    'Customer2_First', 'Customer2_Last', 'customer2@mikedinder.com', '5551264567', '912 S. Fake Pass.',
-                    'Scottsdale', 'AZ', '85032'
+                    4001, 'Customer2_First', 'Customer2_Last', 'customer2@mikedinder.com', '5551264567',
+                    '912 S. Fake Pass.', 'Tempe', 'AZ', '85045'
                 ),
                 (
-                    'Customer3_First', 'Customer3_Last', 'customer3@mikedinder.com', '5551234867', '651 W. Fake St.',
-                    'Scottsdale', 'AZ', '85985'
+                    4002, 'Customer3_First', 'Customer3_Last', 'customer3@mikedinder.com', '5551234867',
+                    '651 W. Fake St.', 'Phoenix', 'AZ', '85125'
                 ),
                 (
-                    'Customer4_First', 'Customer4_Last', 'customer4@mikedinder.com', '5551284367', '185 E. Fake Way.',
-                    'Scottsdale', 'AZ', '85486'
+                    4003, 'Customer4_First', 'Customer4_Last', 'customer4@mikedinder.com', '5551284367',
+                    '185 E. Fake Way.', 'Mesa', 'AZ', '85035'
                 ),
                 (
-                    'Customer5_First', 'Customer5_Last', 'customer5@mikedinder.com', '5551239845', '963 W. Fake Rd.',
-                    'Scottsdale', 'AZ', '85022'
+                    4004, 'Customer5_First', 'Customer5_Last', 'customer5@mikedinder.com', '5551239845',
+                    '963 W. Fake Rd.', 'Glendale', 'AZ', '85358'
                 ),
                 (
-                    'Customer6_First', 'Customer6_Last', 'customer6@mikedinder.com', '5551485631', '158 N. Fake Pkwy.',
-                    'Scottsdale', 'AZ', '85123'
+                    4005, 'Customer6_First', 'Customer6_Last', 'customer6@mikedinder.com', '5551485631',
+                    '158 N. Fake Pkwy.', 'Phoenix', 'AZ', '85032'
                 ),
             ],
             'customer_id'
         )
+
+        # Insert Order Rows
+        insert_rows(
+            conn, 'orders', [
+                'order_id',
+                'customer_id',
+                'order_date',
+                'total_amount',
+                'status',
+                'shipping_address',
+                'city',
+                'state',
+                'zip_code',
+                'payment_method'
+            ],
+            [
+                (
+                    50000, 4000, datetime.date(2026, 1, 1), Decimal('44.95'), 'pending', '420 NE. Fake St.',
+                    'Scottsdale', 'AZ', '85257', 'visa'
+                ),
+                (
+                    50001, 4001, datetime.date(2026, 1, 5), Decimal('29.87'), 'shipped', '8546 W. Flake Ave.',
+                    'Tempe', 'AZ', '85045', 'mastercard'
+                ),
+                (
+                    50002, 4003, datetime.date(2026, 1, 6), Decimal('17.65'), 'picked', '9875 S. Blake Rd.',
+                    'Mesa', 'AZ', '85035', 'american_express'
+                ),
+                (
+                    50003, 4002, datetime.date(2026, 1, 9), Decimal('15.99'), 'in-picking', '124 SW. Dinder St.',
+                    'Phoenix', 'AZ', '85125', 'discover'
+                ),
+                (
+                    50004, 4000, datetime.date(2026, 1, 12), Decimal('44.95'), 'pending', '6784 E. Dinner St.',
+                    'Scottsdale', 'AZ', '85257', 'visa'
+                ),
+                (
+                    50005, 4005, datetime.date(2026, 1, 14), Decimal('19.99'), 'pending', '7863 W. Diner Rd.',
+                    'Phoenix', 'AZ', '85032', 'paypal'
+                ),
+                (
+                    50006, 4004, datetime.date(2026, 1, 17), Decimal('16.79'), 'shipped', '357 N. Stone Way.',
+                    'Glendale', 'AZ', '85358', 'cashapp'
+                ),
+                (
+                    50007, 4001, datetime.date(2026, 1, 21), Decimal('34.99'), 'cancelled', '3698 S. Runner Ave.',
+                    'Tempe', 'AZ', '85045', 'zelle'
+                ),
+            ],
+            'order_id'
+        )
+
         conn.close()

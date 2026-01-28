@@ -19,6 +19,7 @@ def insert_rows(conn=None, table_name='', columns=[], row_info=(), return_identi
     :returns returns_list: List of Return Items E.g. ("{{first_name}} {{last_name}}") Value if users table, else []
     :rtype: list of str
     """
+    print(f'************* Now Inserting into the {table_name.upper()} Table *************')
     cursor = conn.cursor()
     columns_sql = ', '.join(['%s'] * len(columns))
     col_identifiers = [sql.Identifier(name) for name in columns]
