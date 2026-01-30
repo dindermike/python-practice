@@ -1,0 +1,54 @@
+{
+  "type": "object",
+  "properties": {
+    "book_id": {
+      "type": "number"
+    },
+    "title": {
+      "type": "string",
+	  "maxLength": 300
+    },
+    "isbn": {
+      "type": "string",
+	  "maxLength": 14
+    },
+    "publisher_id": {
+      "type": "number"
+    },
+    "publication_date": {
+      "type": "string",
+	  "format": "date-time"
+    },
+    "price": {
+      "type": "number",
+	  "format": "decimal",
+	  "description": "Price with 2 decimal places"
+    },
+    "stock_quantity": {
+      "type": "number"
+    },
+    "description": {
+      "type": "string"
+    },
+    "genre": {
+      "type": "string",
+	  "maxLength": 50
+    },
+    "website": {
+      "type": "string",
+	  "maxLength": 300
+    },
+    "created_at": {
+      "type": "string",
+	  "format": "date-time"
+    }
+  },
+  "required": [
+    "book_id",
+    "title",
+    "isbn",
+    "publisher_id",
+    "price",
+    "genre"
+  ]
+}
