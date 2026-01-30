@@ -325,15 +325,15 @@ if __name__ == '__main__':
                     'Scottsdale', 'AZ', '85257', 'visa'
                 ),
                 (
-                    50001, 4001, datetime.date(2026, 1, 5), Decimal('29.87'), 'shipped', '8546 W. Flake Ave.',
+                    50001, 4001, datetime.date(2026, 1, 5), Decimal('47.52'), 'shipped', '8546 W. Flake Ave.',
                     'Tempe', 'AZ', '85045', 'mastercard'
                 ),
                 (
-                    50002, 4003, datetime.date(2026, 1, 6), Decimal('17.65'), 'picked', '9875 S. Blake Rd.',
+                    50002, 4003, datetime.date(2026, 1, 6), Decimal('52.95'), 'picked', '9875 S. Blake Rd.',
                     'Mesa', 'AZ', '85035', 'american_express'
                 ),
                 (
-                    50003, 4002, datetime.date(2026, 1, 9), Decimal('15.99'), 'in-picking', '124 SW. Dinder St.',
+                    50003, 4002, datetime.date(2026, 1, 9), Decimal('99.26'), 'in-picking', '124 SW. Dinder St.',
                     'Phoenix', 'AZ', '85125', 'discover'
                 ),
                 (
@@ -341,19 +341,52 @@ if __name__ == '__main__':
                     'Scottsdale', 'AZ', '85257', 'visa'
                 ),
                 (
-                    50005, 4005, datetime.date(2026, 1, 14), Decimal('19.99'), 'pending', '7863 W. Diner Rd.',
+                    50005, 4005, datetime.date(2026, 1, 14), Decimal('39.98'), 'pending', '7863 W. Diner Rd.',
                     'Phoenix', 'AZ', '85032', 'paypal'
                 ),
                 (
-                    50006, 4004, datetime.date(2026, 1, 17), Decimal('16.79'), 'shipped', '357 N. Stone Way.',
+                    50006, 4004, datetime.date(2026, 1, 17), Decimal('184.69'), 'shipped', '357 N. Stone Way.',
                     'Glendale', 'AZ', '85358', 'cashapp'
                 ),
                 (
-                    50007, 4001, datetime.date(2026, 1, 21), Decimal('34.99'), 'cancelled', '3698 S. Runner Ave.',
+                    50007, 4001, datetime.date(2026, 1, 21), Decimal('292.48'), 'cancelled', '3698 S. Runner Ave.',
                     'Tempe', 'AZ', '85045', 'zelle'
                 ),
             ],
             'order_id'
+        )
+
+        AsIs('order_item_id SERIAL PRIMARY KEY'),
+        AsIs('order_id INTEGER REFERENCES orders(order_id) ON DELETE CASCADE'),
+        AsIs('book_id INTEGER REFERENCES books(book_id)'),
+        AsIs('quantity INTEGER NOT NULL'),
+        AsIs('unit_price DECIMAL(10, 2) NOT NULL'),
+        AsIs('subtotal DECIMAL(10, 2) NOT NULL')
+
+        # Insert Order Items Rows
+        insert_rows(
+            conn, 'order_items', [
+                'order_item_id',
+                'order_id',
+                'book_id',
+                'quantity',
+                'unit_price',
+                'subtotal'
+            ],
+            [
+                (3000, 50000, 100, 1, Decimal('44.95'), Decimal('44.95')),
+                (3001, 50001, 101, 1, Decimal('29.87'), Decimal('29.87')),
+                (3002, 50001, 102, 1, Decimal('17.65'), Decimal('17.65')),
+                (3003, 50002, 102, 3, Decimal('17.65'), Decimal('52.95')),
+                (3004, 50003, 103, 4, Decimal('15.99'), Decimal('63.96')),
+                (3005, 50003, 102, 2, Decimal('17.65'), Decimal('35.30')),
+                (3006, 50004, 104, 1, Decimal('44.95'), Decimal('44.95')),
+                (3007, 50005, 105, 2, Decimal('19.99'), Decimal('39.98')),
+                (3008, 50006, 106, 11, Decimal('16.79'), Decimal('184.69')),
+                (3009, 50007, 107, 5, Decimal('34.99'), Decimal('174.95')),
+                (3010, 50007, 106, 7, Decimal('16.79'), Decimal('117.53')),
+            ],
+            'order_item_id'
         )
 
         conn.close()
