@@ -356,13 +356,6 @@ if __name__ == '__main__':
             'order_id'
         )
 
-        AsIs('order_item_id SERIAL PRIMARY KEY'),
-        AsIs('order_id INTEGER REFERENCES orders(order_id) ON DELETE CASCADE'),
-        AsIs('book_id INTEGER REFERENCES books(book_id)'),
-        AsIs('quantity INTEGER NOT NULL'),
-        AsIs('unit_price DECIMAL(10, 2) NOT NULL'),
-        AsIs('subtotal DECIMAL(10, 2) NOT NULL')
-
         # Insert Order Items Rows
         insert_rows(
             conn, 'order_items', [
