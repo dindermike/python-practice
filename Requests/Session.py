@@ -3,7 +3,8 @@
 # Require a partial manual process to copy and paste that token.
 import os
 import requests
-import time
+import subprocess
+import sys
 
 from dotenv import load_dotenv, set_key
 
@@ -84,11 +85,15 @@ if token:
                 session_token = data['session_token']
                 set_key('.env', 'REQRES_TOKEN', session_token)
                 print(f'We Have Updated REQRES_TOKEN in the .env File To: {session_token}')
-                print('Your Token Will Expire in 1 Hour')
+                duration = int(os.getenv('REQRES_TOKEN_TIMEOUT')) / 60
+                print(f'Your Token Will Expire in {duration} Hour(s)')
 
-                time.sleep(3600)
+                # Run Timeout Script in Background to Continue Using Command-Line Interface
+                # In A Work Environment Use Celery Instead
+                command = [sys.executable, 'Requests/End_Session.py']
+                process = subprocess.Popen(command)
 
-                set_key('.env', 'REQRES_TOKEN', os.getenv('REQRES_DUMMY_VALUE'))
+                print(f'Background Process Started with PID: {process.pid}')
 
             if 'note' in data:
                 print('Note:', data['note'])
