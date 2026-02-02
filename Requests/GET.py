@@ -16,7 +16,6 @@ if os.getenv('REQRES_TOKEN') is None or os.getenv('REQRES_TOKEN') == os.getenv('
     print('You Need A Validated Token to Continue!')
     sys.exit()
 else:
-    book_list = '/app/collections/books/records'
     token = None
 
     headers = {
@@ -26,7 +25,7 @@ else:
         'x-api-key': os.getenv('X_API_PROD_KEY')
     }
 
-    response = requests.get(os.getenv('REQRES_BASE_URL') + book_list, headers=headers)
+    response = requests.get(os.getenv('REQRES_BASE_URL') + os.getenv('REQRES_COLLECTION_BOOKS'), headers=headers)
 
     # Get JSON Response
     result = response.json()
@@ -61,6 +60,9 @@ else:
                     print(record['description'])
                     print(record['book_id'])
                     print(record['website'])
+                    print(record['publisher_id'])
+                    print(record['stock_quantity'])
+                    print(record['publication_date'])
                     print('--------------------------------------------------')
         else:
             if 'message' in result:
