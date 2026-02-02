@@ -85,7 +85,7 @@ if token:
                 session_token = data['session_token']
                 set_key('.env', 'REQRES_TOKEN', session_token)
                 print(f'We Have Updated REQRES_TOKEN in the .env File To: {session_token}')
-                duration = int(os.getenv('REQRES_TOKEN_TIMEOUT')) / 60
+                duration = (int(os.getenv('REQRES_TOKEN_TIMEOUT')) / 60) / 60
                 print(f'Your Token Will Expire in {duration} Hour(s)')
 
                 # Run Timeout Script in Background to Continue Using Command-Line Interface

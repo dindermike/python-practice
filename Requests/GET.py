@@ -45,8 +45,23 @@ else:
             print('Pages:', meta['pages'])
 
         if 'data' in result:
-            json_formatted_str = json.dumps(result['data'], indent=2)
+            data = result['data']
+            json_formatted_str = json.dumps(data, indent=2)
             print(json_formatted_str)
+
+            for book in data:
+                record = book['data']
+
+                if record['title'] == 'Becoming an Enterprise Django Developer':
+                    print('--------------------------------------------------')
+                    print('Example Record Found...')
+                    print(record['title'])
+                    print(record['price'])
+                    print(record['genre'])
+                    print(record['description'])
+                    print(record['book_id'])
+                    print(record['website'])
+                    print('--------------------------------------------------')
         else:
             if 'message' in result:
                 print(result['message'])
