@@ -39,7 +39,7 @@ def partial_update_book(id=None, info_print=True) -> Union[dict, None]:
         }
         headers = {
             'Accept': 'application/json',
-            'Authorization': f'Bearer {os.getenv('REQRES_TOKEN')}',
+            'Authorization': f'Bearer {os.getenv("REQRES_TOKEN")}',
             'Connection': 'keep-alive',
             'x-api-key': os.getenv('X_API_PROD_KEY')
         }
@@ -85,10 +85,10 @@ def partial_update_book(id=None, info_print=True) -> Union[dict, None]:
 
                 return record
             else:
-                if 'message' in result and info_print:
+                if info_print and 'message' in result:
                     print(result['message'])
         else:
-            if 'message' in result and info_print:
+            if info_print and 'message' in result:
                 print(result['message'])
 
         return None

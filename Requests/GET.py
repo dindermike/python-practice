@@ -32,7 +32,7 @@ def get_books(book_id=None, rwr=False, info_print=True) -> Union[str, dict, None
         lookup_title = None
         headers = {
             'Accept': 'application/json',
-            'Authorization': f'Bearer {os.getenv('REQRES_TOKEN')}',
+            'Authorization': f'Bearer {os.getenv("REQRES_TOKEN")}',
             'Connection': 'keep-alive',
             'x-api-key': os.getenv('X_API_PROD_KEY')
         }
@@ -47,7 +47,7 @@ def get_books(book_id=None, rwr=False, info_print=True) -> Union[str, dict, None
 
         if status == 200:
             if info_print:
-                print('Success! Books Retreived')
+                print('Success! Books Retrieved')
 
             if 'meta' in result and info_print:
                 meta = result['meta']
@@ -97,10 +97,16 @@ def get_books(book_id=None, rwr=False, info_print=True) -> Union[str, dict, None
                         print(record['publication_date'])
                         print('--------------------------------------------------')
 
+                    if rwr:
+                        return record
+
                 if return_id:
                     return return_id
                 else:
-                    return data
+                    if not rwr:
+                        return 'f8cff302-116c-4532-a4da-f1566a4ca55b'  # Fake Dummy Record ID in Valid Format
+                    else:
+                        return data
             else:
                 if 'message' in result and info_print:
                     print(result['message'])
