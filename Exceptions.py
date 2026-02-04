@@ -4,7 +4,7 @@
 print('Check If A String Is A Number?')
 
 
-def is_number(this_str=''):
+def is_number(this_str='') -> bool:
     """
     Check if a String is a Number.
 

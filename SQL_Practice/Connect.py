@@ -4,14 +4,20 @@ import psycopg2
 
 from dotenv import load_dotenv
 from psycopg2 import OperationalError
+from typing import Union
 
 
 # Load Environment Variables
 load_dotenv()
 
 
-def connect():
-    """ Connect to the PostgreSQL database server """
+def connect() -> Union[object, None]:
+    """
+    Connect to the PostgreSQL database server
+
+    :returns: Connection object or None
+    :rtype: Object or None
+    """
     conn = None
     try:
         conn = psycopg2.connect(

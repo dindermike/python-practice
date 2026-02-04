@@ -22,13 +22,15 @@ print('--------------------------------------------------')
 print("Show a Histogram of the List of Numbers you Entered.")
 
 
-def histogram(list_of_numbers):
+def histogram(list_of_numbers) -> None:
     """
     Histogram: a chart that visually displays the distribution of continuous numerical data, grouping it into "bins" or
     ranges, with the height of each bar showing the frequency (how many data points) within that range. This function
     will represent this in text format using asterisks "*", where each line is each element in the list.
 
     :param list_of_numbers: List of Numbers Entered Via Input
+    :returns: Nothing
+    :rtype: None
     """
     for interval in list_of_numbers:
         output = ''

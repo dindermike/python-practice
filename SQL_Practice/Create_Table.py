@@ -6,7 +6,7 @@ from psycopg2 import sql
 from psycopg2.extensions import AsIs
 
 
-def create_table(conn, table_name='', columns=None):
+def create_table(conn, table_name='', columns=None) -> None:
     """
     Insert a new User into the User table and return the User ID.
 
@@ -14,6 +14,7 @@ def create_table(conn, table_name='', columns=None):
     :param table_name: Database Table Name
     :param columns: List, Specifies the columns to write
     :returns: Nothing - Prints Status as Prompt Dialogue
+    :rtype: None
     """
     cursor = conn.cursor()
     columns_sql = ', '.join(['%s'] * len(columns))

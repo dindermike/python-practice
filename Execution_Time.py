@@ -4,7 +4,7 @@ import time
 from decimal import Decimal, ROUND_HALF_UP
 
 
-def loop_nums(num_range=5):
+def loop_nums(num_range=5) -> tuple[int, str]:
     """
     Docstring for loop_nums. Loops through numbers from 1 to the end number passed in as a parameter. Adds the sum of
     all numbers in the loop.

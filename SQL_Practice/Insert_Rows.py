@@ -5,7 +5,7 @@ from Connect import connect
 from psycopg2 import sql
 
 
-def insert_rows(conn=None, table_name='', columns=[], row_info=(), return_identifier='id'):
+def insert_rows(conn=None, table_name='', columns=[], row_info=(), return_identifier='id') -> tuple[list, list]:
     """
     Insert a new User into the User table and return the User ID.
 
