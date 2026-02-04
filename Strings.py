@@ -1,4 +1,5 @@
 # Various String operations and functions
+import pprint
 
 # Reverse a string
 print('Reverse a String')
@@ -18,6 +19,8 @@ for char in entered_string:
     reversed_3 = char + reversed_3
 print(f'The reverse of {entered_string} is... {reversed_3}')
 
+print('The Length of Your String is:', len(entered_string))
+
 print('--------------------------------------------------')
 # Reverse a Number
 print('Reverse a Number')
@@ -28,6 +31,36 @@ reversed = int(str(number)[::-1])
 
 print('The reversed number is:', reversed)
 print(type(reversed))
+
+print('--------------------------------------------------')
+# Line Breaks in Strings and Removing Line Breaks
+print('String Line Breaks')
+
+var1 = '\nHello World\n\nHello Dinder\n'
+var2 = var1.rstrip()
+var3 = var1.lstrip()
+var4 = var1.strip()
+var5 = var1.replace('\n', '')
+
+print(var1)
+print('*****')
+print(var2)
+print('*****')
+print(var3)
+print('*****')
+print(var4)
+print('*****')
+print(var5)
+print('*****')
+
+print('--------------------------------------------------')
+# Convert a String to a List
+print('String to List')
+
+this_string = str(input('Enter a Random Sentence: '))
+
+print('Your List is...')
+print(this_string.split(' '))
 
 print('--------------------------------------------------')
 

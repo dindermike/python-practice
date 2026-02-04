@@ -3,6 +3,8 @@
 pystatx - Requires "python3 -m pip install pystatx" and/or activating Virtual Environment First.
 Command: source practice_env/bin/activate
 """
+import collections
+import pprint
 # import statx
 import time
 
@@ -24,6 +26,13 @@ print("Does File Exist?")
 check_file = input("Enter the Filename: ")
 
 print(f"Does The File {check_file} Exist:", path.isfile(check_file))
+
+with open(check_file, 'r') as file_info:
+    character_count = collections.Counter(file_info.read())
+    value = pprint.pformat(character_count)
+
+    print('A Count of Every Unique Character Found in this File...')
+    print(value)
 
 print('--------------------------------------------------')
 # List all files found in a directory, with their file extensions on a separate line.

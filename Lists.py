@@ -18,6 +18,20 @@ for x in tupled:
     print(type(x))
 
 print('--------------------------------------------------')
+# Remove Duplicates from a List
+my_list = [1, 2, 3, 2, 1, 10, 40, 10, 2, 2, 2, 3, 7, 9, 11, 10, 4, 5, 3]
+
+print('Original List:', my_list)
+
+# Will Not Preserve Order
+unique_list1 = list(set(my_list))
+print('Order Not Preserved:', unique_list1)
+
+# Will Preserve Order
+unique_list2 = list(dict.fromkeys(my_list))
+print('Order Preserved:', unique_list2)
+
+print('--------------------------------------------------')
 # Create a Histogram using the list of numbers above.
 print("Show a Histogram of the List of Numbers you Entered.")
 
