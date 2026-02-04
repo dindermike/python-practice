@@ -1,37 +1,37 @@
 # Various String operations and functions
 
 # Reverse a string
-print("Reverse a String")
-print("    * First Method")
-entered_string = input("Enter the string you wish to reverse: ")
-reversed_1 = "".join(reversed(entered_string))
+print('Reverse a String')
+print('    * First Method')
+entered_string = input('Enter the string you wish to reverse: ')
+reversed_1 = ''.join(reversed(entered_string))
 
-print(f"The reverse of {entered_string} is... {reversed_1}")
+print(f'The reverse of {entered_string} is... {reversed_1}')
 
-print("    * Second Method")
+print('    * Second Method')
 reversed_2 = entered_string[::-1]
-print(f"The reverse of {entered_string} is... {reversed_2}")
+print(f'The reverse of {entered_string} is... {reversed_2}')
 
-print("    * Third Method")
-reversed_3 = ""
+print('    * Third Method')
+reversed_3 = ''
 for char in entered_string:
     reversed_3 = char + reversed_3
-print(f"The reverse of {entered_string} is... {reversed_3}")
+print(f'The reverse of {entered_string} is... {reversed_3}')
 
 print('--------------------------------------------------')
 # Reverse a Number
-print("Reverse a Number")
+print('Reverse a Number')
 
-number = int(input("Enter your positive number:"))
+number = int(input('Enter your positive number:'))
 
 reversed = int(str(number)[::-1])
 
-print("The reversed number is:", reversed)
+print('The reversed number is:', reversed)
 print(type(reversed))
 
 print('--------------------------------------------------')
 
-print("Multi-Line String 1")
+print('Multi-Line String 1')
 
 print("""
       This is a Mult-Line String in a Print Statement.
@@ -43,8 +43,52 @@ print('--------------------------------------------------')
 
 print('Replace characters in a string.')
 
-var = "This,is,my,string."
-print("Original String =", var)
+var = 'This,is,my,string.'
+print('Original String =', var)
 
 modified_var = var.replace(',', ' ')
 print('Repaced all "," with a " " =', modified_var)
+
+print('--------------------------------------------------')
+
+print('Add Leading Characters to a String')
+
+str1 = 'Hello'
+str2 = 'Hello Wo'
+str3 = 'Hello World'
+str4 = 'Hello Dinder World'
+
+print(str1)
+print(str2)
+print(str3)
+print(str4)
+
+str1_new = str1.ljust(18, '.')
+str2_new = str2.ljust(18, '.')
+str3_new = str3.ljust(18, '.')
+str4_new = str4.ljust(18, '.')
+
+print(str1_new)
+print(str2_new)
+print(str3_new)
+print(str4_new)
+
+str1_new = str1.ljust(18, '_')
+str2_new = str2.ljust(18, '_')
+str3_new = str3.ljust(18, '_')
+str4_new = str4.ljust(18, '_')
+
+print(str1_new)
+print(str2_new)
+print(str3_new)
+print(str4_new)
+
+str1_new = str1.ljust(18, '*')
+str2_new = str2.ljust(18, '*')
+str3_new = str3.ljust(18, '*')
+str4_new = str4.ljust(18, '*')
+
+print(str1_new)
+print(str2_new)
+print(str3_new)
+print(str4_new)

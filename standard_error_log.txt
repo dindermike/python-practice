@@ -8,3 +8,25 @@ ERROR B: Something went wrong.
 ERROR B: Another way to write to stderr.
 ERROR B: Something went wrong.
 ERROR B: Another way to write to stderr.
+ERROR B: Something went wrong.
+ERROR B: Another way to write to stderr.
+ERROR B: Something went wrong.
+ERROR B: Another way to write to stderr.
+ERROR B: Something went wrong.
+ERROR B: Another way to write to stderr.
+ERROR B: Something went wrong.
+ERROR B: Another way to write to stderr.
+ERROR B: Something went wrong.
+ERROR B: Another way to write to stderr.
+ERROR B: Something went wrong.
+ERROR B: Another way to write to stderr.
+ERROR B: Something went wrong.
+ERROR B: Another way to write to stderr.
+ERROR B: Something went wrong.
+ERROR B: Another way to write to stderr.
+ERROR B: Something went wrong.
+ERROR B: Another way to write to stderr.
+ERROR B: Something went wrong.
+ERROR B: Another way to write to stderr.
+ERROR B: Something went wrong.
+ERROR B: Another way to write to stderr.
