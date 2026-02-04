@@ -140,7 +140,7 @@ print("Find Even and Odd Indexes and Reverse the List.")
 
 numbered_list = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
 
-# Copying for Independent Operations Further Down in this File
+# Cloning/Copying for Independent Operations Further Down in this File (Clone)
 numbered_list_1 = copy.copy(numbered_list)
 numbered_list_2 = copy.copy(numbered_list)
 numbered_list_3 = copy.copy(numbered_list)

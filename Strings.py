@@ -1,5 +1,4 @@
 # Various String operations and functions
-import pprint
 
 # Reverse a string
 print('Reverse a String')
