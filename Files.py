@@ -46,12 +46,12 @@ for file in files_list:
     print('***********************************************')
     print("Filename:", file)
 
-    file_extension = file.split('.')
+    filename_list = file.split('.')
     # stx = statx.statx(file).btime
     # dt_object = datetime.fromtimestamp(stx)
     # formatted_date = dt_object.strftime("%a %b %d %H:%M:%S %Y")
 
-    print('File Extension: ".' + file_extension[-1] + '"')
+    print('File Extension: ".' + filename_list[-1] + '"')
     print('File Last Accessed Time:', time.ctime(path.getatime(file)))
     # print(f"File Created Time: {formatted_date}")
     print('File Changed Time:', time.ctime(path.getctime(file)))

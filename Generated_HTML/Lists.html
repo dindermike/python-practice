@@ -1,0 +1,444 @@
+
+            <!DOCTYPE html>
+            <html lang="en">
+                <head>
+                    <!-- Character Encoding -->
+                    <meta charset="UTF-8">
+
+                    <!-- Viewport for Responsive Design -->
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+                    <!-- Page Title -->
+                    <title>Python Lists.py Source Code</title>
+
+                    <!-- Meta Description for SEO -->
+                    <meta name="description" content="A practice code page for displaying Lists.py python snippets.">
+
+                    <!-- Meta Keywords -->
+                    <meta name="keywords" content="code, snippets, python, programming, syntax highlighting, development">
+
+                    <!-- Author Information -->
+                    <meta name="author" content="Mike Dinder">
+
+                    <!-- HTTP Equiv Headers -->
+                    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+                    <!-- Robots Meta Tag -->
+                    <meta name="robots" content="index, follow">
+
+                    <!-- Open Graph Meta Tags for Social Media -->
+                    <meta property="og:title" content="Display Lists.py Code Snippets">
+                    <meta property="og:description" content="A practice code page for displaying Lists.py python snippets.">
+                    <meta property="og:type" content="website">
+                    <meta property="og:url" content="https://www.mikedinder.com//home/mike/Python_Practice/Generated_HTML/Lists.html">
+                    <meta property="og:image" content="https://www.mikedinder.com/mikedinder.jpg">
+
+                    <!-- Twitter Card Meta Tags -->
+                    <meta name="twitter:card" content="summary_large_image">
+                    <meta name="twitter:title" content="Display Lists.py Code Snippets">
+                    <meta name="twitter:description" content="A practice code page for displaying Lists.py python snippets.">
+                    <meta name="twitter:image" content="https://www.mikedinder.com/mikedinder.jpg">
+
+                    <!-- Favicon -->
+                    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+                    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+                    <!-- Theme Color for Mobile Browsers -->
+                    <meta name="theme-color" content="#1e293b">
+
+                    <!-- Preconnect to CDN for Performance -->
+                    <!-- <link rel="preconnect" href="https://cdnjs.cloudflare.com"> -->
+
+                    <!-- Highlight.js for Syntax Highlighting -->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+                    <!-- Custom Styles -->
+                    <style type="text/css">
+                        * {
+                            margin: 0;
+                            padding: 0;
+                            box-sizing: border-box;
+                        }
+
+                        body {
+                            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+                            line-height: 1.6;
+                            color: #e2e8f0;
+                            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+                            min-height: 100vh;
+                            padding: 20px;
+                        }
+
+                        .container {
+                            max-width: 1200px;
+                            margin: 0 auto;
+                        }
+
+                        header {
+                            text-align: center;
+                            margin-bottom: 40px;
+                            padding: 20px;
+                        }
+
+                        h1 {
+                            font-size: 2.5rem;
+                            color: #60a5fa;
+                            margin-bottom: 10px;
+                        }
+
+                        .subtitle {
+                            color: #94a3b8;
+                            font-size: 1.1rem;
+                        }
+
+                        .snippet-container {
+                            background: #1e293b;
+                            border-radius: 12px;
+                            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                            margin-bottom: 30px;
+                            overflow: hidden;
+                            border: 1px solid #334155;
+                        }
+
+                        .snippet-header {
+                            background: #0f172a;
+                            padding: 15px 20px;
+                            border-bottom: 1px solid #334155;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                        }
+
+                        .snippet-title {
+                            color: #f1f5f9;
+                            font-size: 1.1rem;
+                            font-weight: 600;
+                        }
+
+                        .language-badge {
+                            background: #3b82f6;
+                            color: white;
+                            padding: 5px 12px;
+                            border-radius: 20px;
+                            font-size: 0.85rem;
+                            font-weight: 500;
+                        }
+
+                        .snippet-body {
+                            position: relative;
+                        }
+
+                        pre {
+                            margin: 0;
+                            padding: 20px;
+                            overflow-x: auto;
+                        }
+
+                        code {
+                            font-family: 'Courier New', Courier, monospace;
+                            font-size: 0.95rem;
+                        }
+
+                        .copy-button {
+                            position: absolute;
+                            top: 10px;
+                            right: 10px;
+                            background: #3b82f6;
+                            color: white;
+                            border: none;
+                            padding: 8px 16px;
+                            border-radius: 6px;
+                            cursor: pointer;
+                            font-size: 0.9rem;
+                            transition: background 0.3s ease;
+                        }
+
+                        .copy-button:hover {
+                            background: #2563eb;
+                        }
+
+                        .copy-button:active {
+                            background: #1d4ed8;
+                        }
+
+                        footer {
+                            text-align: center;
+                            margin-top: 50px;
+                            padding: 20px;
+                            color: #64748b;
+                        }
+
+                        @media (max-width: 768px) {
+                            h1 {
+                                font-size: 2rem;
+                            }
+
+                            .snippet-header {
+                                flex-direction: column;
+                                gap: 10px;
+                                align-items: flex-start;
+                            }
+                        }
+                    </style>
+                </head>
+
+                <body>
+                    <div class="container">
+                        <header>
+                            <h1>Source Code Snippets of "Lists.py"</h1>
+                            <h2>Mike Dinder</h2>
+                            <p class="subtitle">The entire contents of the "Lists.py" file as code examples with syntax highlighting</p>
+                            <p class="subtitle">
+                                Auto Generated Using <a href="https://claude.ai" target="_blank">Generate_HTML.py</a> script to auto format each of these pages in a standardized template.
+                            </p>
+                        </header>
+
+                        <main>
+                            <!-- Python Snippet -->
+                            <div class="snippet-container">
+                                <div class="snippet-header">
+                                    <span class="snippet-title">Lists</span>
+                                    <span class="language-badge">Python</span>
+                                </div>
+
+                                <div class="snippet-body">
+                                    <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                                    <pre>
+                                        <code class="language-python"># List and Tuple operations
+import copy
+
+
+# Enter numbers and split into a list and a tuple.
+print("Enter a series of numbers. Your output will be a list and a separate tuple of numbers.")
+numbers = [int(num) for num in input("Enter numbers separated by spaces: ").split()]
+tupled = tuple(numbers)
+
+print("List:", numbers)
+print(type(numbers))
+for x in numbers:
+    print(type(x))
+
+print("Tuple:", tupled)
+print(type(tupled))
+for x in tupled:
+    print(type(x))
+
+print('--------------------------------------------------')
+# Remove Duplicates from a List
+my_list = [1, 2, 3, 2, 1, 10, 40, 10, 2, 2, 2, 3, 7, 9, 11, 10, 4, 5, 3]
+
+print('Original List:', my_list)
+
+# Will Not Preserve Order
+unique_list1 = list(set(my_list))
+print('Order Not Preserved:', unique_list1)
+
+# Will Preserve Order
+unique_list2 = list(dict.fromkeys(my_list))
+print('Order Preserved:', unique_list2)
+
+print('--------------------------------------------------')
+# Create a Histogram using the list of numbers above.
+print("Show a Histogram of the List of Numbers you Entered.")
+
+
+def histogram(list_of_numbers) -> None:
+    """
+    Histogram: a chart that visually displays the distribution of continuous numerical data, grouping it into "bins" or
+    ranges, with the height of each bar showing the frequency (how many data points) within that range. This function
+    will represent this in text format using asterisks "*", where each line is each element in the list.
+
+    :param list_of_numbers: List of Numbers Entered Via Input
+    :returns: Nothing
+    :rtype: None
+    """
+    for interval in list_of_numbers:
+        output = ''
+
+        while (interval > 0):
+            output += '*'
+            interval -= 1
+
+        print(output)
+
+
+histogram(numbers)
+
+print('--------------------------------------------------')
+# Find all the Even Numbers found in the list. By Value and not by index.
+print("Show Even numbers by value of the list of numbers.")
+
+for x in numbers:
+    if x > 100:
+        print("XXX - This Number Exceeds This Threshold! - XXX")
+    elif x % 2 == 0:
+        print("    (" + str(x) + ")")
+    else:
+        print("X")
+
+print('--------------------------------------------------')
+
+# Show the First and Last elements of a list of names
+print("Show the first and last names of a list of names.")
+
+names = [name for name in input("Enter your names separated by spaces: ").split()]
+
+print("Your List of Names =", names)
+print("The First Name/Element is...", names[0])
+print("The Last Name/Element is...", names[-1])
+
+print('--------------------------------------------------')
+# List to String
+print("List to String.")
+
+stringed_list_1 = ' '.join(names)
+stringed_list_2 = ', '.join(names)
+stringed_list_3 = ' - '.join(names)
+stringed_list_4 = ' : '.join(names)
+
+print("Example 1:", stringed_list_1)
+print("Example 2:", stringed_list_2)
+print("Example 3:", stringed_list_3)
+print("Example 4:", stringed_list_4)
+
+print('--------------------------------------------------')
+# Number of items in a list, how many times does this name appear in the list?
+print("The number of items in a list.")
+
+print("The Length of the names you entered is =", len(names))
+
+find_name = input("Enter the name you wish to find: ")
+count = 0
+found = False
+
+this_count = names.count(find_name)
+print(f"A) The name {find_name} was found {this_count} times.")
+
+# Via For Loop: Slower Memory Performacne
+for name in names:
+    if name == find_name:
+        count += 1
+
+print(f"B) The name {find_name} was found {count} times.")
+
+print('--------------------------------------------------')
+# Alternative, check if element is in the list
+print("Check if the Name you Entered is in the List")
+
+if find_name in names:
+    print(f'A) The Name "{find_name}" is in the list of names you created.')
+else:
+    print(f'A) The Name "{find_name}" is NOT in the list of names you created.')
+
+# Via a For Loop: Slower Memory Performance
+for name in names:
+    if name == find_name:
+        found = True
+
+if found:
+    print(f'B) The Name "{find_name}" is in the list of names you created.')
+else:
+    print(f'B) The Name "{find_name}" is NOT in the list of names you created.')
+
+print('--------------------------------------------------')
+# Find all Even and Odd indexes of a list
+print("Find Even and Odd Indexes and Reverse the List.")
+
+numbered_list = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+
+# Cloning/Copying for Independent Operations Further Down in this File (Clone)
+numbered_list_1 = copy.copy(numbered_list)
+numbered_list_2 = copy.copy(numbered_list)
+numbered_list_3 = copy.copy(numbered_list)
+numbered_list_4 = copy.copy(numbered_list)
+
+even_indexes = numbered_list[::2]
+odd_indexes = numbered_list[1::2]
+
+print("Your Standard List Is:", numbered_list)
+print("Your Even Indexes Are:", even_indexes)
+print("Your Odd Indexes Are:", odd_indexes)
+print("Your Reversed List Is:", numbered_list[::-1])
+
+print('--------------------------------------------------')
+# Using a Slice Object
+print("Slice Objects.")
+
+special_slice = slice(3, 12, 2)
+
+print("Your Slice Is:", special_slice)
+print("Your Sliced List Is:", numbered_list[special_slice])
+print("Your Reversed Sliced List Is:", numbered_list[::-1][special_slice])
+
+print('--------------------------------------------------')
+# Adding and Removing items from a List
+print("Adding and Removing Items in a List")
+
+print("Un-Altered")
+print(numbered_list_1)
+print(numbered_list_2)
+print(numbered_list_3)
+print(numbered_list_4)
+
+print("Removing Index 5 by Index:", numbered_list_1.pop(5))
+print(numbered_list_1)
+
+print("Removing Index 5 by Value:", numbered_list_2.remove(7))
+print(numbered_list_2)
+
+print("Removing First Element")
+del numbered_list_3[0]
+print(numbered_list_3)
+
+print("Removing Last Element")
+del numbered_list_4[-1]
+print(numbered_list_4)
+
+print('--------------------------------------------------')
+</code>
+                                    </pre>
+                                </div>
+                            </div>
+                        </main>
+
+                        <footer>
+                            <p>&copy; 2026 MikeDinder.com - Code Snippets Display. Built with HTML, CSS, and Highlight.js</p>
+                        </footer>
+                    </div>
+
+                    <!-- Initialize Highlight.js -->
+                    <script type="text/javascript">
+                        // Initialize syntax highlighting
+                        hljs.highlightAll();
+
+                        // Copy code function
+                        function copyCode(button) {
+                            const codeBlock = button.nextElementSibling.querySelector('code');
+                            const code = codeBlock.textContent;
+
+                            navigator.clipboard.writeText(code).then(() => {
+                                const originalText = button.textContent;
+                                button.textContent = 'Copied!';
+                                button.style.background = '#10b981';
+
+                                setTimeout(() => {
+                                    button.textContent = originalText;
+                                    button.style.background = '#3b82f6';
+                                }, 2000);
+                            }).catch(err => {
+                                console.error('Failed to copy code:', err);
+                                button.textContent = 'Error!';
+                                button.style.background = '#ef4444';
+
+                                setTimeout(() => {
+                                    button.textContent = 'Copy';
+                                    button.style.background = '#3b82f6';
+                                }, 2000);
+                            });
+                        }
+                    </script>
+                </body>
+            </html>
+        

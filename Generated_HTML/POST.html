@@ -1,32 +1,4 @@
-# Use this file to generate HTML Files that embed Python Files as display code on that page, for educational and
-# resume purposes only.
-from os import listdir
-from os.path import isfile, join
 
-
-def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None, directory=None) -> None:
-    """
-    Generate an single HTML file, one for each Python file found in the directory specified. Generates using a
-    pre-formatted code snippet template for displaying code in a clean and user friendly way on the internet.
-
-    :param filename: String, the filename of the code that is being generated.
-    :param fn_no_ext: String, the filename without the file extension of the code that is being generated.
-    :param output_html_path: String, output path that represents where the generated file will be created.
-    :param directory: String, path that represents the working directory of this file.
-    :returns: Nothing
-    :rtype: None
-    """
-
-    try:
-        with open(directory + filename, 'r', encoding='utf-8') as f:
-            code_content = f.read()
-    except FileNotFoundError:
-        print(f'Error: The READ File "{filename}" Was Not Found.')
-    except Exception as e:
-        print(f'An Error Occurred: {e}')
-    else:
-        # HTML Template with <pre> and <code> Tags
-        html_content = f"""
             <!DOCTYPE html>
             <html lang="en">
                 <head>
@@ -37,10 +9,10 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
                     <!-- Page Title -->
-                    <title>Python {filename} Source Code</title>
+                    <title>Python POST.py Source Code</title>
 
                     <!-- Meta Description for SEO -->
-                    <meta name="description" content="A practice code page for displaying {filename} python snippets.">
+                    <meta name="description" content="A practice code page for displaying POST.py python snippets.">
 
                     <!-- Meta Keywords -->
                     <meta name="keywords" content="code, snippets, python, programming, syntax highlighting, development">
@@ -56,16 +28,16 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                     <meta name="robots" content="index, follow">
 
                     <!-- Open Graph Meta Tags for Social Media -->
-                    <meta property="og:title" content="Display {filename} Code Snippets">
-                    <meta property="og:description" content="A practice code page for displaying {filename} python snippets.">
+                    <meta property="og:title" content="Display POST.py Code Snippets">
+                    <meta property="og:description" content="A practice code page for displaying POST.py python snippets.">
                     <meta property="og:type" content="website">
-                    <meta property="og:url" content="https://www.mikedinder.com/{output_html_path}">
+                    <meta property="og:url" content="https://www.mikedinder.com//home/mike/Python_Practice/Generated_HTML/POST.html">
                     <meta property="og:image" content="https://www.mikedinder.com/mikedinder.jpg">
 
                     <!-- Twitter Card Meta Tags -->
                     <meta name="twitter:card" content="summary_large_image">
-                    <meta name="twitter:title" content="Display {filename} Code Snippets">
-                    <meta name="twitter:description" content="A practice code page for displaying {filename} python snippets.">
+                    <meta name="twitter:title" content="Display POST.py Code Snippets">
+                    <meta name="twitter:description" content="A practice code page for displaying POST.py python snippets.">
                     <meta name="twitter:image" content="https://www.mikedinder.com/mikedinder.jpg">
 
                     <!-- Favicon -->
@@ -84,92 +56,92 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
 
                     <!-- Custom Styles -->
                     <style type="text/css">
-                        * {{
+                        * {
                             margin: 0;
                             padding: 0;
                             box-sizing: border-box;
-                        }}
+                        }
 
-                        body {{
+                        body {
                             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
                             line-height: 1.6;
                             color: #e2e8f0;
                             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
                             min-height: 100vh;
                             padding: 20px;
-                        }}
+                        }
 
-                        .container {{
+                        .container {
                             max-width: 1200px;
                             margin: 0 auto;
-                        }}
+                        }
 
-                        header {{
+                        header {
                             text-align: center;
                             margin-bottom: 40px;
                             padding: 20px;
-                        }}
+                        }
 
-                        h1 {{
+                        h1 {
                             font-size: 2.5rem;
                             color: #60a5fa;
                             margin-bottom: 10px;
-                        }}
+                        }
 
-                        .subtitle {{
+                        .subtitle {
                             color: #94a3b8;
                             font-size: 1.1rem;
-                        }}
+                        }
 
-                        .snippet-container {{
+                        .snippet-container {
                             background: #1e293b;
                             border-radius: 12px;
                             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
                             margin-bottom: 30px;
                             overflow: hidden;
                             border: 1px solid #334155;
-                        }}
+                        }
 
-                        .snippet-header {{
+                        .snippet-header {
                             background: #0f172a;
                             padding: 15px 20px;
                             border-bottom: 1px solid #334155;
                             display: flex;
                             justify-content: space-between;
                             align-items: center;
-                        }}
+                        }
 
-                        .snippet-title {{
+                        .snippet-title {
                             color: #f1f5f9;
                             font-size: 1.1rem;
                             font-weight: 600;
-                        }}
+                        }
 
-                        .language-badge {{
+                        .language-badge {
                             background: #3b82f6;
                             color: white;
                             padding: 5px 12px;
                             border-radius: 20px;
                             font-size: 0.85rem;
                             font-weight: 500;
-                        }}
+                        }
 
-                        .snippet-body {{
+                        .snippet-body {
                             position: relative;
-                        }}
+                        }
 
-                        pre {{
+                        pre {
                             margin: 0;
                             padding: 20px;
                             overflow-x: auto;
-                        }}
+                        }
 
-                        code {{
+                        code {
                             font-family: 'Courier New', Courier, monospace;
                             font-size: 0.95rem;
-                        }}
+                        }
 
-                        .copy-button {{
+                        .copy-button {
                             position: absolute;
                             top: 10px;
                             right: 10px;
@@ -181,43 +153,43 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                             cursor: pointer;
                             font-size: 0.9rem;
                             transition: background 0.3s ease;
-                        }}
+                        }
 
-                        .copy-button:hover {{
+                        .copy-button:hover {
                             background: #2563eb;
-                        }}
+                        }
 
-                        .copy-button:active {{
+                        .copy-button:active {
                             background: #1d4ed8;
-                        }}
+                        }
 
-                        footer {{
+                        footer {
                             text-align: center;
                             margin-top: 50px;
                             padding: 20px;
                             color: #64748b;
-                        }}
+                        }
 
-                        @media (max-width: 768px) {{
-                            h1 {{
+                        @media (max-width: 768px) {
+                            h1 {
                                 font-size: 2rem;
-                            }}
+                            }
 
-                            .snippet-header {{
+                            .snippet-header {
                                 flex-direction: column;
                                 gap: 10px;
                                 align-items: flex-start;
-                            }}
-                        }}
+                            }
+                        }
                     </style>
                 </head>
 
                 <body>
                     <div class="container">
                         <header>
-                            <h1>Source Code Snippets of "{filename}"</h1>
+                            <h1>Source Code Snippets of "POST.py"</h1>
                             <h2>Mike Dinder</h2>
-                            <p class="subtitle">The entire contents of the "{filename}" file as code examples with syntax highlighting</p>
+                            <p class="subtitle">The entire contents of the "POST.py" file as code examples with syntax highlighting</p>
                             <p class="subtitle">
                                 Auto Generated Using <a href="https://claude.ai" target="_blank">Generate_HTML.py</a> script to auto format each of these pages in a standardized template.
                             </p>
@@ -227,14 +199,123 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                             <!-- Python Snippet -->
                             <div class="snippet-container">
                                 <div class="snippet-header">
-                                    <span class="snippet-title">{fn_no_ext}</span>
+                                    <span class="snippet-title">POST</span>
                                     <span class="language-badge">Python</span>
                                 </div>
 
                                 <div class="snippet-body">
                                     <button class="copy-button" onclick="copyCode(this)">Copy</button>
                                     <pre>
-                                        <code class="language-python">{code_content}</code>
+                                        <code class="language-python"># Running basic POST Requests using a web platform called ReqRes (https://reqres.in/) to mock API Endpoints
+# For me to hit via Python requests below.
+import json
+import os
+import requests
+import sys
+
+from datetime import datetime
+from dotenv import load_dotenv
+from typing import Union
+from zoneinfo import ZoneInfo
+
+
+# Load Environment Variables
+load_dotenv()
+
+
+def create_book(payload={}, info_print=True) -> Union[dict, None]:
+    """
+    Takes in a payload and creates a new Book record in ReqRes.
+
+    :param payload: Dict, Payload to create.
+    :param info_print: Boolean, Optional turn off print statements.
+    :returns: Record of book created or None
+    :rtype: dict or None
+    """
+
+    if os.getenv('REQRES_TOKEN') is None or os.getenv('REQRES_TOKEN') == os.getenv('REQRES_DUMMY_VALUE'):
+        print('You Need A Validated Token to Continue!')
+        sys.exit()
+    else:
+        headers = {
+            'Accept': 'application/json',
+            'Authorization': f'Bearer {os.getenv("REQRES_TOKEN")}',
+            'Connection': 'keep-alive',
+            'Content-Type': 'application/json',
+            'x-api-key': os.getenv('X_API_PROD_KEY')
+        }
+
+        response = requests.post(
+            os.getenv('REQRES_BASE_URL') + os.getenv('REQRES_COLLECTION_BOOKS'),
+            json=payload,
+            headers=headers
+        )
+
+        # Get JSON Response
+        result = response.json()
+
+        # Get Status Code
+        status = response.status_code
+
+        if status == 201:
+            if info_print:
+                print('Success! Book Created')
+
+            if 'data' in result:
+                data = result['data']
+
+                if info_print:
+                    json_formatted_str = json.dumps(data, indent=2)
+                    print(json_formatted_str)
+
+                record = data['data']
+
+                if info_print and record['title'] == 'King Arthur Baking Company\'s Big Book of Bread':
+                    print('--------------------------------------------------')
+                    print('Record Created, Details...')
+                    print(record['title'])
+                    print(record['price'])
+                    print(record['genre'])
+                    print(record['description'])
+                    print(record['book_id'])
+                    print(record['website'])
+                    print(record['publisher_id'])
+                    print(record['stock_quantity'])
+                    print(record['publication_date'])
+                    print('--------------------------------------------------')
+
+                return record
+            else:
+                if info_print and 'message' in result:
+                    print(result['message'])
+        else:
+            if info_print and 'message' in result:
+                print(result['message'])
+
+        return None
+
+
+if __name__ == '__main__':
+    tz = ZoneInfo('America/Phoenix')
+
+    create_book(
+        {
+            'data': {
+                'isbn': '978-1668009741',
+                'genre': 'Cooking',
+                'price': '29.87',
+                'title': 'King Arthur Baking Company\'s Big Book of Bread',
+                'book_id': 101,
+                'website': 'https://shop.kingarthurbaking.com/items/king-arthur-baking-companys-big-book-of-bread',
+                'created_at': datetime(2026, 2, 2, 13, 40, 0, tzinfo=tz).strftime(os.getenv('STD_DATETIME_FMT')),
+                'description': 'Master the art of bread baking with 125+ bread recipes for every baker\'s journey.',
+                'publisher_id': 20001,
+                'stock_quantity': 25,
+                'publication_date': datetime(2024, 10, 22, 6, 0, 0, tzinfo=tz).strftime(os.getenv('STD_DATETIME_FMT'))
+            }
+        }
+    )
+</code>
                                     </pre>
                                 </div>
                             </div>
@@ -251,73 +332,31 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                         hljs.highlightAll();
 
                         // Copy code function
-                        function copyCode(button) {{
+                        function copyCode(button) {
                             const codeBlock = button.nextElementSibling.querySelector('code');
                             const code = codeBlock.textContent;
 
-                            navigator.clipboard.writeText(code).then(() => {{
+                            navigator.clipboard.writeText(code).then(() => {
                                 const originalText = button.textContent;
                                 button.textContent = 'Copied!';
                                 button.style.background = '#10b981';
 
-                                setTimeout(() => {{
+                                setTimeout(() => {
                                     button.textContent = originalText;
                                     button.style.background = '#3b82f6';
-                                }}, 2000);
-                            }}).catch(err => {{
+                                }, 2000);
+                            }).catch(err => {
                                 console.error('Failed to copy code:', err);
                                 button.textContent = 'Error!';
                                 button.style.background = '#ef4444';
 
-                                setTimeout(() => {{
+                                setTimeout(() => {
                                     button.textContent = 'Copy';
                                     button.style.background = '#3b82f6';
-                                }}, 2000);
-                            }});
-                        }}
+                                }, 2000);
+                            });
+                        }
                     </script>
                 </body>
             </html>
-        """  # noqa: E501
-
-        try:
-            with open(output_html_path, 'w', encoding='utf-8') as f_html:
-                f_html.write(html_content)
-        except FileNotFoundError:
-            print(f'Error: The WRITE File "{filename}" Was Not Found.')
-        except Exception as e:
-            print(f'An Error Occurred: {e}')
-        else:
-            print(f'Successfully Generated HTML File: {filename}')
-
-
-if __name__ == '__main__':
-    directory1 = '/home/mike/Python_Practice/'
-    directory2 = '/home/mike/Python_Practice/Requests/'
-    directory3 = '/home/mike/Python_Practice/SQL_Practice/'
-
-    directories = [directory1, directory2, directory3]
-
-    files_list1 = [f for f in listdir(directory1) if isfile(join(directory1, f))]
-    files_list2 = [f for f in listdir(directory2) if isfile(join(directory2, f))]
-    files_list3 = [f for f in listdir(directory3) if isfile(join(directory3, f))]
-
-    files_list = [files_list1,  files_list2,  files_list3]
-
-    for di, directory in enumerate(directories):
-        for fi, file in enumerate(files_list[di]):
-            if file.startswith('.'):
-                file = file[1:]
-
-            filename_list = file.split('.')
-
-            if filename_list[-1] == 'py':
-                generate_html_with_code(
-                    file,
-                    filename_list[0],
-                    directory1 + 'Generated_HTML/' + filename_list[0] + '.html',
-                    directory
-                )
-
-# Example usage:
-# generate_html_with_code('my_script.py', 'code_output.html')
+        
