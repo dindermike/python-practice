@@ -206,7 +206,8 @@
                                 <div class="snippet-body">
                                     <button class="copy-button" onclick="copyCode(this)">Copy</button>
                                     <pre>
-                                        <code class="language-python"># Use this file to generate HTML Files that embed Python Files as display code on that page, for educational and
+                                        <code class="language-python">
+# Use this file to generate HTML Files that embed Python Files as display code on that page, for educational and
 # resume purposes only.
 from os import listdir
 from os.path import isfile, join
@@ -233,65 +234,65 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
     except Exception as e:
         print(f'An Error Occurred: {e}')
     else:
-        # HTML Template with <pre> and <code> Tags
+        # HTML Template with &lt;pre&gt; and &lt;code&gt; Tags
         html_content = f"""
-            <!DOCTYPE html>
-            <html lang="en">
-                <head>
-                    <!-- Character Encoding -->
-                    <meta charset="UTF-8">
+            &lt;!DOCTYPE html&gt;
+            &lt;html lang="en"&gt;
+                &lt;head&gt;
+                    &lt;!-- Character Encoding --&gt;
+                    &lt;meta charset="UTF-8"&gt;
 
-                    <!-- Viewport for Responsive Design -->
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    &lt;!-- Viewport for Responsive Design --&gt;
+                    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
 
-                    <!-- Page Title -->
-                    <title>Python {filename} Source Code</title>
+                    &lt;!-- Page Title --&gt;
+                    &lt;title&gt;Python {filename} Source Code&lt;/title&gt;
 
-                    <!-- Meta Description for SEO -->
-                    <meta name="description" content="A practice code page for displaying {filename} python snippets.">
+                    &lt;!-- Meta Description for SEO --&gt;
+                    &lt;meta name="description" content="A practice code page for displaying {filename} python snippets."&gt;
 
-                    <!-- Meta Keywords -->
-                    <meta name="keywords" content="code, snippets, python, programming, syntax highlighting, development">
+                    &lt;!-- Meta Keywords --&gt;
+                    &lt;meta name="keywords" content="code, snippets, python, programming, syntax highlighting, development"&gt;
 
-                    <!-- Author Information -->
-                    <meta name="author" content="Mike Dinder">
+                    &lt;!-- Author Information --&gt;
+                    &lt;meta name="author" content="Mike Dinder"&gt;
 
-                    <!-- HTTP Equiv Headers -->
-                    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+                    &lt;!-- HTTP Equiv Headers --&gt;
+                    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+                    &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
 
-                    <!-- Robots Meta Tag -->
-                    <meta name="robots" content="index, follow">
+                    &lt;!-- Robots Meta Tag --&gt;
+                    &lt;meta name="robots" content="index, follow"&gt;
 
-                    <!-- Open Graph Meta Tags for Social Media -->
-                    <meta property="og:title" content="Display {filename} Code Snippets">
-                    <meta property="og:description" content="A practice code page for displaying {filename} python snippets.">
-                    <meta property="og:type" content="website">
-                    <meta property="og:url" content="https://www.mikedinder.com/{output_html_path}">
-                    <meta property="og:image" content="https://www.mikedinder.com/mikedinder.jpg">
+                    &lt;!-- Open Graph Meta Tags for Social Media --&gt;
+                    &lt;meta property="og:title" content="Display {filename} Code Snippets"&gt;
+                    &lt;meta property="og:description" content="A practice code page for displaying {filename} python snippets."&gt;
+                    &lt;meta property="og:type" content="website"&gt;
+                    &lt;meta property="og:url" content="https://www.mikedinder.com/{output_html_path}"&gt;
+                    &lt;meta property="og:image" content="https://www.mikedinder.com/mikedinder.jpg"&gt;
 
-                    <!-- Twitter Card Meta Tags -->
-                    <meta name="twitter:card" content="summary_large_image">
-                    <meta name="twitter:title" content="Display {filename} Code Snippets">
-                    <meta name="twitter:description" content="A practice code page for displaying {filename} python snippets.">
-                    <meta name="twitter:image" content="https://www.mikedinder.com/mikedinder.jpg">
+                    &lt;!-- Twitter Card Meta Tags --&gt;
+                    &lt;meta name="twitter:card" content="summary_large_image"&gt;
+                    &lt;meta name="twitter:title" content="Display {filename} Code Snippets"&gt;
+                    &lt;meta name="twitter:description" content="A practice code page for displaying {filename} python snippets."&gt;
+                    &lt;meta name="twitter:image" content="https://www.mikedinder.com/mikedinder.jpg"&gt;
 
-                    <!-- Favicon -->
-                    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-                    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+                    &lt;!-- Favicon --&gt;
+                    &lt;link rel="icon" type="image/x-icon" href="/favicon.ico"&gt;
+                    &lt;link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"&gt;
 
-                    <!-- Theme Color for Mobile Browsers -->
-                    <meta name="theme-color" content="#1e293b">
+                    &lt;!-- Theme Color for Mobile Browsers --&gt;
+                    &lt;meta name="theme-color" content="#1e293b"&gt;
 
-                    <!-- Preconnect to CDN for Performance -->
-                    <!-- <link rel="preconnect" href="https://cdnjs.cloudflare.com"> -->
+                    &lt;!-- Preconnect to CDN for Performance --&gt;
+                    &lt;!-- &lt;link rel="preconnect" href="https://cdnjs.cloudflare.com"&gt; --&gt;
 
-                    <!-- Highlight.js for Syntax Highlighting -->
-                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+                    &lt;!-- Highlight.js for Syntax Highlighting --&gt;
+                    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css"&gt;
+                    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"&gt;&lt;/script&gt;
 
-                    <!-- Custom Styles -->
-                    <style type="text/css">
+                    &lt;!-- Custom Styles --&gt;
+                    &lt;style type="text/css"&gt;
                         * {{
                             margin: 0;
                             padding: 0;
@@ -417,44 +418,44 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                                 align-items: flex-start;
                             }}
                         }}
-                    </style>
-                </head>
+                    &lt;/style&gt;
+                &lt;/head&gt;
 
-                <body>
-                    <div class="container">
-                        <header>
-                            <h1>Source Code Snippets of "{filename}"</h1>
-                            <h2>Mike Dinder</h2>
-                            <p class="subtitle">The entire contents of the "{filename}" file as code examples with syntax highlighting</p>
-                            <p class="subtitle">
-                                Auto Generated Using <a href="https://claude.ai" target="_blank">Generate_HTML.py</a> script to auto format each of these pages in a standardized template.
-                            </p>
-                        </header>
+                &lt;body&gt;
+                    &lt;div class="container"&gt;
+                        &lt;header&gt;
+                            &lt;h1&gt;Source Code Snippets of "{filename}"&lt;/h1&gt;
+                            &lt;h2&gt;Mike Dinder&lt;/h2&gt;
+                            &lt;p class="subtitle"&gt;The entire contents of the "{filename}" file as code examples with syntax highlighting&lt;/p&gt;
+                            &lt;p class="subtitle"&gt;
+                                Auto Generated Using &lt;a href="https://claude.ai" target="_blank"&gt;Generate_HTML.py&lt;/a&gt; script to auto format each of these pages in a standardized template.
+                            &lt;/p&gt;
+                        &lt;/header&gt;
 
-                        <main>
-                            <!-- Python Snippet -->
-                            <div class="snippet-container">
-                                <div class="snippet-header">
-                                    <span class="snippet-title">{fn_no_ext}</span>
-                                    <span class="language-badge">Python</span>
-                                </div>
+                        &lt;main&gt;
+                            &lt;!-- Python Snippet --&gt;
+                            &lt;div class="snippet-container"&gt;
+                                &lt;div class="snippet-header"&gt;
+                                    &lt;span class="snippet-title"&gt;{fn_no_ext}&lt;/span&gt;
+                                    &lt;span class="language-badge"&gt;Python&lt;/span&gt;
+                                &lt;/div&gt;
 
-                                <div class="snippet-body">
-                                    <button class="copy-button" onclick="copyCode(this)">Copy</button>
-                                    <pre>
-                                        <code class="language-python">{code_content}</code>
-                                    </pre>
-                                </div>
-                            </div>
-                        </main>
+                                &lt;div class="snippet-body"&gt;
+                                    &lt;button class="copy-button" onclick="copyCode(this)"&gt;Copy&lt;/button&gt;
+                                    &lt;pre&gt;
+                                        &lt;code class="language-python"&gt;{code_content}&lt;/code&gt;
+                                    &lt;/pre&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/main&gt;
 
-                        <footer>
-                            <p>&copy; 2026 MikeDinder.com - Code Snippets Display. Built with Python, HTML, CSS, and Highlight.js</p>
-                        </footer>
-                    </div>
+                        &lt;footer&gt;
+                            &lt;p&gt;&copy; 2026 MikeDinder.com - Code Snippets Display. Built with Python, HTML, CSS, and Highlight.js&lt;/p&gt;
+                        &lt;/footer&gt;
+                    &lt;/div&gt;
 
-                    <!-- Initialize Highlight.js -->
-                    <script type="text/javascript">
+                    &lt;!-- Initialize Highlight.js --&gt;
+                    &lt;script type="text/javascript"&gt;
                         // Initialize syntax highlighting
                         hljs.highlightAll();
 
@@ -463,29 +464,29 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                             const codeBlock = button.nextElementSibling.querySelector('code');
                             const code = codeBlock.textContent;
 
-                            navigator.clipboard.writeText(code).then(() => {{
+                            navigator.clipboard.writeText(code).then(() =&gt; {{
                                 const originalText = button.textContent;
                                 button.textContent = 'Copied!';
                                 button.style.background = '#10b981';
 
-                                setTimeout(() => {{
+                                setTimeout(() =&gt; {{
                                     button.textContent = originalText;
                                     button.style.background = '#3b82f6';
                                 }}, 2000);
-                            }}).catch(err => {{
+                            }}).catch(err =&gt; {{
                                 console.error('Failed to copy code:', err);
                                 button.textContent = 'Error!';
                                 button.style.background = '#ef4444';
 
-                                setTimeout(() => {{
+                                setTimeout(() =&gt; {{
                                     button.textContent = 'Copy';
                                     button.style.background = '#3b82f6';
                                 }}, 2000);
                             }});
                         }}
-                    </script>
-                </body>
-            </html>
+                    &lt;/script&gt;
+                &lt;/body&gt;
+            &lt;/html&gt;
         """  # noqa: E501
 
         try:
@@ -526,7 +527,7 @@ if __name__ == '__main__':
                     directory1 + 'Generated_HTML/' + filename_list[0] + '.html',
                     directory
                 )
-</code>
+                                        </code>
                                     </pre>
                                 </div>
                             </div>

@@ -311,7 +311,7 @@ if __name__ == '__main__':
 
             filename_list = file.split('.')
 
-            if filename_list[-1] == 'py':
+            if filename_list[-1] == 'py' and file != 'Generate_HTML.py':
                 generate_html_with_code(
                     file,
                     filename_list[0],
