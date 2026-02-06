@@ -241,7 +241,7 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                         </main>
 
                         <footer>
-                            <p>&copy; 2026 MikeDinder.com - Code Snippets Display. Built with HTML, CSS, and Highlight.js</p>
+                            <p>&copy; 2026 MikeDinder.com - Code Snippets Display. Built with Python, HTML, CSS, and Highlight.js</p>
                         </footer>
                     </div>
 
@@ -318,6 +318,3 @@ if __name__ == '__main__':
                     directory1 + 'Generated_HTML/' + filename_list[0] + '.html',
                     directory
                 )
-
-# Example usage:
-# generate_html_with_code('my_script.py', 'code_output.html')
