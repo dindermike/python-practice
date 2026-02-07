@@ -160,7 +160,7 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
 
                         pre {{
                             margin: 0;
-                            padding: 20px;
+                            padding: 35px 0 20px;
                             overflow-x: auto;
                         }}
 
@@ -292,9 +292,9 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
 
 
 if __name__ == '__main__':
-    directory1 = '/home/mike/Python_Practice/'
-    directory2 = '/home/mike/Python_Practice/Requests/'
-    directory3 = '/home/mike/Python_Practice/SQL_Practice/'
+    directory1 = '/home/mike/Python/'
+    directory2 = '/home/mike/Python/Requests/'
+    directory3 = '/home/mike/Python/SQL_Practice/'
 
     directories = [directory1, directory2, directory3]
 
