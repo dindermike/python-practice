@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Coming Soon!</title>
+    <title>Site Under Construction - Launching Soon</title>
     <style>
         * {
             margin: 0;
@@ -12,87 +12,291 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a1128 0%, #1c2541 50%, #2d4263 100%);
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: white;
             padding: 20px;
+            color: #e8f1f5;
+            position: relative;
+        }
+        
+        /* Animated stars background */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
         }
         
         .container {
+            background: rgba(28, 37, 65, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 2px solid rgba(100, 181, 246, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(66, 165, 245, 0.2);
+            max-width: 900px;
+            width: 100%;
+            padding: 60px 40px;
             text-align: center;
-            max-width: 600px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .space-scene {
+            width: 250px;
+            height: 250px;
+            margin: 0 auto 30px;
+            position: relative;
+        }
+        
+        .space-scene svg {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .rocket {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(-5deg); }
+            50% { transform: translateY(-15px) rotate(-5deg); }
+        }
+        
+        .planet {
+            animation: spin 20s linear infinite;
+            transform-origin: center;
+        }
+        
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
         
         h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.8em;
+            background: linear-gradient(135deg, #64b5f6 0%, #42a5f5 50%, #90caf9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
             font-weight: 700;
+            text-shadow: 0 0 30px rgba(100, 181, 246, 0.5);
         }
         
-        p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
+        .subtitle {
+            font-size: 1.3em;
+            color: #90caf9;
+            margin-bottom: 40px;
+            font-weight: 300;
         }
         
-        .email-form {
+        .content {
+            text-align: left;
+            margin-top: 40px;
+            padding: 35px;
+            background: rgba(13, 27, 42, 0.6);
+            border-radius: 15px;
+            border-left: 4px solid #42a5f5;
+            box-shadow: inset 0 0 20px rgba(66, 165, 245, 0.1);
+        }
+        
+        .content h2 {
+            color: #64b5f6;
+            margin-bottom: 20px;
+            font-size: 1.9em;
             display: flex;
+            align-items: center;
             gap: 10px;
-            max-width: 400px;
-            margin: 0 auto;
         }
         
-        input[type="email"] {
-            flex: 1;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
+        .content p {
+            line-height: 1.9;
+            color: #b0bec5;
+            margin-bottom: 18px;
+            font-size: 1.05em;
         }
         
-        button {
-            padding: 12px 30px;
-            background-color: #fff;
-            color: #667eea;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.2s;
+        .python-logo {
+            display: inline-block;
+            font-weight: bold;
+            color: #64b5f6;
+            text-shadow: 0 0 10px rgba(100, 181, 246, 0.5);
         }
         
-        button:hover {
-            transform: translateY(-2px);
+        strong {
+            color: #90caf9;
         }
         
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 2rem;
-            }
-            
-            p {
-                font-size: 1rem;
-            }
-            
-            .email-form {
-                flex-direction: column;
-            }
+        .footer {
+            margin-top: 35px;
+            color: #607d8b;
+            font-size: 0.95em;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            background: rgba(66, 165, 245, 0.2);
+            color: #64b5f6;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-top: 20px;
+            border: 1px solid rgba(100, 181, 246, 0.3);
         }
     </style>
 </head>
 <body>
+    <!-- Animated stars background -->
+    <div class="stars" id="stars"></div>
+    
     <div class="container">
-        <h1>Python Coming Soon!</h1>
-        <p>We're working hard to bring you something amazing. Stay tuned!</p>
-        <form class="email-form" onsubmit="event.preventDefault(); alert('Thank you for your interest!');">
-            <input type="email" placeholder="Enter Your Email" required>
-            <button type="submit">Notify Me</button>
-        </form>
+        <div class="space-scene">
+            <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <!-- Gradients -->
+                    <radialGradient id="planetGradient">
+                        <stop offset="0%" style="stop-color:#1e88e5;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#0d47a1;stop-opacity:1" />
+                    </radialGradient>
+                    
+                    <linearGradient id="rocketGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#90caf9;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#42a5f5;stop-opacity:1" />
+                    </linearGradient>
+                    
+                    <radialGradient id="glowGradient">
+                        <stop offset="0%" style="stop-color:#64b5f6;stop-opacity:0.8" />
+                        <stop offset="100%" style="stop-color:#64b5f6;stop-opacity:0" />
+                    </radialGradient>
+                </defs>
+                
+                <!-- Background glow -->
+                <circle cx="150" cy="150" r="100" fill="url(#glowGradient)" opacity="0.3"/>
+                
+                <!-- Planet with construction -->
+                <g class="planet">
+                    <circle cx="150" cy="180" r="60" fill="url(#planetGradient)"/>
+                    <!-- Planet craters/features -->
+                    <circle cx="135" cy="165" r="8" fill="#0d47a1" opacity="0.4"/>
+                    <circle cx="170" cy="175" r="12" fill="#0d47a1" opacity="0.3"/>
+                    <circle cx="150" cy="195" r="6" fill="#0d47a1" opacity="0.5"/>
+                    
+                    <!-- Construction elements on planet -->
+                    <rect x="140" y="155" width="20" height="3" fill="#ffd54f" opacity="0.8"/>
+                    <rect x="135" y="160" width="30" height="3" fill="#ffd54f" opacity="0.8"/>
+                </g>
+                
+                <!-- Orbiting stars/debris -->
+                <circle cx="80" cy="120" r="2" fill="#90caf9">
+                    <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="220" cy="140" r="2" fill="#64b5f6">
+                    <animate attributeName="opacity" values="1;0.3;1" dur="2.5s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="100" cy="80" r="1.5" fill="#42a5f5">
+                    <animate attributeName="opacity" values="0.5;1;0.5" dur="1.8s" repeatCount="indefinite"/>
+                </circle>
+                
+                <!-- Rocket -->
+                <g class="rocket">
+                    <!-- Exhaust/flames -->
+                    <ellipse cx="150" cy="125" rx="8" ry="15" fill="#ff6b35" opacity="0.7">
+                        <animate attributeName="ry" values="15;20;15" dur="0.5s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" values="0.7;0.9;0.7" dur="0.5s" repeatCount="indefinite"/>
+                    </ellipse>
+                    <ellipse cx="150" cy="120" rx="6" ry="12" fill="#ffd54f" opacity="0.8">
+                        <animate attributeName="ry" values="12;16;12" dur="0.5s" repeatCount="indefinite"/>
+                    </ellipse>
+                    
+                    <!-- Rocket body -->
+                    <rect x="135" y="60" width="30" height="50" rx="3" fill="url(#rocketGradient)"/>
+                    
+                    <!-- Rocket nose cone -->
+                    <path d="M 150 30 L 165 60 L 135 60 Z" fill="#1565c0"/>
+                    
+                    <!-- Window -->
+                    <circle cx="150" cy="75" r="8" fill="#0d1117" opacity="0.7"/>
+                    <circle cx="150" cy="75" r="6" fill="#64b5f6" opacity="0.3"/>
+                    
+                    <!-- Fins -->
+                    <path d="M 135 95 L 125 110 L 135 110 Z" fill="#1565c0"/>
+                    <path d="M 165 95 L 175 110 L 165 110 Z" fill="#1565c0"/>
+                    
+                    <!-- Details -->
+                    <rect x="140" y="85" width="20" height="2" fill="#1565c0"/>
+                    <rect x="140" y="95" width="20" height="2" fill="#1565c0"/>
+                </g>
+                
+                <!-- Small stars around -->
+                <circle cx="60" cy="60" r="1.5" fill="white" opacity="0.8"/>
+                <circle cx="240" cy="80" r="1.5" fill="white" opacity="0.6"/>
+                <circle cx="90" cy="200" r="1" fill="white" opacity="0.7"/>
+                <circle cx="210" cy="220" r="1" fill="white" opacity="0.8"/>
+            </svg>
+        </div>
+        
+        <h1>🚀 Launching Soon 🚀</h1>
+        <p class="subtitle">Building our Python universe, one snippet at a time</p>
+        
+        <div class="status-badge">⚡ Under Construction ⚡</div>
+        
+        <div class="content">
+            <h2>🐍 <span class="python-logo">Python</span> Code Repository</h2>
+            
+            <p>
+                This site will feature an extensive collection of <strong>Python</strong> code snippets, tutorials, and practical examples designed to help developers explore the vast universe of programming possibilities.
+            </p>
+            
+            <p>
+                <strong>What is Python?</strong> Python is a powerful, high-level, interpreted programming language celebrated for its clean syntax and readability. Created by Guido van Rossum and first released in 1991, Python was designed with a philosophy that emphasizes code readability and simplicity, making programming accessible to beginners while remaining powerful enough for experts.
+            </p>
+            
+            <p>
+                Over the past three decades, Python has evolved from a modest scripting language into one of the most popular and versatile programming languages in the world. Named after the British comedy series "Monty Python's Flying Circus," Python has made significant impacts across numerous domains including web development, data science, machine learning, artificial intelligence, scientific computing, automation, and more.
+            </p>
+            
+            <p>
+                Whether you're embarking on your first coding journey or you're a seasoned developer seeking quick references and advanced techniques, this site will serve as your launchpad into the Python ecosystem. Get ready to explore code that's out of this world!
+            </p>
+        </div>
+        
+        <div class="footer">
+            <p>🌟 Expected Launch: Coming Soon | Coded with passion for Python explorers 🌟</p>
+        </div>
     </div>
+    
+    <script>
+        // Generate random stars in background
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.width = Math.random() * 2 + 1 + 'px';
+            star.style.height = star.style.width;
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            starsContainer.appendChild(star);
+        }
+    </script>
 </body>
 </html>
