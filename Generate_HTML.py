@@ -59,14 +59,14 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                     <meta property="og:title" content="Display {filename} Code Snippets">
                     <meta property="og:description" content="A practice code page for displaying {filename} python snippets.">
                     <meta property="og:type" content="website">
-                    <meta property="og:url" content="https://www.mikedinder.com/{output_html_path}">
-                    <meta property="og:image" content="https://www.mikedinder.com/mikedinder.jpg">
+                    <meta property="og:url" content="https://python.mikedinder.com/{output_html_path}">
+                    <meta property="og:image" content="https://python.mikedinder.com/Images/python-3d.jpg">
 
                     <!-- Twitter Card Meta Tags -->
                     <meta name="twitter:card" content="summary_large_image">
                     <meta name="twitter:title" content="Display {filename} Code Snippets">
                     <meta name="twitter:description" content="A practice code page for displaying {filename} python snippets.">
-                    <meta name="twitter:image" content="https://www.mikedinder.com/mikedinder.jpg">
+                    <meta name="twitter:image" content="https://python.mikedinder.com/Images/python-3d.jpg">
 
                     <!-- All Browser Legacy Support -->
                     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -232,7 +232,7 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                             <h2>Mike Dinder</h2>
                             <p class="subtitle">The entire contents of the "{filename}" file as code examples with syntax highlighting</p>
                             <p class="subtitle">
-                                Auto Generated Using <a href="https://claude.ai" target="_blank">Generate_HTML.py</a> script to auto format each of these pages in a standardized template.
+                                Auto Generated Using <a href="https://python.mikedinder.com/Generated_HTML/Generate_HTML.html" title="Generate HTML Python Script" aria-label="Generate HTML Python Script">Generate_HTML.py</a> script to auto format each of these pages in a standardized template.
                             </p>
                         </header>
 
@@ -328,6 +328,6 @@ if __name__ == '__main__':
                 generate_html_with_code(
                     file,
                     filename_list[0],
-                    directory1 + 'Generated_HTML/' + filename_list[0] + '.html',
+                    'Generated_HTML/' + filename_list[0] + '.html',
                     directory
                 )
