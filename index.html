@@ -48,7 +48,7 @@
                 padding: 0;
                 box-sizing: border-box;
             }
-            
+
             body {
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                 background: linear-gradient(135deg, #0a1128 0%, #1c2541 50%, #2d4263 100%);
@@ -61,7 +61,7 @@
                 color: #e8f1f5;
                 position: relative;
             }
-            
+
             /* Animated stars background */
             .stars {
                 position: fixed;
@@ -71,19 +71,19 @@
                 height: 100%;
                 pointer-events: none;
             }
-            
+
             .star {
                 position: absolute;
                 background: white;
                 border-radius: 50%;
                 animation: twinkle 3s infinite;
             }
-            
+
             @keyframes twinkle {
                 0%, 100% { opacity: 0.3; }
                 50% { opacity: 1; }
             }
-            
+
             .container {
                 background: rgba(28, 37, 65, 0.85);
                 backdrop-filter: blur(10px);
@@ -97,38 +97,38 @@
                 position: relative;
                 z-index: 10;
             }
-            
+
             .space-scene {
                 width: 250px;
                 height: 250px;
                 margin: 0 auto 30px;
                 position: relative;
             }
-            
+
             .space-scene svg {
                 width: 100%;
                 height: 100%;
             }
-            
+
             .rocket {
                 animation: float 3s ease-in-out infinite;
             }
-            
+
             @keyframes float {
                 0%, 100% { transform: translateY(0) rotate(-5deg); }
                 50% { transform: translateY(-15px) rotate(-5deg); }
             }
-            
+
             .planet {
                 animation: spin 20s linear infinite;
                 transform-origin: center;
             }
-            
+
             @keyframes spin {
                 from { transform: rotate(0deg); }
                 to { transform: rotate(360deg); }
             }
-            
+
             h1 {
                 font-size: 2.8em;
                 background: linear-gradient(135deg, #64b5f6 0%, #42a5f5 50%, #90caf9 100%);
@@ -149,14 +149,14 @@
                 font-weight: 700;
                 text-shadow: 0 0 30px rgba(100, 181, 246, 0.5);
             }
-            
+
             .subtitle {
                 font-size: 1.3em;
                 color: #90caf9;
                 margin-bottom: 40px;
                 font-weight: 300;
             }
-            
+
             .content {
                 text-align: left;
                 margin-top: 40px;
@@ -166,7 +166,7 @@
                 border-left: 4px solid #42a5f5;
                 box-shadow: inset 0 0 20px rgba(66, 165, 245, 0.1);
             }
-            
+
             .content h2 {
                 color: #64b5f6;
                 margin-bottom: 20px;
@@ -175,31 +175,31 @@
                 align-items: center;
                 gap: 10px;
             }
-            
+
             .content p {
                 line-height: 1.9;
                 color: #b0bec5;
                 margin-bottom: 18px;
                 font-size: 1.05em;
             }
-            
+
             .python-logo {
                 display: inline-block;
                 font-weight: bold;
                 color: #64b5f6;
                 text-shadow: 0 0 10px rgba(100, 181, 246, 0.5);
             }
-            
+
             strong {
                 color: #90caf9;
             }
-            
+
             .footer {
                 margin-top: 35px;
                 color: #607d8b;
                 font-size: 0.95em;
             }
-            
+
             .status-badge {
                 display: inline-block;
                 background: rgba(66, 165, 245, 0.2);
@@ -209,6 +209,25 @@
                 font-size: 0.9em;
                 margin-top: 20px;
                 border: 1px solid rgba(100, 181, 246, 0.3);
+            }
+
+            /* Links Section */
+            .links-section ul {
+                padding: 10px 0 25px 30px;
+            }
+
+            .links-section ul li a {
+                color: #3366CC;
+            }
+
+            .links-section ul li a:visited {
+                color: #666699;
+            }
+
+            .links-section ul li a:hover,
+            .links-section ul li a:active,
+            .links-section ul li a:focus {
+                color: #336699;
             }
         </style>
     </head>
@@ -327,6 +346,98 @@
                 <p>
                     Whether you're embarking on your first coding journey or you're a seasoned developer seeking quick references and advanced techniques, this site will serve as your launchpad into the Python ecosystem. Get ready to explore code that's out of this world!
                 </p>
+            </div>
+
+            <div class="content links-section">
+                <h2>View Some of my Pre-Built Pages</h2>
+                <p>These are a collection of Python Scripts that I have been practicing with to keep my skills alive. I will be adding to these in due time.</p>
+
+                <h3>Core Concept Scripts</h3>
+                <ul>
+                    <li>
+                        <a href="/Generated_HTML/Collections.html" title="Python Collections Script" aria-label="Python Collections Script">Collections</a>
+                    </li>
+                    <li>
+                        <a href="/Generated_HTML/Dicts.html" title="Python Dictionary Script" aria-label="Python Dictionary Script">Dictionaries</a>
+                    </li>
+                    <li>
+                        <a href="/Generated_HTML/Exceptions.html" title="Python Exceptions Script" aria-label="Python Exceptions Script">Exceptions</a>
+                    </li>
+                    <li>
+                        <a href="/Generated_HTML/Execution_Time.html" title="Python Execution Time Script" aria-label="Python Execution Time Script">Execution Time</a>
+                    </li>
+                    <li>
+                        <a href="/Generated_HTML/Files.html" title="Python Files Script" aria-label="Python Files Script">Files</a>
+                    </li>
+                    <li>
+                        <a href="/Generated_HTML/Generate_HTML.html" title="Python Generate HTML Script" aria-label="Python Generate HTML Script">Generate HTML</a>
+                    </li>
+                    <li>
+                        <a href="/Generated_HTML/Helpers.html" title="Python Helpers Script" aria-label="Python Helpers Script">Helpers</a>
+                    </li>
+                    <li>
+                        <a href="/Generated_HTML/Lists.html" title="Python Lists Script" aria-label="Python Lists Script">Lists</a>
+                    </li>
+                    <li>
+                        <a href="/Generated_HTML/Math.html" title="Python Math Script" aria-label="Python Math Script">Math</a>
+                    </li>
+                    <li>
+                        <a href="/Generated_HTML/Strings.html" title="Python Strings Script" aria-label="Python Strings Script">Strings</a>
+                    </li>
+                    <li>
+                        <a href="/Generated_HTML/Time.html" title="Python Time Script" aria-label="Python Time Script">Time</a>
+                    </li>
+                    <li>
+                        <a href="/Generated_HTML/Variables.html" title="Python Variables Script" aria-label="Python Variables Script">Variables</a>
+                    </li>
+                </ul>
+
+                <h3>REST API Requests</h3>
+                <ul>
+                    <li>
+                        <a href="/Generated_HTML/DELETE.html" title="Python DELETE Request Script" aria-label="Python DELETE Request Script">DELETE Request</a>
+                    </li>
+                    <li>
+                        <a href="/Generated_HTML/End_Session.html" title="Python End Session Script" aria-label="Python End Session Script">End Session</a>
+                    </li>
+                    <li>
+                        <a href="/Generated_HTML/GET.html" title="Python GET Request Script" aria-label="Python GET Request Script">GET Request</a>
+                    </li>
+                    <li>
+                        <a href="/Generated_HTML/PATCH.html" title="Python PATCH Request Script" aria-label="Python PATCH Request Script">PATCH Request</a>
+                    </li>
+                    <li>
+                        <a href="/Generated_HTML/POST.html" title="Python POST Request Script" aria-label="Python POST Request Script">POST Request</a>
+                    </li>
+                    <li>
+                        <a href="/Generated_HTML/PUT.html" title="Python PUT Request Script" aria-label="Python PUT Request Script">PUT Request</a>
+                    </li>
+                    <li>
+                        <a href="/Generated_HTML/Session.html" title="Python Session Script" aria-label="Python Session Script">Session</a>
+                    </li>
+                    <li>
+                        <a href="/Generated_HTML/Requests.html" title="Python Basic Requests Script" aria-label="Python Basic Requests Script">Basic Requests</a>
+                    </li>
+                </ul>
+
+                <h3>PostgreSQL SQL Practice - Via Python Connect Cursor</h3>
+                <ul>
+                    <li>
+                        <a href="/Generated_HTML/Connect.html" title="Python Connect Script" aria-label="Python Connect Script">SQL Connect</a>
+                    </li>
+                    <li>
+                        <a href="/Generated_HTML/Create_Database.html" title="Python Create Database Script" aria-label="Python Create Database Script">Create Database</a>
+                    </li>
+                    <li>
+                        <a href="/Generated_HTML/Create_Table.html" title="Python Create Table Script" aria-label="Python Create Table Script">Create Table</a>
+                    </li>
+                    <li>
+                        <a href="/Generated_HTML/Insert_Rows.html" title="Python Insert Rows Script" aria-label="Python Insert Rows Script">Insert Rows</a>
+                    </li>
+                    <li>
+                        <a href="/Generated_HTML/Populate.html" title="Python Populate Database Script" aria-label="Python Populate Database Script">Populate Database</a>
+                    </li>
+                </ul>
             </div>
 
             <div class="footer">
