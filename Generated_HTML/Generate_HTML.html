@@ -12,7 +12,7 @@
                     <title>Python Generate_HTML.py Source Code</title>
 
                     <!-- Meta Description for SEO -->
-                    <meta name="description" content="A practice code page for displaying Generate_HTML.py python snippets.">
+                    <meta name="description" content="A practice code page for displaying Python Generate HTML Code Snippets.">
 
                     <!-- Meta Keywords -->
                     <meta name="keywords" content="code, snippets, python, programming, syntax highlighting, development">
@@ -27,17 +27,23 @@
                     <!-- Robots Meta Tag -->
                     <meta name="robots" content="index, follow">
 
+                    <!-- Meta Description for SEO -->
+                    <meta name="description" content="A personal Mike Dinder project dedicated to Python Generate HTML Code Snippets.">
+
+                    <!-- Meta Keywords -->
+                    <meta name="keywords" content="mike dinder, michael dinder, python projects, python code, python">
+
                     <!-- Open Graph Meta Tags for Social Media -->
-                    <meta property="og:title" content="Display Generate_HTML.py Code Snippets">
-                    <meta property="og:description" content="A practice code page for displaying Generate_HTML.py python snippets.">
+                    <meta property="og:title" content="Display Python Generate HTML Code Snippets">
+                    <meta property="og:description" content="A practice code page for displaying Python Generate HTML Code Snippets.">
                     <meta property="og:type" content="website">
                     <meta property="og:url" content="https://python.mikedinder.com/Generated_HTML/Generate_HTML.html">
                     <meta property="og:image" content="https://python.mikedinder.com/Images/python-3d.jpg">
 
                     <!-- Twitter Card Meta Tags -->
                     <meta name="twitter:card" content="summary_large_image">
-                    <meta name="twitter:title" content="Display Generate_HTML.py Code Snippets">
-                    <meta name="twitter:description" content="A practice code page for displaying Generate_HTML.py python snippets.">
+                    <meta name="twitter:title" content="Display Python Generate HTML Code Snippets">
+                    <meta name="twitter:description" content="A practice code page for displaying Python Generate HTML Code Snippets.">
                     <meta name="twitter:image" content="https://python.mikedinder.com/Images/python-3d.jpg">
 
                     <!-- All Browser Legacy Support -->
@@ -238,6 +244,8 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
     :returns: Nothing
     :rtype: None
     """
+    human_readable_name = filename.replace('_', ' ')
+    human_readable_name = human_readable_name.replace('.py', '')
 
     try:
         with open(directory + filename, 'r', encoding='utf-8') as f:
@@ -262,7 +270,7 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                     &lt;title&gt;Python {filename} Source Code&lt;/title&gt;
 
                     &lt;!-- Meta Description for SEO --&gt;
-                    &lt;meta name="description" content="A practice code page for displaying {filename} python snippets."&gt;
+                    &lt;meta name="description" content="A practice code page for displaying Python {human_readable_name} Code Snippets."&gt;
 
                     &lt;!-- Meta Keywords --&gt;
                     &lt;meta name="keywords" content="code, snippets, python, programming, syntax highlighting, development"&gt;
@@ -277,17 +285,23 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                     &lt;!-- Robots Meta Tag --&gt;
                     &lt;meta name="robots" content="index, follow"&gt;
 
+                    &lt;!-- Meta Description for SEO --&gt;
+                    &lt;meta name="description" content="A personal Mike Dinder project dedicated to Python {human_readable_name} Code Snippets."&gt;
+
+                    &lt;!-- Meta Keywords --&gt;
+                    &lt;meta name="keywords" content="mike dinder, michael dinder, python projects, python code, python"&gt;
+
                     &lt;!-- Open Graph Meta Tags for Social Media --&gt;
-                    &lt;meta property="og:title" content="Display {filename} Code Snippets"&gt;
-                    &lt;meta property="og:description" content="A practice code page for displaying {filename} python snippets."&gt;
+                    &lt;meta property="og:title" content="Display {human_readable_name} Code Snippets"&gt;
+                    &lt;meta property="og:description" content="A practice code page for displaying Python {human_readable_name} Code Snippets."&gt;
                     &lt;meta property="og:type" content="website"&gt;
                     &lt;meta property="og:url" content="https://python.mikedinder.com/{output_html_path}"&gt;
                     &lt;meta property="og:image" content="https://python.mikedinder.com/Images/python-3d.jpg"&gt;
 
                     &lt;!-- Twitter Card Meta Tags --&gt;
                     &lt;meta name="twitter:card" content="summary_large_image"&gt;
-                    &lt;meta name="twitter:title" content="Display {filename} Code Snippets"&gt;
-                    &lt;meta name="twitter:description" content="A practice code page for displaying {filename} python snippets."&gt;
+                    &lt;meta name="twitter:title" content="Display Python {human_readable_name} Code Snippets"&gt;
+                    &lt;meta name="twitter:description" content="A practice code page for displaying Python {human_readable_name} Code Snippets."&gt;
                     &lt;meta name="twitter:image" content="https://python.mikedinder.com/Images/python-3d.jpg"&gt;
 
                     &lt;!-- All Browser Legacy Support --&gt;

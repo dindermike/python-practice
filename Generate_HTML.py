@@ -16,6 +16,8 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
     :returns: Nothing
     :rtype: None
     """
+    human_readable_name = filename.replace('_', ' ')
+    human_readable_name = human_readable_name.replace('.py', '')
 
     try:
         with open(directory + filename, 'r', encoding='utf-8') as f:
@@ -40,7 +42,7 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                     <title>Python {filename} Source Code</title>
 
                     <!-- Meta Description for SEO -->
-                    <meta name="description" content="A practice code page for displaying {filename} python snippets.">
+                    <meta name="description" content="A practice code page for displaying Python {human_readable_name} Code Snippets.">
 
                     <!-- Meta Keywords -->
                     <meta name="keywords" content="code, snippets, python, programming, syntax highlighting, development">
@@ -55,17 +57,23 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                     <!-- Robots Meta Tag -->
                     <meta name="robots" content="index, follow">
 
+                    <!-- Meta Description for SEO -->
+                    <meta name="description" content="A personal Mike Dinder project dedicated to Python {human_readable_name} Code Snippets.">
+
+                    <!-- Meta Keywords -->
+                    <meta name="keywords" content="mike dinder, michael dinder, python projects, python code, python">
+
                     <!-- Open Graph Meta Tags for Social Media -->
-                    <meta property="og:title" content="Display {filename} Code Snippets">
-                    <meta property="og:description" content="A practice code page for displaying {filename} python snippets.">
+                    <meta property="og:title" content="Display Python {human_readable_name} Code Snippets">
+                    <meta property="og:description" content="A practice code page for displaying Python {human_readable_name} Code Snippets.">
                     <meta property="og:type" content="website">
                     <meta property="og:url" content="https://python.mikedinder.com/{output_html_path}">
                     <meta property="og:image" content="https://python.mikedinder.com/Images/python-3d.jpg">
 
                     <!-- Twitter Card Meta Tags -->
                     <meta name="twitter:card" content="summary_large_image">
-                    <meta name="twitter:title" content="Display {filename} Code Snippets">
-                    <meta name="twitter:description" content="A practice code page for displaying {filename} python snippets.">
+                    <meta name="twitter:title" content="Display Python {human_readable_name} Code Snippets">
+                    <meta name="twitter:description" content="A practice code page for displaying Python {human_readable_name} Code Snippets.">
                     <meta name="twitter:image" content="https://python.mikedinder.com/Images/python-3d.jpg">
 
                     <!-- All Browser Legacy Support -->
