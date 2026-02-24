@@ -718,7 +718,6 @@ print(f"Your BMI for a Height of {height} Inches and Weight of {weight} Lbs is:"
                             dot.className = 'dot ready';
                             statusText.textContent = 'Python ' + pyodide.runPython('import sys; sys.version.split()[0]');
                             input.disabled = false;
-                            input.focus();
                         }
 
                         function addEntry(code, stdout, value, error) {

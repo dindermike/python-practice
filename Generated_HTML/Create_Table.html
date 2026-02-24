@@ -575,7 +575,6 @@ if __name__ == '__main__':
                             dot.className = 'dot ready';
                             statusText.textContent = 'Python ' + pyodide.runPython('import sys; sys.version.split()[0]');
                             input.disabled = false;
-                            input.focus();
                         }
 
                         function addEntry(code, stdout, value, error) {

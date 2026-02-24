@@ -544,7 +544,6 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                             dot.className = 'dot ready';
                             statusText.textContent = 'Python ' + pyodide.runPython('import sys; sys.version.split()[0]');
                             input.disabled = false;
-                            input.focus();
                         }}
 
                         function addEntry(code, stdout, value, error) {{
