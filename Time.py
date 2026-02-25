@@ -18,11 +18,12 @@ print("Show a calendar for a given month and year.")
 year = int(input("Enter the Year in YYYY format: "))
 month = int(input("Enter the Month in MM numeric format: "))
 
+print(f'Shows the Month Only for {month} of {year}')
 print(calendar.month(year, month))
 
 print('--------------------------------------------------')
 
-print('Shows the Full Year')
+print(f'Shows the Full Year {year}')
 print(calendar.calendar(year))
 
 print('--------------------------------------------------')
@@ -43,5 +44,5 @@ elif start_object < end_object:
 else:
     delta = 0
 
-print("The number of days between the two dates is...")
+print(f"The number of days between the two dates ({date_1} & {date_2}) is...")
 print(delta)
