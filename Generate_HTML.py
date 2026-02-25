@@ -107,8 +107,7 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                     <link rel="preconnect" href="https://fonts.googleapis.com">
                     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
                     <!-- <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script> -->
-                    <!-- <script src="https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.js"></script> -->
-                    <script src="https://python.mikedinder.com/JS/pyodide-v0-29-3.js"></script>
+                    <script src="https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.js"></script>
 
                     <!-- Custom Styles -->
                     <style type="text/css">
@@ -139,6 +138,10 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                             padding: 20px;
                             display: flex;
                             flex-direction: column;
+                        }}
+
+                        .mobile-br {{
+                            display: none;
                         }}
 
                         .container {{
@@ -243,18 +246,25 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                             align-items: center;
                         }}
 
-                        .run-dialog p {{
+                        .run-dialog p:before {{
+                            content: '*';
+                            position: absolute;
+                            top: 0;
+                            left: 0.25em;
+                            font-size: 0.9em;
                         }}
 
                         .run-btn {{
+                            width: 126px;
                             background: #3b82f6;
                             color: white;
                             border: 1px solid transparent;
-                            padding: 8px 16px;
+                            padding: 0.5em;
                             border-radius: 17.5px;
                             cursor: pointer;
                             font-size: 0.9em;
                             transition: all 0.3s ease;
+                            flex-shrink: 0;
                         }}
 
                         .run-btn:hover,
@@ -540,6 +550,14 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                             h1 {{
                                 font-size: 2em;
                             }}
+
+                            pre {{
+                                padding: 2.6em 0 1.5em;
+                            }}
+
+                            .run-dialog p {{
+                                padding: 0 1em 0 0;
+                            }}
                         }}
 
                         /* 640 Design */
@@ -570,6 +588,15 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
 
                             h2 {{
                                 font-size: 1.4em;
+                            }}
+
+                            pre {{
+                                padding: 2.6em 0 2em;
+                            }}
+
+                            .run-dialog p:before {{
+                                top: 0;
+                                font-size: 0.88em;
                             }}
                         }}
 
@@ -602,6 +629,35 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                             h2 {{
                                 font-size: 1.2em;
                             }}
+
+                            pre {{
+                                padding: 2.6em 0 8.5em;
+                            }}
+
+                            .run-dialog {{
+                                padding: 0 1em 1em;
+                                display: block;
+                                justify-content: unset;
+                                align-items: unset;
+                            }}
+
+                            .run-dialog p {{
+                                text-align: justify;
+                            }}
+
+                            .run-dialog p:before {{
+                                top: 1.75em;
+                                font-size: 0.86em;
+                            }}
+
+                            .run-btn {{
+                                display: inline-block;
+                                float: right;
+                            }}
+
+                            .mobile-br {{
+                                display: inline-block;
+                            }}
                         }}
 
                         /* 320 Design */
@@ -633,6 +689,10 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                             .rocket {{
                                 animation: rocketFly 45s infinite linear;
                             }}
+
+                            pre {{
+                                padding: 2.6em 0 13.5em;
+                            }}
                         }}
 
                         /* Below 320 Design */
@@ -643,6 +703,10 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
 
                             .container {{
                                 max-width: 234px;
+                            }}
+
+                            pre {{
+                                padding: 2.6em 0 16.5em;
                             }}
                         }}
                     </style>
@@ -682,7 +746,7 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                                         <code class="language-python">{code_content}</code>
 
                                         <div class="run-dialog">
-                                            <p><sup>*</sup>Runs the entire script above. Open your Console Window in Inspect Code to view the output of the script above.<br />&nbsp;A prompt popup will ask you for various input() commands.</p>
+                                            <p>Runs the entire script above. Open your Console Window in Inspect Code to view the output of the script above.<br /><br class="mobile-br" />A prompt popup will ask you for various input() commands.</p>
                                             <button class="run-btn" title="Run the Python code shown above" aria-label="Run the Python code shown above" onclick="runMyPythonCode()">Run Python Code</button>
                                         </div></pre>
                                 </div>
