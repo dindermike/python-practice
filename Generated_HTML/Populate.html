@@ -76,7 +76,8 @@
                     <!-- Run Python in the Clients Web Browser with WebAssembly -->
                     <link rel="preconnect" href="https://fonts.googleapis.com">
                     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
-                    <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+                    <!-- <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script> -->
+                    <script src="https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.js"></script>
 
                     <!-- Custom Styles -->
                     <style type="text/css">
@@ -110,7 +111,7 @@
                         }
 
                         .container {
-                            max-width: 1200px;
+                            max-width: 1160px;
                             margin: 0 auto;
                             z-index: 3;
                         }
@@ -131,14 +132,14 @@
                         }
 
                         h1 {
-                            font-size: 2.5rem;
+                            font-size: 2.4em;
                             color: #60a5fa;
                             margin-bottom: 10px;
                         }
 
                         .subtitle {
                             color: #94a3b8;
-                            font-size: 1.1rem;
+                            font-size: 1.1em;
                         }
 
                         .snippet-container {
@@ -161,7 +162,7 @@
 
                         .snippet-title {
                             color: #f1f5f9;
-                            font-size: 1.1rem;
+                            font-size: 1.1em;
                             font-weight: 600;
                         }
 
@@ -170,8 +171,18 @@
                             color: white;
                             padding: 5px 12px;
                             border-radius: 20px;
-                            font-size: 0.85rem;
+                            border: 1px solid transparent;
+                            font-size: 0.85em;
                             font-weight: 500;
+                            text-decoration: none;
+                            transition: all 0.3s ease;
+                        }
+
+                        .language-badge:hover,
+                        .language-badge:active,
+                        .language-badge:focus {
+                            background: #01183c;
+                            border: 1px solid #4380e2;
                         }
 
                         .snippet-body {
@@ -186,29 +197,28 @@
 
                         code {
                             font-family: 'Courier New', Courier, monospace;
-                            font-size: 0.95rem;
+                            font-size: 0.95em;
                         }
 
                         .copy-button {
                             position: absolute;
                             top: 10px;
-                            right: 10px;
+                            right: 20px;
                             background: #3b82f6;
                             color: white;
-                            border: none;
+                            border: 1px solid transparent;
                             padding: 8px 16px;
-                            border-radius: 6px;
+                            border-radius: 17.5px;
                             cursor: pointer;
-                            font-size: 0.9rem;
-                            transition: background 0.3s ease;
+                            font-size: 0.9em;
+                            transition: all 0.3s ease;
                         }
 
-                        .copy-button:hover {
+                        .copy-button:hover,
+                        .copy-button:active,
+                        .copy-button:focus {
                             background: #2563eb;
-                        }
-
-                        .copy-button:active {
-                            background: #1d4ed8;
+                            border: 1px solid #95bdfd;
                         }
 
                         footer {
@@ -231,7 +241,7 @@
                         .logo {
                             font-family: 'Syne', sans-serif;
                             font-weight: 800;
-                            font-size: 1.1rem;
+                            font-size: 1.1em;
                             letter-spacing: -0.02em;
                             color: var(--accent);
                         }
@@ -243,7 +253,7 @@
                             display: flex;
                             align-items: center;
                             gap: 8px;
-                            font-size: 0.72rem;
+                            font-size: 0.72em;
                             color: var(--muted);
                             letter-spacing: 0.05em;
                             text-transform: uppercase;
@@ -303,7 +313,7 @@
                             white-space: pre-wrap;
                             word-break: break-all;
                             line-height: 1.6;
-                            font-size: 0.9rem;
+                            font-size: 0.9em;
                         }
                         .result.stdout { color: var(--text); opacity: 0.85; }
                         .result.value { color: var(--warn); }
@@ -312,7 +322,7 @@
                         .loading-indicator {
                             padding-left: 28px;
                             color: var(--muted);
-                            font-size: 0.8rem;
+                            font-size: 0.8em;
                             animation: pulse 1s infinite;
                         }
 
@@ -336,7 +346,7 @@
                             outline: none;
                             color: var(--accent2);
                             font-family: 'JetBrains Mono', monospace;
-                            font-size: 0.9rem;
+                            font-size: 0.9em;
                             resize: none;
                             line-height: 1.6;
                             min-height: 24px;
@@ -349,7 +359,7 @@
 
                         .hint {
                             margin-top: 10px;
-                            font-size: 0.7rem;
+                            font-size: 0.7em;
                             color: var(--muted);
                             display: flex;
                             gap: 20px;
@@ -362,7 +372,7 @@
                             border-radius: 3px;
                             font-family: inherit;
                             color: var(--text);
-                            font-size: 0.68rem;
+                            font-size: 0.68em;
                         }
 
                         #output::-webkit-scrollbar { width: 4px; }
@@ -371,12 +381,12 @@
 
                         .welcome {
                             color: var(--muted);
-                            font-size: 0.8rem;
+                            font-size: 0.8em;
                             padding: 12px 0;
                             line-height: 1.8;
                             border-bottom: 1px solid #1a1a1e;
                         }
-                        .welcome .hi { color: var(--accent); font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; }
+                        .welcome .hi { color: var(--accent); font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1em; }
 
                         /* Rocket Ship */
                         .rocket {
@@ -424,21 +434,151 @@
                             100% { left: 100%; top: 48%; transform: rotate(-72deg); opacity: 1; }
                         }
 
-                        @media (max-width: 768px) {
-                            h1 {
-                                font-size: 2rem;
-                            }
+                        /* Responsive Design */
+                        /* ----------------- */
 
-                            .snippet-header {
-                                flex-direction: column;
-                                gap: 10px;
-                                align-items: flex-start;
+                        /* 1200 Design */
+                        @media (max-width: 1399px) {
+                            .container {
+                                max-width: 1160px;
                             }
                         }
 
-                        @media (max-width: 480px) {
+                        /* 1024 Design */
+                        @media (max-width: 1199px) {
+                            .container {
+                                max-width: 984px;
+                            }
+
+                            h1 {
+                                font-size: 2.2em;
+                            }
+                        }
+
+                        /* 768 Design */
+                        @media (max-width: 1023px) {
+                            body {
+                                padding: 15px;
+                            }
+
+                            .container {
+                                max-width: 738px;
+                            }
+
+                            .subtitle-1 {
+                                padding: 0 8em 1.5em;
+                            }
+
+                            .subtitle-2 {
+                                padding: 0 6em;
+                            }
+
+                            h1 {
+                                font-size: 2em;
+                            }
+                        }
+
+                        /* 640 Design */
+                        @media (max-width: 767px) {
+                            body {
+                                padding: 10px;
+                            }
+
+                            .container {
+                                max-width: 620px;
+                            }
+
+                            .subtitle {
+                                font-size: 1em;
+                            }
+
+                            .subtitle-1 {
+                                padding: 0 5em 1.4em;
+                            }
+
+                            .subtitle-2 {
+                                padding: 0 4em;
+                            }
+
+                            h1 {
+                                font-size: 1.8em;
+                            }
+
+                            h2 {
+                                font-size: 1.4em;
+                            }
+                        }
+
+                        /* 480 Design */
+                        @media (max-width: 639px) {
+                            body {
+                                padding: 6px;
+                            }
+
+                            .container {
+                                max-width: 468px;
+                            }
+
+                            .subtitle {
+                                font-size: 0.9em;
+                            }
+
+                            .subtitle-1 {
+                                padding: 0 3em 1.2em;
+                            }
+
+                            .subtitle-2 {
+                                padding: 0;
+                            }
+
+                            h1 {
+                                font-size: 1.6em;
+                            }
+
+                            h2 {
+                                font-size: 1.2em;
+                            }
+                        }
+
+                        /* 320 Design */
+                        @media (max-width: 479px) {
+                            body {
+                                padding: 5px;
+                            }
+
+                            .container {
+                                max-width: 310px;
+                            }
+
+                            .subtitle-1 {
+                                padding: 0 0 1em;
+                            }
+
+                            .subtitle-2 {
+                                padding: 0;
+                            }
+
+                            h1 {
+                                font-size: 1em;
+                            }
+
+                            h2 {
+                                font-size: 1em;
+                            }
+
                             .rocket {
                                 animation: rocketFly 45s infinite linear;
+                            }
+                        }
+
+                        /* Below 320 Design */
+                        @media (max-width: 319px) {
+                            body {
+                                padding: 3px;
+                            }
+
+                            .container {
+                                max-width: 234px;
                             }
                         }
                     </style>
@@ -456,9 +596,11 @@
                         <header>
                             <h1>Source Code Snippets of "Populate.py"</h1>
                             <h2>Mike Dinder</h2>
-                            <p class="subtitle">The entire contents of the "Populate.py" file as code examples with syntax highlighting</p>
-                            <p class="subtitle">
+                            <p class="subtitle subtitle-1">The entire contents of the "Populate.py" file as code examples with syntax highlighting</p>
+                            <p class="subtitle subtitle-2">
                                 Auto Generated Using <a href="https://python.mikedinder.com/Generated_HTML/Generate_HTML.html" title="Generate HTML Python Script" aria-label="Generate HTML Python Script">Generate_HTML.py</a> script to auto format each of these pages in a standardized template.
+                                <br /><br />
+                                On smaller viewports/windows, please scroll or use your touch/finger to scroll left to right to view all the code displayed.
                             </p>
                         </header>
 
@@ -467,7 +609,7 @@
                             <div class="snippet-container">
                                 <div class="snippet-header">
                                     <span class="snippet-title">Populate</span>
-                                    <span class="language-badge">Python</span>
+                                    <a href="https://python.mikedinder.com" class="language-badge" title="Python Home Page" aria-label="Python Home Page">Python Home</a>
                                 </div>
 
                                 <div class="snippet-body">
@@ -869,9 +1011,11 @@ if __name__ == '__main__':
                                     <div class="hi">Python in your browser</div>
                                     <p>
                                         Client-side execution via Pyodide · No server · Full stdlib · numpy, pandas, matplotlib available via micropip
+                                        <br /><br />
                                     </p>
                                     <p>
                                         Copy snippets from above. Note, input() command functionality is not working via the browser. Please replace each input() statement with the value you would like to have entered into the command-line. Otherwise, you can copy this script exactly as it is shown and you can run it on your own machine using the Command-Line Interface (CLI).
+                                        <br /><br />
                                     </p>
                                 </div>
                             </div>
@@ -898,6 +1042,8 @@ if __name__ == '__main__':
                                     <span><kbd>↑↓</kbd> history</span>
                                 </div>
                             </div>
+
+                            <button onclick="runMyPythonCode()">Run Python Code</button>
                         </section>
 
                         <footer>
@@ -934,6 +1080,397 @@ if __name__ == '__main__':
                                     button.style.background = '#3b82f6';
                                 }, 2000);
                             });
+                        }
+
+                        async function runMyPythonCode() {
+                            let pyodide = await loadPyodide();
+                            // The input() call below will open a browser prompt dialog
+                            pyodide.runPython(`# Populate database using existing functions to create other tables/records that are not associated with those specific
+# practice files.
+import datetime
+
+from Connect import connect
+from Create_Table import create_table
+from decimal import Decimal
+from Insert_Rows import insert_rows
+from psycopg2.extensions import AsIs
+
+
+if __name__ == '__main__':
+    conn = connect()
+
+    if conn:
+        create_table(conn, 'authors', [
+            AsIs('author_id SERIAL PRIMARY KEY'),
+            AsIs('first_name VARCHAR(100) NOT NULL'),
+            AsIs('last_name VARCHAR(100) NOT NULL'),
+            AsIs('biography TEXT'),
+            AsIs('birth_date DATE'),
+            AsIs('created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP'),
+            AsIs('UNIQUE(first_name, last_name)')
+        ])
+
+        create_table(conn, 'publishers', [
+            AsIs('publisher_id SERIAL PRIMARY KEY'),
+            AsIs('name VARCHAR(200) NOT NULL'),
+            AsIs('address TEXT'),
+            AsIs('city VARCHAR(100)'),
+            AsIs('state VARCHAR(50)'),
+            AsIs('zip_code VARCHAR(10)'),
+            AsIs('phone VARCHAR(20)'),
+            AsIs('email VARCHAR(200)'),
+            AsIs('created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP'),
+            AsIs('UNIQUE(name)'),
+            AsIs('UNIQUE(email)')
+        ])
+
+        create_table(conn, 'books', [
+            AsIs('book_id SERIAL PRIMARY KEY'),
+            AsIs('title VARCHAR(300) NOT NULL'),
+            AsIs('isbn VARCHAR(14) UNIQUE NOT NULL'),
+            AsIs('publisher_id INTEGER REFERENCES publishers(publisher_id)'),
+            AsIs('publication_date DATE'),
+            AsIs('price DECIMAL(10, 2) NOT NULL'),
+            AsIs('stock_quantity INTEGER DEFAULT 0'),
+            AsIs('description TEXT'),
+            AsIs('genre VARCHAR(50)'),
+            AsIs('website VARCHAR(300)'),
+            AsIs('created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP')
+        ])
+
+        create_table(conn, 'book_authors', [
+            AsIs('book_id INTEGER REFERENCES books(book_id) ON DELETE CASCADE'),
+            AsIs('author_id INTEGER REFERENCES authors(author_id) ON DELETE CASCADE'),
+            AsIs('PRIMARY KEY (book_id, author_id)')
+        ])
+
+        create_table(conn, 'customers', [
+            AsIs('customer_id SERIAL PRIMARY KEY'),
+            AsIs('first_name VARCHAR(100) NOT NULL'),
+            AsIs('last_name VARCHAR(100) NOT NULL'),
+            AsIs('email VARCHAR(100) UNIQUE NOT NULL'),
+            AsIs('phone VARCHAR(20)'),
+            AsIs('address TEXT'),
+            AsIs('city VARCHAR(100)'),
+            AsIs('state VARCHAR(50)'),
+            AsIs('zip_code VARCHAR(10)'),
+            AsIs('created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP'),
+            AsIs('UNIQUE(first_name, last_name)')
+        ])
+
+        create_table(conn, 'orders', [
+            AsIs('order_id SERIAL PRIMARY KEY'),
+            AsIs('customer_id INTEGER REFERENCES customers(customer_id)'),
+            AsIs('order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP'),
+            AsIs('total_amount DECIMAL(10, 2) NOT NULL'),
+            AsIs('status VARCHAR(20) DEFAULT \'pending\''),
+            AsIs('shipping_address TEXT'),
+            AsIs('city VARCHAR(100)'),
+            AsIs('state VARCHAR(50)'),
+            AsIs('zip_code VARCHAR(10)'),
+            AsIs('payment_method VARCHAR(50)')
+        ])
+
+        create_table(conn, 'order_items', [
+            AsIs('order_item_id SERIAL PRIMARY KEY'),
+            AsIs('order_id INTEGER REFERENCES orders(order_id) ON DELETE CASCADE'),
+            AsIs('book_id INTEGER REFERENCES books(book_id)'),
+            AsIs('quantity INTEGER NOT NULL'),
+            AsIs('unit_price DECIMAL(10, 2) NOT NULL'),
+            AsIs('subtotal DECIMAL(10, 2) NOT NULL')
+        ])
+
+        # Insert Author Rows
+        insert_rows(
+            conn, 'authors', [
+                'author_id',
+                'first_name',
+                'last_name',
+                'biography',
+                'birth_date'
+            ],
+            [
+                (
+                    10000, 'Mike', 'Dinder', 'Information Technology Author of a Django Book',
+                    datetime.date(1985, 12, 15)
+                ),
+                (
+                    10001, 'Michael', 'Binder', 'Writer of fiction books, mostly Sci-fi and Fantasy',
+                    datetime.date(1987, 9, 13)
+                ),
+                (
+                    10002, 'Robb', 'Dinder', 'Writer of awesome baking books', datetime.date(1989, 4, 20)
+                ),
+                (
+                    10003, 'Roger', 'ROLast', 'Master debater of anything that is considered a "hot topic"',
+                    datetime.date(1999, 4, 19)
+                ),
+                (
+                    10004, 'Rachel', 'RALast', 'Specializes in spy tactics, specifically how to transition from job to '
+                    'job and make people believe you are an expert in that field, even when you are not.',
+                    datetime.date(2001, 7, 12)
+                ),
+                (
+                    10005, 'Ruby', 'RULast', 'Specializes in adaptability through difficult situations.',
+                    datetime.date(2000, 2, 14)
+                ),
+                (
+                    10006, 'Liz', 'LILast', 'Publishes stories of how to become a pilot as well as specializes in how '
+                    'to be sassy to people who need it.', datetime.date(2005, 6, 25)
+                ),
+                (
+                    10007, 'Vienna', 'VILast', 'Publishes stories of luxury cars', datetime.date(2003, 7, 18)
+                ),
+            ],
+            'author_id'
+        )
+
+        # Insert Publisher Rows
+        insert_rows(
+            conn, 'publishers', [
+                'publisher_id',
+                'name',
+                'address',
+                'city',
+                'state',
+                'zip_code',
+                'phone',
+                'email',
+            ],
+            [
+                (
+                    20000, 'Dinder Publishing', '1234 Fake St.', 'Phoenix', 'AZ', '85022', '6235529371',
+                    'mike@mikedinder.com'
+                ),
+                (
+                    20001, 'Robb Publishing', '2345 Bake St.', 'Phoenix', 'AZ', '85032', '5555529371',
+                    'robb@mikedinder.com'
+                ),
+                (
+                    20002, 'Roger Publishing', '3456 Flake St.', 'Phoenix', 'AZ', '85257', '5551239371',
+                    'roger@mikedinder.com'
+                ),
+                (
+                    20003, 'Rachel Publishing', '4567 Blake St.', 'Phoenix', 'AZ', '85021', '5554569371',
+                    'rachel@mikedinder.com'
+                ),
+                (
+                    20004, 'Liz Publishing', '5678 Rake St.', 'Phoenix', 'AZ', '85050', '5559849371',
+                    'liz@mikedinder.com'
+                ),
+                (
+                    20005, 'Ruby Publishing', '6789 Make St.', 'Phoenix', 'AZ', '85012', '5555529456',
+                    'ruby@mikedinder.com'
+                ),
+                (
+                    20006, 'Vienna Publishing', '7890 Wake St.', 'Phoenix', 'AZ', '85008', '5555529841',
+                    'vienna@mikedinder.com'
+                ),
+            ],
+            'publisher_id'
+        )
+
+        # Insert Book Rows
+        insert_rows(
+            conn, 'books', [
+                'book_id',
+                'title',
+                'isbn',
+                'publisher_id',
+                'publication_date',
+                'price',
+                'stock_quantity',
+                'description',
+                'genre',
+                'website'
+            ],
+            [
+                (
+                    100, 'Becoming an Enterprise Django Developer', '978-1801073639', 20000, datetime.date(2022, 6, 27),
+                    Decimal('44.95'), 765, 'Discover best practices, tooling, and solutions for writing and organizing '
+                    'Django applications in production', 'Programming',
+                    'https://www.amazon.com/Becoming-Enterprise-Django-Developer-applications/dp/1801073635'
+                ),
+                (
+                    101, 'King Arthur Baking Company\'s Big Book of Bread', '978-1668009741', 20001,
+                    datetime.date(2024, 10, 22), Decimal('29.87'), 25, 'Master the art of bread baking with 125+ bread '
+                    'recipes for every baker\'s journey.', 'Cooking',
+                    'https://shop.kingarthurbaking.com/items/king-arthur-baking-companys-big-book-of-bread'
+                ),
+                (
+                    102, 'Win Every Argument', '978-1250853479', 20002, datetime.date(2023, 2, 28), Decimal('17.65'),
+                    1029, 'The Art of Debating, Persuading, and Public Speaking', 'Communications',
+                    'https://www.amazon.com/Win-Every-Argument-Debating-Persuading/dp/1250853478'
+                ),
+                (
+                    103, 'Shadow Cell', '978-0316572149', 20003, datetime.date(2025, 9, 9), Decimal('15.99'), 45,
+                    'An Insider Account of America\'s New Spy War', 'Intelligence & Espionage',
+                    'https://www.amazon.com/Red-Cell-Inside-Account-Americas-ebook/dp/B0CK8C5XD7'
+                ),
+                (
+                    104, 'Becoming an Enterprise Django Developer 2', '999-9801073639', 20000,
+                    datetime.date(2026, 12, 15), Decimal('44.95'), 125, 'The 2nd Edition of his best book that dives '
+                    'even deeper into Production related Django projects', 'Programming',
+                    'https://www.amazon.com/Becoming-Enterprise-Django-Developer-applications-2/dp/1801073420'
+                ),
+                (
+                    105, 'Becoming A Pilot', '979-8372222861', 20004, datetime.date(2023, 1, 12), Decimal('19.99'), 420,
+                    'What Every New Pilot Needs To Know To Save Time And Money In Flight School', 'Commercial',
+                    'https://www.amazon.com/Becoming-Pilot-Every-Flight-School/dp/B0BS8NPF6D'
+                ),
+                (
+                    106, 'Superadaptability', '978-3111575124', 20005, datetime.date(2025, 11, 17), Decimal('16.79'),
+                    744, 'How to Transcend in an Age of Overwhelm', 'Decision-Making & Problem Solving',
+                    'https://www.amazon.com/SuperAdaptability-How-Thrive-Age-Uncertainty/dp/3111575128'
+                ),
+                (
+                    107, '2025\'s Automotive Elite', '978-1923361928', 20006, datetime.date(2024, 10, 22),
+                    Decimal('34.99'), 856, 'Supercars and Luxury Icons', 'Pictorial',
+                    'https://www.amazon.com/2025s-Automotive-Elite-Supercars-Luxury/dp/1923361929'
+                ),
+            ],
+            'book_id'
+        )
+
+        # Insert Book Authors Rows
+        insert_rows(
+            conn, 'book_authors', [
+                'book_id',
+                'author_id'
+            ],
+            [
+                (100, 10000),
+                (101, 10002),
+                (102, 10003),
+                (103, 10004),
+                (104, 10000),
+                (105, 10006),
+                (106, 10005),
+                (107, 10007),
+            ]
+        )
+
+        # Insert Customer Rows
+        insert_rows(
+            conn, 'customers', [
+                'customer_id',
+                'first_name',
+                'last_name',
+                'email',
+                'phone',
+                'address',
+                'city',
+                'state',
+                'zip_code'
+            ],
+            [
+                (
+                    4000, 'Customer1_First', 'Customer1_Last', 'customer1@mikedinder.com', '5551234567',
+                    '456 W. Fake Ave.', 'Scottsdale', 'AZ', '85257'
+                ),
+                (
+                    4001, 'Customer2_First', 'Customer2_Last', 'customer2@mikedinder.com', '5551264567',
+                    '912 S. Fake Pass.', 'Tempe', 'AZ', '85045'
+                ),
+                (
+                    4002, 'Customer3_First', 'Customer3_Last', 'customer3@mikedinder.com', '5551234867',
+                    '651 W. Fake St.', 'Phoenix', 'AZ', '85125'
+                ),
+                (
+                    4003, 'Customer4_First', 'Customer4_Last', 'customer4@mikedinder.com', '5551284367',
+                    '185 E. Fake Way.', 'Mesa', 'AZ', '85035'
+                ),
+                (
+                    4004, 'Customer5_First', 'Customer5_Last', 'customer5@mikedinder.com', '5551239845',
+                    '963 W. Fake Rd.', 'Glendale', 'AZ', '85358'
+                ),
+                (
+                    4005, 'Customer6_First', 'Customer6_Last', 'customer6@mikedinder.com', '5551485631',
+                    '158 N. Fake Pkwy.', 'Phoenix', 'AZ', '85032'
+                ),
+            ],
+            'customer_id'
+        )
+
+        # Insert Order Rows
+        insert_rows(
+            conn, 'orders', [
+                'order_id',
+                'customer_id',
+                'order_date',
+                'total_amount',
+                'status',
+                'shipping_address',
+                'city',
+                'state',
+                'zip_code',
+                'payment_method'
+            ],
+            [
+                (
+                    50000, 4000, datetime.date(2026, 1, 1), Decimal('44.95'), 'pending', '420 NE. Fake St.',
+                    'Scottsdale', 'AZ', '85257', 'visa'
+                ),
+                (
+                    50001, 4001, datetime.date(2026, 1, 5), Decimal('47.52'), 'shipped', '8546 W. Flake Ave.',
+                    'Tempe', 'AZ', '85045', 'mastercard'
+                ),
+                (
+                    50002, 4003, datetime.date(2026, 1, 6), Decimal('52.95'), 'picked', '9875 S. Blake Rd.',
+                    'Mesa', 'AZ', '85035', 'american_express'
+                ),
+                (
+                    50003, 4002, datetime.date(2026, 1, 9), Decimal('99.26'), 'in-picking', '124 SW. Dinder St.',
+                    'Phoenix', 'AZ', '85125', 'discover'
+                ),
+                (
+                    50004, 4000, datetime.date(2026, 1, 12), Decimal('44.95'), 'pending', '6784 E. Dinner St.',
+                    'Scottsdale', 'AZ', '85257', 'visa'
+                ),
+                (
+                    50005, 4005, datetime.date(2026, 1, 14), Decimal('39.98'), 'pending', '7863 W. Diner Rd.',
+                    'Phoenix', 'AZ', '85032', 'paypal'
+                ),
+                (
+                    50006, 4004, datetime.date(2026, 1, 17), Decimal('184.69'), 'shipped', '357 N. Stone Way.',
+                    'Glendale', 'AZ', '85358', 'cashapp'
+                ),
+                (
+                    50007, 4001, datetime.date(2026, 1, 21), Decimal('292.48'), 'cancelled', '3698 S. Runner Ave.',
+                    'Tempe', 'AZ', '85045', 'zelle'
+                ),
+            ],
+            'order_id'
+        )
+
+        # Insert Order Items Rows
+        insert_rows(
+            conn, 'order_items', [
+                'order_item_id',
+                'order_id',
+                'book_id',
+                'quantity',
+                'unit_price',
+                'subtotal'
+            ],
+            [
+                (3000, 50000, 100, 1, Decimal('44.95'), Decimal('44.95')),
+                (3001, 50001, 101, 1, Decimal('29.87'), Decimal('29.87')),
+                (3002, 50001, 102, 1, Decimal('17.65'), Decimal('17.65')),
+                (3003, 50002, 102, 3, Decimal('17.65'), Decimal('52.95')),
+                (3004, 50003, 103, 4, Decimal('15.99'), Decimal('63.96')),
+                (3005, 50003, 102, 2, Decimal('17.65'), Decimal('35.30')),
+                (3006, 50004, 104, 1, Decimal('44.95'), Decimal('44.95')),
+                (3007, 50005, 105, 2, Decimal('19.99'), Decimal('39.98')),
+                (3008, 50006, 106, 11, Decimal('16.79'), Decimal('184.69')),
+                (3009, 50007, 107, 5, Decimal('34.99'), Decimal('174.95')),
+                (3010, 50007, 106, 7, Decimal('16.79'), Decimal('117.53')),
+            ],
+            'order_item_id'
+        )
+
+        conn.close()
+`);
                         }
 
                         const output = document.getElementById('output');

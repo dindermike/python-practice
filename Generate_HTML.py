@@ -106,7 +106,8 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                     <!-- Run Python in the Clients Web Browser with WebAssembly -->
                     <link rel="preconnect" href="https://fonts.googleapis.com">
                     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
-                    <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+                    <!-- <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script> -->
+                    <script src="https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.js"></script>
 
                     <!-- Custom Styles -->
                     <style type="text/css">
@@ -140,7 +141,7 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                         }}
 
                         .container {{
-                            max-width: 1200px;
+                            max-width: 1160px;
                             margin: 0 auto;
                             z-index: 3;
                         }}
@@ -161,14 +162,14 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                         }}
 
                         h1 {{
-                            font-size: 2.5rem;
+                            font-size: 2.4em;
                             color: #60a5fa;
                             margin-bottom: 10px;
                         }}
 
                         .subtitle {{
                             color: #94a3b8;
-                            font-size: 1.1rem;
+                            font-size: 1.1em;
                         }}
 
                         .snippet-container {{
@@ -191,7 +192,7 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
 
                         .snippet-title {{
                             color: #f1f5f9;
-                            font-size: 1.1rem;
+                            font-size: 1.1em;
                             font-weight: 600;
                         }}
 
@@ -200,8 +201,18 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                             color: white;
                             padding: 5px 12px;
                             border-radius: 20px;
-                            font-size: 0.85rem;
+                            border: 1px solid transparent;
+                            font-size: 0.85em;
                             font-weight: 500;
+                            text-decoration: none;
+                            transition: all 0.3s ease;
+                        }}
+
+                        .language-badge:hover,
+                        .language-badge:active,
+                        .language-badge:focus {{
+                            background: #01183c;
+                            border: 1px solid #4380e2;
                         }}
 
                         .snippet-body {{
@@ -216,29 +227,28 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
 
                         code {{
                             font-family: 'Courier New', Courier, monospace;
-                            font-size: 0.95rem;
+                            font-size: 0.95em;
                         }}
 
                         .copy-button {{
                             position: absolute;
                             top: 10px;
-                            right: 10px;
+                            right: 20px;
                             background: #3b82f6;
                             color: white;
-                            border: none;
+                            border: 1px solid transparent;
                             padding: 8px 16px;
-                            border-radius: 6px;
+                            border-radius: 17.5px;
                             cursor: pointer;
-                            font-size: 0.9rem;
-                            transition: background 0.3s ease;
+                            font-size: 0.9em;
+                            transition: all 0.3s ease;
                         }}
 
-                        .copy-button:hover {{
+                        .copy-button:hover,
+                        .copy-button:active,
+                        .copy-button:focus {{
                             background: #2563eb;
-                        }}
-
-                        .copy-button:active {{
-                            background: #1d4ed8;
+                            border: 1px solid #95bdfd;
                         }}
 
                         footer {{
@@ -261,7 +271,7 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                         .logo {{
                             font-family: 'Syne', sans-serif;
                             font-weight: 800;
-                            font-size: 1.1rem;
+                            font-size: 1.1em;
                             letter-spacing: -0.02em;
                             color: var(--accent);
                         }}
@@ -273,7 +283,7 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                             display: flex;
                             align-items: center;
                             gap: 8px;
-                            font-size: 0.72rem;
+                            font-size: 0.72em;
                             color: var(--muted);
                             letter-spacing: 0.05em;
                             text-transform: uppercase;
@@ -333,7 +343,7 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                             white-space: pre-wrap;
                             word-break: break-all;
                             line-height: 1.6;
-                            font-size: 0.9rem;
+                            font-size: 0.9em;
                         }}
                         .result.stdout {{ color: var(--text); opacity: 0.85; }}
                         .result.value {{ color: var(--warn); }}
@@ -342,7 +352,7 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                         .loading-indicator {{
                             padding-left: 28px;
                             color: var(--muted);
-                            font-size: 0.8rem;
+                            font-size: 0.8em;
                             animation: pulse 1s infinite;
                         }}
 
@@ -366,7 +376,7 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                             outline: none;
                             color: var(--accent2);
                             font-family: 'JetBrains Mono', monospace;
-                            font-size: 0.9rem;
+                            font-size: 0.9em;
                             resize: none;
                             line-height: 1.6;
                             min-height: 24px;
@@ -379,7 +389,7 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
 
                         .hint {{
                             margin-top: 10px;
-                            font-size: 0.7rem;
+                            font-size: 0.7em;
                             color: var(--muted);
                             display: flex;
                             gap: 20px;
@@ -392,7 +402,7 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                             border-radius: 3px;
                             font-family: inherit;
                             color: var(--text);
-                            font-size: 0.68rem;
+                            font-size: 0.68em;
                         }}
 
                         #output::-webkit-scrollbar {{ width: 4px; }}
@@ -401,12 +411,12 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
 
                         .welcome {{
                             color: var(--muted);
-                            font-size: 0.8rem;
+                            font-size: 0.8em;
                             padding: 12px 0;
                             line-height: 1.8;
                             border-bottom: 1px solid #1a1a1e;
                         }}
-                        .welcome .hi {{ color: var(--accent); font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; }}
+                        .welcome .hi {{ color: var(--accent); font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1em; }}
 
                         /* Rocket Ship */
                         .rocket {{
@@ -454,21 +464,151 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                             100% {{ left: 100%; top: 48%; transform: rotate(-72deg); opacity: 1; }}
                         }}
 
-                        @media (max-width: 768px) {{
-                            h1 {{
-                                font-size: 2rem;
-                            }}
+                        /* Responsive Design */
+                        /* ----------------- */
 
-                            .snippet-header {{
-                                flex-direction: column;
-                                gap: 10px;
-                                align-items: flex-start;
+                        /* 1200 Design */
+                        @media (max-width: 1399px) {{
+                            .container {{
+                                max-width: 1160px;
                             }}
                         }}
 
-                        @media (max-width: 480px) {{
+                        /* 1024 Design */
+                        @media (max-width: 1199px) {{
+                            .container {{
+                                max-width: 984px;
+                            }}
+
+                            h1 {{
+                                font-size: 2.2em;
+                            }}
+                        }}
+
+                        /* 768 Design */
+                        @media (max-width: 1023px) {{
+                            body {{
+                                padding: 15px;
+                            }}
+
+                            .container {{
+                                max-width: 738px;
+                            }}
+
+                            .subtitle-1 {{
+                                padding: 0 8em 1.5em;
+                            }}
+
+                            .subtitle-2 {{
+                                padding: 0 6em;
+                            }}
+
+                            h1 {{
+                                font-size: 2em;
+                            }}
+                        }}
+
+                        /* 640 Design */
+                        @media (max-width: 767px) {{
+                            body {{
+                                padding: 10px;
+                            }}
+
+                            .container {{
+                                max-width: 620px;
+                            }}
+
+                            .subtitle {{
+                                font-size: 1em;
+                            }}
+
+                            .subtitle-1 {{
+                                padding: 0 5em 1.4em;
+                            }}
+
+                            .subtitle-2 {{
+                                padding: 0 4em;
+                            }}
+
+                            h1 {{
+                                font-size: 1.8em;
+                            }}
+
+                            h2 {{
+                                font-size: 1.4em;
+                            }}
+                        }}
+
+                        /* 480 Design */
+                        @media (max-width: 639px) {{
+                            body {{
+                                padding: 6px;
+                            }}
+
+                            .container {{
+                                max-width: 468px;
+                            }}
+
+                            .subtitle {{
+                                font-size: 0.9em;
+                            }}
+
+                            .subtitle-1 {{
+                                padding: 0 3em 1.2em;
+                            }}
+
+                            .subtitle-2 {{
+                                padding: 0;
+                            }}
+
+                            h1 {{
+                                font-size: 1.6em;
+                            }}
+
+                            h2 {{
+                                font-size: 1.2em;
+                            }}
+                        }}
+
+                        /* 320 Design */
+                        @media (max-width: 479px) {{
+                            body {{
+                                padding: 5px;
+                            }}
+
+                            .container {{
+                                max-width: 310px;
+                            }}
+
+                            .subtitle-1 {{
+                                padding: 0 0 1em;
+                            }}
+
+                            .subtitle-2 {{
+                                padding: 0;
+                            }}
+
+                            h1 {{
+                                font-size: 1em;
+                            }}
+
+                            h2 {{
+                                font-size: 1em;
+                            }}
+
                             .rocket {{
                                 animation: rocketFly 45s infinite linear;
+                            }}
+                        }}
+
+                        /* Below 320 Design */
+                        @media (max-width: 319px) {{
+                            body {{
+                                padding: 3px;
+                            }}
+
+                            .container {{
+                                max-width: 234px;
                             }}
                         }}
                     </style>
@@ -486,9 +626,11 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                         <header>
                             <h1>Source Code Snippets of "{filename}"</h1>
                             <h2>Mike Dinder</h2>
-                            <p class="subtitle">The entire contents of the "{filename}" file as code examples with syntax highlighting</p>
-                            <p class="subtitle">
+                            <p class="subtitle subtitle-1">The entire contents of the "{filename}" file as code examples with syntax highlighting</p>
+                            <p class="subtitle subtitle-2">
                                 Auto Generated Using <a href="https://python.mikedinder.com/Generated_HTML/Generate_HTML.html" title="Generate HTML Python Script" aria-label="Generate HTML Python Script">Generate_HTML.py</a> script to auto format each of these pages in a standardized template.
+                                <br /><br />
+                                On smaller viewports/windows, please scroll or use your touch/finger to scroll left to right to view all the code displayed.
                             </p>
                         </header>
 
@@ -497,7 +639,7 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                             <div class="snippet-container">
                                 <div class="snippet-header">
                                     <span class="snippet-title">{fn_no_ext}</span>
-                                    <span class="language-badge">Python</span>
+                                    <a href="https://python.mikedinder.com" class="language-badge" title="Python Home Page" aria-label="Python Home Page">Python Home</a>
                                 </div>
 
                                 <div class="snippet-body">
@@ -514,9 +656,11 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                                     <div class="hi">Python in your browser</div>
                                     <p>
                                         Client-side execution via Pyodide · No server · Full stdlib · numpy, pandas, matplotlib available via micropip
+                                        <br /><br />
                                     </p>
                                     <p>
                                         Copy snippets from above. Note, input() command functionality is not working via the browser. Please replace each input() statement with the value you would like to have entered into the command-line. Otherwise, you can copy this script exactly as it is shown and you can run it on your own machine using the Command-Line Interface (CLI).
+                                        <br /><br />
                                     </p>
                                 </div>
                             </div>
@@ -543,6 +687,8 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                                     <span><kbd>↑↓</kbd> history</span>
                                 </div>
                             </div>
+
+                            <button onclick="runMyPythonCode()">Run Python Code</button>
                         </section>
 
                         <footer>
@@ -579,6 +725,12 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                                     button.style.background = '#3b82f6';
                                 }}, 2000);
                             }});
+                        }}
+
+                        async function runMyPythonCode() {{
+                            let pyodide = await loadPyodide();
+                            // The input() call below will open a browser prompt dialog
+                            pyodide.runPython(`{code_content}`);
                         }}
 
                         const output = document.getElementById('output');
