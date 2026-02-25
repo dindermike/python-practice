@@ -757,7 +757,7 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                             <!-- Execute Python Snippet -->
                             <div id="output">
                                 <div class="welcome">
-                                    <div class="hi">Python in your browser</div>
+                                    <div class="hi">Python in Your Browser</div>
                                     <p>
                                         Client-side execution via Pyodide · No server · Full stdlib · numpy, pandas, matplotlib available via micropip
                                         <br /><br />
