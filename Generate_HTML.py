@@ -763,7 +763,7 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                                         <br /><br />
                                     </p>
                                     <p>
-                                        Copy snippets or the entire script from above. You may also copy this script exactly as it is shown and you can run it on your own machine using the Command-Line Interface (CLI).
+                                        Mobile users will want to use this method. Copy snippets or the entire script from above. You may also copy this script exactly as it is shown and you can run it on your own machine using the Command-Line Interface (CLI).
                                         <br /><br />
                                     </p>
                                 </div>
