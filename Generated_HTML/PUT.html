@@ -77,7 +77,8 @@
                     <link rel="preconnect" href="https://fonts.googleapis.com">
                     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
                     <!-- <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script> -->
-                    <script src="https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.js"></script>
+                    <!-- <script src="https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.js"></script> -->
+                    <script src="https://python.mikedinder.com/JS/pyodide-v0-29-3.js"></script>
 
                     <!-- Custom Styles -->
                     <style type="text/css">
@@ -191,13 +192,46 @@
 
                         pre {
                             margin: 0;
-                            padding: 35px 0 20px;
+                            padding: 2.6em 0 0.5em;
                             overflow-x: auto;
+                            position: relative;
                         }
 
                         code {
                             font-family: 'Courier New', Courier, monospace;
                             font-size: 0.95em;
+                        }
+
+                        .run-dialog {
+                            width: 100%;
+                            position: absolute;
+                            bottom: 0;
+                            padding: 0 1em 1em;
+                            white-space: pre-line;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                        }
+
+                        .run-dialog p {
+                        }
+
+                        .run-btn {
+                            background: #3b82f6;
+                            color: white;
+                            border: 1px solid transparent;
+                            padding: 8px 16px;
+                            border-radius: 17.5px;
+                            cursor: pointer;
+                            font-size: 0.9em;
+                            transition: all 0.3s ease;
+                        }
+
+                        .run-btn:hover,
+                        .run-btn:active,
+                        .run-btn:focus {
+                            background: #2563eb;
+                            border: 1px solid #95bdfd;
                         }
 
                         .copy-button {
@@ -729,7 +763,11 @@ if __name__ == '__main__':
         }
     )
 </code>
-                                    </pre>
+
+                                        <div class="run-dialog">
+                                            <p><sup>*</sup>Runs the entire script above. Open your Console Window in Inspect Code to view the output of the script above.<br />&nbsp;A prompt popup will ask you for various input() commands.</p>
+                                            <button class="run-btn" title="Run the Python code shown above" aria-label="Run the Python code shown above" onclick="runMyPythonCode()">Run Python Code</button>
+                                        </div></pre>
                                 </div>
                             </div>
 
@@ -742,7 +780,7 @@ if __name__ == '__main__':
                                         <br /><br />
                                     </p>
                                     <p>
-                                        Copy snippets from above. Note, input() command functionality is not working via the browser. Please replace each input() statement with the value you would like to have entered into the command-line. Otherwise, you can copy this script exactly as it is shown and you can run it on your own machine using the Command-Line Interface (CLI).
+                                        Copy snippets or the entire script from above. You may also copy this script exactly as it is shown and you can run it on your own machine using the Command-Line Interface (CLI).
                                         <br /><br />
                                     </p>
                                 </div>
@@ -770,8 +808,6 @@ if __name__ == '__main__':
                                     <span><kbd>↑↓</kbd> history</span>
                                 </div>
                             </div>
-
-                            <button onclick="runMyPythonCode()">Run Python Code</button>
                         </section>
 
                         <footer>
@@ -811,9 +847,19 @@ if __name__ == '__main__':
                         }
 
                         async function runMyPythonCode() {
-                            let pyodide = await loadPyodide();
+                            let pyodide1 = await loadPyodide();
                             // The input() call below will open a browser prompt dialog
-                            pyodide.runPython(`# Running basic PUT Requests using a web platform called ReqRes (https://reqres.in/) to mock API Endpoints
+                            pyodide1.runPython(`
+import sys, io
+from js import prompt
+
+def input(prompt_text=""):
+    return prompt(prompt_text)
+
+# Override the built-in input
+__builtins__.input = input
+
+# Running basic PUT Requests using a web platform called ReqRes (https://reqres.in/) to mock API Endpoints
 # For me to hit via Python requests below.
 import json
 import os
@@ -926,7 +972,8 @@ if __name__ == '__main__':
             }
         }
     )
-`);
+
+                            `);
                         }
 
                         const output = document.getElementById('output');
@@ -952,8 +999,17 @@ if __name__ == '__main__':
                             // Redirect stdout/stderr
                             pyodide.runPython(`
                                 import sys, io
+                                from js import prompt
+
+                                def input(prompt_text=""):
+                                    return prompt(prompt_text)
+
+                                # Override the built-in input
+                                __builtins__.input = input
+
                                 class _Capture(io.StringIO):
                                     pass
+
                                 sys.stdout = _Capture()
                                 sys.stderr = _Capture()
                             `);
