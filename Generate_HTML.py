@@ -228,6 +228,7 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                             padding: 2.6em 0 0.5em;
                             overflow-x: auto;
                             position: relative;
+                            z-index: 4;
                         }}
 
                         code {{
@@ -286,6 +287,7 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                             cursor: pointer;
                             font-size: 0.9em;
                             transition: all 0.3s ease;
+                            z-index: 5;
                         }}
 
                         .copy-button:hover,
