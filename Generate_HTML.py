@@ -737,7 +737,7 @@ def generate_html_with_code(filename=None, fn_no_ext=None, output_html_path=None
                             <div class="snippet-container">
                                 <div class="snippet-header">
                                     <span class="snippet-title">{fn_no_ext}</span>
-                                    <a href="https://python.mikedinder.com" class="language-badge" title="Python Home Page" aria-label="Python Home Page">Python Home</a>
+                                    <a href="../index.html" class="language-badge" title="Python Home Page" aria-label="Python Home Page">Python Home</a>
                                 </div>
 
                                 <div class="snippet-body">
