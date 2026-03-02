@@ -26,6 +26,9 @@
         <!-- Robots Meta Tag -->
         <meta name="robots" content="index, follow">
 
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
         <!-- Meta Description for SEO -->
         <meta name="description" content="A personal Mike Dinder project dedicated to Python Code Snippets.">
 
@@ -487,19 +490,34 @@
             .link-arrow { margin-left: auto; color: var(--cyan-dim); font-size: 1em; transition: transform 0.3s; }
             .link-card:hover .link-arrow { transform: translateX(4px); color: var(--cyan); }
 
-            /* FOOTER */
+            /* Footer */
             footer {
                 text-align: center;
-                padding: 3em 2em;
-                border-top: 1px solid rgba(0,212,255,0.08);
-                position: relative;
-                z-index: 3;
-                color: var(--muted);
-                font-family: 'Space Mono', monospace;
-                font-size: 0.7em;
-                letter-spacing: 0.1em;
+                padding: 50px 0;
+                border-top: 1px solid rgba(51, 102, 153, 0.1);
             }
-            footer a { color: var(--cyan-dim); text-decoration: none; }
+
+            footer p {
+                color: var(--muted);
+            }
+
+            .social-links {
+                display: flex;
+                justify-content: center;
+                gap: 30px;
+                margin-bottom: 20px;
+            }
+
+            .social-link {
+                color: var(--cyan);
+                font-size: 1.5em;
+                transition: all 0.3s ease;
+            }
+
+            .social-link:hover {
+                transform: translateY(-5px) scale(1.2);
+                text-shadow: 0 0 20px var(--cyan);
+            }
 
             /* Glitch effect on hover hero */
             .glitch {
@@ -986,8 +1004,18 @@
             </div>
         </section>
 
-        <footer>
-            <p>&copy; 2026 MikeDinder.com, All Rights Reserved. Generated Using <a href="https://claude.ai" target="_blank">Claude.AI</a></p>
+        <!-- Footer -->
+        <footer id="contact">
+            <div class="container">
+                <div class="social-links">
+                    <a href="https://www.mikedinder.com" class="social-link" title="Mike Dinder Home Page/Resume" aria-label="Mike Dinder Home Page/Resume"><i class="fa-solid fa-house-chimney-window"></i></a>
+                    <a href="https://www.linkedin.com/in/mikedinder/" target="_blank" class="social-link" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/dindermike" target="_blank" class="social-link" title="GitHub" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="mailto:dindermike@hotmail.com" target="_blank" class="social-link" title="Primary Email" aria-label="Primary Email"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="mailto:mike@mikedinder.com" target="_blank" class="social-link" title="Secondary Email" aria-label="Secondary Email"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+                <p>&copy; 2026 MikeDinder.com, All Rights Reserved. Built with AI, Python, HTML, CSS, JavaScript and Some Code Generated using Using <a href="https://claude.ai" target="_blank">Claude.AI</a></p>
+            </div>
         </footer>
 
         <script type="text/javascript">
