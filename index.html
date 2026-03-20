@@ -76,7 +76,6 @@
                 font-family: 'Rajdhani', sans-serif;
                 font-size: 18px;
                 overflow-x: hidden;
-                cursor: none;
             }
 
             h3 {
@@ -385,14 +384,23 @@
                 background: linear-gradient(135deg, rgba(0,212,255,0.05), transparent);
                 opacity: 0;
                 transition: opacity 0.3s;
+                pointer-events: none;
             }
             .card:hover::after { opacity: 1; }
 
             .card-icon {
                 font-size: 2em;
                 margin-bottom: 1em;
-                display: block;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
             }
+
+            .card-icon img {
+                width: 2em;
+                height: auto;
+            }
+
             .card-title {
                 font-family: 'Orbitron', sans-serif;
                 font-size: 0.85em;
@@ -717,7 +725,7 @@
                     <div class="timeline-item">
                         <div class="timeline-year">1989 — IGNITION</div>
                         <div class="timeline-heading">Born in a Holiday Break</div>
-                        <div class="timeline-body">During the Christmas holiday of 1989, Guido van Rossum — a Dutch programmer at Centrum Wiskunde & Informatica (CWI) in the Netherlands — began writing Python as a hobby project. He wanted a language that bridged the gap between C and shell scripting, something expressive and easy to read. He named it after Monty Python's Flying Circus.</div>
+                        <div class="timeline-body">During the Christmas holiday of 1989, Guido van Rossum — a Dutch programmer at Centrum Wiskunde &amp; Informatica (CWI) in the Netherlands — began writing Python as a hobby project. He wanted a language that bridged the gap between C and shell scripting, something expressive and easy to read. He named it after Monty Python's Flying Circus.</div>
                     </div>
 
                     <div class="timeline-item">
@@ -734,7 +742,7 @@
 
                     <div class="timeline-item">
                         <div class="timeline-year">2000 — NEW TRAJECTORY</div>
-                        <div class="timeline-heading">Python 2.0 & Open Development</div>
+                        <div class="timeline-heading">Python 2.0 &amp; Open Development</div>
                         <div class="timeline-body">Python 2.0 introduced list comprehensions, garbage collection, and crucially, a shift to a more open, community-driven development model. The Python Software Foundation was formed, ensuring the language's future was guided by its global user base rather than any single company.</div>
                     </div>
 
@@ -746,7 +754,7 @@
 
                     <div class="timeline-item">
                         <div class="timeline-year">2010s — SUPERNOVA</div>
-                        <div class="timeline-heading">The Data Science & AI Revolution</div>
+                        <div class="timeline-heading">The Data Science &amp; AI Revolution</div>
                         <div class="timeline-body">Libraries like NumPy, Pandas, Matplotlib, scikit-learn, TensorFlow, and PyTorch transformed Python into the undisputed language of data science, machine learning, and AI. Universities began teaching it as a first language. Tech giants adopted it as a primary development tool.</div>
                     </div>
 
@@ -792,57 +800,73 @@
 
                 <div class="cards-grid">
                     <div class="card">
-                    <span class="card-icon">🤖</span>
-                    <div class="card-title">Artificial Intelligence & ML</div>
+                    <span class="card-icon">
+                        <img src="Images/AI3.png" role="img" aria-label="AI Icon" alt="AI Icon" />
+                    </span>
+                    <div class="card-title">Artificial Intelligence &amp; ML</div>
                     <div class="card-body">TensorFlow, PyTorch, and Keras make Python the primary language for training neural networks. From image recognition to large language models, Python is the engine of the AI revolution.</div>
                     <span class="card-tag">tensorflow · pytorch · keras</span>
                     </div>
 
                     <div class="card">
-                    <span class="card-icon">🌐</span>
+                    <span class="card-icon">
+                        <img src="Images/Development.png" role="img" aria-label="Development Icon" alt="Development Icon" />
+                    </span>
                     <div class="card-title">Web Development</div>
                     <div class="card-body">Django and Flask power millions of web applications. Instagram, Pinterest, and Disqus were all built on Django. Python's simplicity makes rapid web development extraordinarily efficient.</div>
                     <span class="card-tag">django · flask · fastapi</span>
                     </div>
 
                     <div class="card">
-                    <span class="card-icon">📊</span>
-                    <div class="card-title">Data Science & Analytics</div>
+                    <span class="card-icon">
+                        <img src="Images/Analytics.png" role="img" aria-label="Analytics Icon" alt="Analytics Icon" />
+                    </span>
+                    <div class="card-title">Data Science &amp; Analytics</div>
                     <div class="card-body">Pandas, NumPy, and Jupyter notebooks are the standard toolkit for data exploration. Scientists, economists, and analysts worldwide use Python to turn raw data into meaningful insight.</div>
                     <span class="card-tag">pandas · numpy · matplotlib</span>
                     </div>
 
                     <div class="card">
-                    <span class="card-icon">🔭</span>
+                    <span class="card-icon">
+                        <img src="Images/Science.png" role="img" aria-label="Science Icon" alt="Science Icon" />
+                    </span>
                     <div class="card-title">Scientific Computing</div>
                     <div class="card-body">NASA uses Python to process telescope imagery. The first-ever photograph of a black hole was processed with Python scripts. SciPy and Astropy are essential tools in modern scientific research.</div>
                     <span class="card-tag">scipy · astropy · sympy</span>
                     </div>
 
                     <div class="card">
-                    <span class="card-icon">🔐</span>
+                    <span class="card-icon">
+                        <img src="Images/Security.png" role="img" aria-label="Security Icon" alt="Security Icon" />
+                    </span>
                     <div class="card-title">Cybersecurity</div>
                     <div class="card-body">Python's vast library ecosystem makes it the go-to language for pen testing, network scanning, and security automation. Tools like Scapy and Impacket are staples in security research.</div>
                     <span class="card-tag">scapy · requests · cryptography</span>
                     </div>
 
                     <div class="card">
-                    <span class="card-icon">⚙️</span>
-                    <div class="card-title">Automation & DevOps</div>
+                    <span class="card-icon">
+                        <img src="Images/Gear.png" role="img" aria-label="Gear Icon" alt="Gear Icon" />
+                    </span>
+                    <div class="card-title">Automation &amp; DevOps</div>
                     <div class="card-body">From Ansible playbooks to custom deployment scripts, Python automates the modern internet's infrastructure. It eliminates repetitive tasks and powers CI/CD pipelines across the industry.</div>
                     <span class="card-tag">ansible · boto3 · paramiko</span>
                     </div>
 
                     <div class="card">
-                    <span class="card-icon">🎮</span>
+                    <span class="card-icon">
+                        <img src="Images/Game.png" role="img" aria-label="Game Icon" alt="Game Icon" />
+                    </span>
                     <div class="card-title">Game Development</div>
                     <div class="card-body">Pygame enables 2D game creation while Python scripts power game logic in larger engines. Many game studios use Python for prototyping and tooling due to its rapid development speed.</div>
                     <span class="card-tag">pygame · panda3d · ursina</span>
                     </div>
 
                     <div class="card">
-                    <span class="card-icon">🏦</span>
-                    <div class="card-title">Finance & Quantitative Analysis</div>
+                    <span class="card-icon">
+                        <img src="Images/Money.png" role="img" aria-label="Money Icon" alt="Money Icon" />
+                    </span>
+                    <div class="card-title">Finance &amp; Quantitative Analysis</div>
                     <div class="card-body">Wall Street runs on Python. Quantitative analysts build trading algorithms, risk models, and financial data pipelines using Python's powerful numerical and statistical libraries.</div>
                     <span class="card-tag">quantlib · zipline · alphalens</span>
                     </div>
